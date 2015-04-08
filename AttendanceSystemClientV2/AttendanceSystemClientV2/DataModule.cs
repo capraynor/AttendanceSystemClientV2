@@ -56,10 +56,12 @@ namespace AttendanceSystemClientV2
         #endregion
 
         #region DataModule Events
-        private void ClientChannel_OnLoginNeeded(object sender, LoginNeededEventArgs e)
+        private void ClientChannel_OnLoginNeeded(object sender, LoginNeededEventArgs e)//如果 fdatamodule需要登录，将会调用此函数。
         {
-            // Performing login
-            if (this.LogOn(Properties.Settings.Default.UserId, Properties.Settings.Default.Password))
+            // 登录操作
+            
+            if ((!string.IsNullOrEmpty(Properties.Settings.Default.Password)) && 
+                this.LogOn(Properties.Settings.Default.UserId, Properties.Settings.Default.Password))//密码不为空 并且登录成功
             {
                 e.Retry = true;
                 e.LoginSuccessful = true;
@@ -71,9 +73,9 @@ namespace AttendanceSystemClientV2
 
             using (LogOnForm lLoginForm = new LogOnForm())
             {
-                if (lLoginForm.ShowDialog() != DialogResult.OK)
+                if (lLoginForm.ShowDialog() != DialogResult.OK)//若用户点击了取消
                 {
-                    MessageBox.Show("Login cancelled");
+                    MessageBox.Show("用户取消了登录");
                     return;
                 }
                 lUserId = lLoginForm.UserId;
@@ -86,7 +88,7 @@ namespace AttendanceSystemClientV2
                 e.LoginSuccessful = true;
             }
             else
-                MessageBox.Show("Login failed");
+                MessageBox.Show("登录失败");
         }
         #endregion
 
@@ -131,7 +133,7 @@ namespace AttendanceSystemClientV2
             try
             {
                 IQueryable<JSANDKKVIEWRO> ttt = remoteDataAdapter.GetTable<JSANDKKVIEWRO>();
-                MessageBox.Show(ttt.Any().ToString()+"第二条语句执行了");
+                ttt.Count();
             }
             catch (RemObjects.SDK.Exceptions.SessionNotFoundException excp)
             {

@@ -26,8 +26,22 @@ namespace AttendanceSystemClientV2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_fDataModule.IsLoggedOn.ToString());
             _fDataModule.getdata();
+        }
+
+        private void manualBtn_Click(object sender, EventArgs e)
+        {
+            new ManualRollCallForm().ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ShowServerClassesForm().ShowDialog();
+        }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            new ShowServerClassesForm().ShowDialog();
         }
     }
 }

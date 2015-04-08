@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AttendanceSystemClientV2
 {
-    public partial class ManualRollCallForm : Form
+    public partial class WaitForm : Form
     {
-        public ManualRollCallForm()
+        public WaitForm()
         {
             InitializeComponent();
         }
