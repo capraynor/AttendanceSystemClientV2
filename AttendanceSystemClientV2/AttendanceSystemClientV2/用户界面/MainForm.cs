@@ -11,7 +11,9 @@ namespace AttendanceSystemClientV2
         #region Private fields
         private readonly DataModule _fDataModule;
         #endregion
-
+        //显示隐藏的学生列表
+        //选择标签页的时候弹出toast提示
+        //标签页侧边栏需要背景
         public MainForm()
         {
             InitializeComponent();

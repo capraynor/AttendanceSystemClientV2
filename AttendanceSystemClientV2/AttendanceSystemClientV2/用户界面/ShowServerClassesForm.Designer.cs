@@ -34,10 +34,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.radButton2 = new Telerik.WinControls.UI.RadButton();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.undoDownloading = new Telerik.WinControls.UI.RadButton();
+            this.downloadCourseBtn = new Telerik.WinControls.UI.RadButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.rollCallGridView = new Telerik.WinControls.UI.RadGridView();
             this.panel8 = new System.Windows.Forms.Panel();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,18 +51,21 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.curriculumListLbox = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.courseNameLbl = new System.Windows.Forms.Label();
+            this.teacherNameLbl = new System.Windows.Forms.Label();
+            this.classDurationLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.undoDownloading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadCourseBtn)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallGridView.MasterTemplate)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             this.panel3.SuspendLayout();
@@ -114,37 +117,37 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.radButton2);
-            this.panel7.Controls.Add(this.radButton1);
+            this.panel7.Controls.Add(this.undoDownloading);
+            this.panel7.Controls.Add(this.downloadCourseBtn);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(482, 483);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(588, 91);
             this.panel7.TabIndex = 2;
             // 
-            // radButton2
+            // undoDownloading
             // 
-            this.radButton2.Enabled = false;
-            this.radButton2.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.radButton2.Location = new System.Drawing.Point(329, 23);
-            this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(161, 56);
-            this.radButton2.TabIndex = 1;
-            this.radButton2.Text = "撤销下载";
+            this.undoDownloading.Enabled = false;
+            this.undoDownloading.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.undoDownloading.Location = new System.Drawing.Point(329, 23);
+            this.undoDownloading.Name = "undoDownloading";
+            this.undoDownloading.Size = new System.Drawing.Size(161, 56);
+            this.undoDownloading.TabIndex = 1;
+            this.undoDownloading.Text = "撤销下载";
             // 
-            // radButton1
+            // downloadCourseBtn
             // 
-            this.radButton1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.radButton1.Location = new System.Drawing.Point(97, 23);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(161, 56);
-            this.radButton1.TabIndex = 0;
-            this.radButton1.Text = "下载课程";
+            this.downloadCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.downloadCourseBtn.Location = new System.Drawing.Point(97, 23);
+            this.downloadCourseBtn.Name = "downloadCourseBtn";
+            this.downloadCourseBtn.Size = new System.Drawing.Size(161, 56);
+            this.downloadCourseBtn.TabIndex = 0;
+            this.downloadCourseBtn.Text = "下载课程";
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.radGridView1);
+            this.panel4.Controls.Add(this.rollCallGridView);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(482, 0);
@@ -152,32 +155,32 @@
             this.panel4.Size = new System.Drawing.Size(588, 483);
             this.panel4.TabIndex = 1;
             // 
-            // radGridView1
+            // rollCallGridView
             // 
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("微软雅黑", 21.75F);
-            this.radGridView1.Location = new System.Drawing.Point(0, 51);
+            this.rollCallGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rollCallGridView.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.rollCallGridView.Location = new System.Drawing.Point(0, 51);
             // 
-            // radGridView1
+            // rollCallGridView
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AllowColumnReorder = false;
-            this.radGridView1.MasterTemplate.AllowDragToGroup = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.rollCallGridView.MasterTemplate.AllowAddNewRow = false;
+            this.rollCallGridView.MasterTemplate.AllowColumnReorder = false;
+            this.rollCallGridView.MasterTemplate.AllowDragToGroup = false;
+            this.rollCallGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn3.HeaderText = "上课时间";
             gridViewTextBoxColumn3.Name = "col1";
             gridViewTextBoxColumn3.Width = 350;
             gridViewTextBoxColumn4.HeaderText = "签到情况";
             gridViewTextBoxColumn4.Name = "col2";
             gridViewTextBoxColumn4.Width = 217;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.rollCallGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4});
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.Size = new System.Drawing.Size(586, 430);
-            this.radGridView1.TabIndex = 0;
-            this.radGridView1.Text = "radGridView1";
+            this.rollCallGridView.Name = "rollCallGridView";
+            this.rollCallGridView.ReadOnly = true;
+            this.rollCallGridView.Size = new System.Drawing.Size(586, 430);
+            this.rollCallGridView.TabIndex = 0;
+            this.rollCallGridView.Text = "radGridView1";
             // 
             // panel8
             // 
@@ -240,6 +243,9 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.classDurationLbl);
+            this.panel9.Controls.Add(this.teacherNameLbl);
+            this.panel9.Controls.Add(this.courseNameLbl);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.label1);
@@ -301,26 +307,26 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.listBox1);
+            this.panel10.Controls.Add(this.curriculumListLbox);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(482, 237);
             this.panel10.TabIndex = 1;
             // 
-            // listBox1
+            // curriculumListLbox
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.Font = new System.Drawing.Font("微软雅黑", 21.75F);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 38;
-            this.listBox1.Items.AddRange(new object[] {
+            this.curriculumListLbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.curriculumListLbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.curriculumListLbox.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.curriculumListLbox.FormattingEnabled = true;
+            this.curriculumListLbox.ItemHeight = 38;
+            this.curriculumListLbox.Items.AddRange(new object[] {
             "2012级软件1班操作系统原理"});
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(482, 237);
-            this.listBox1.TabIndex = 0;
+            this.curriculumListLbox.Location = new System.Drawing.Point(0, 0);
+            this.curriculumListLbox.Name = "curriculumListLbox";
+            this.curriculumListLbox.Size = new System.Drawing.Size(482, 237);
+            this.curriculumListLbox.TabIndex = 0;
             // 
             // panel5
             // 
@@ -343,6 +349,36 @@
             this.radPanel2.TabIndex = 0;
             this.radPanel2.Text = "课程列表";
             // 
+            // courseNameLbl
+            // 
+            this.courseNameLbl.AutoSize = true;
+            this.courseNameLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.courseNameLbl.Location = new System.Drawing.Point(135, 32);
+            this.courseNameLbl.Name = "courseNameLbl";
+            this.courseNameLbl.Size = new System.Drawing.Size(53, 28);
+            this.courseNameLbl.TabIndex = 4;
+            this.courseNameLbl.Text = "N/A";
+            // 
+            // teacherNameLbl
+            // 
+            this.teacherNameLbl.AutoSize = true;
+            this.teacherNameLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.teacherNameLbl.Location = new System.Drawing.Point(135, 95);
+            this.teacherNameLbl.Name = "teacherNameLbl";
+            this.teacherNameLbl.Size = new System.Drawing.Size(53, 28);
+            this.teacherNameLbl.TabIndex = 5;
+            this.teacherNameLbl.Text = "N/A";
+            // 
+            // classDurationLbl
+            // 
+            this.classDurationLbl.AutoSize = true;
+            this.classDurationLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.classDurationLbl.Location = new System.Drawing.Point(135, 162);
+            this.classDurationLbl.Name = "classDurationLbl";
+            this.classDurationLbl.Size = new System.Drawing.Size(53, 28);
+            this.classDurationLbl.TabIndex = 6;
+            this.classDurationLbl.Text = "N/A";
+            // 
             // ShowServerClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -358,11 +394,11 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.undoDownloading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadCourseBtn)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallGridView)).EndInit();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -387,7 +423,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox curriculumListLbox;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private Telerik.WinControls.UI.RadPanel radPanel2;
@@ -403,8 +439,11 @@
         private System.Windows.Forms.Panel panel13;
         private Telerik.WinControls.UI.RadPanel radPanel4;
         private System.Windows.Forms.Panel panel10;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
-        private Telerik.WinControls.UI.RadButton radButton2;
-        private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.UI.RadGridView rollCallGridView;
+        private Telerik.WinControls.UI.RadButton undoDownloading;
+        private Telerik.WinControls.UI.RadButton downloadCourseBtn;
+        private System.Windows.Forms.Label classDurationLbl;
+        private System.Windows.Forms.Label teacherNameLbl;
+        private System.Windows.Forms.Label courseNameLbl;
     }
 }
