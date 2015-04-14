@@ -1,4 +1,4 @@
-﻿namespace AttendanceSystemClientV2
+﻿namespace AttendanceSystemClientV2.用户界面
 {
     partial class ShowServerClassesForm
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -143,6 +143,7 @@
             this.downloadCourseBtn.Size = new System.Drawing.Size(161, 56);
             this.downloadCourseBtn.TabIndex = 0;
             this.downloadCourseBtn.Text = "下载课程";
+            this.downloadCourseBtn.Click += new System.EventHandler(this.downloadCourseBtn_Click);
             // 
             // panel4
             // 
@@ -167,15 +168,15 @@
             this.rollCallGridView.MasterTemplate.AllowColumnReorder = false;
             this.rollCallGridView.MasterTemplate.AllowDragToGroup = false;
             this.rollCallGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.HeaderText = "上课时间";
-            gridViewTextBoxColumn3.Name = "col1";
-            gridViewTextBoxColumn3.Width = 350;
-            gridViewTextBoxColumn4.HeaderText = "签到情况";
-            gridViewTextBoxColumn4.Name = "col2";
-            gridViewTextBoxColumn4.Width = 217;
+            gridViewTextBoxColumn5.HeaderText = "上课时间";
+            gridViewTextBoxColumn5.Name = "col1";
+            gridViewTextBoxColumn5.Width = 350;
+            gridViewTextBoxColumn6.HeaderText = "签到情况";
+            gridViewTextBoxColumn6.Name = "col2";
+            gridViewTextBoxColumn6.Width = 217;
             this.rollCallGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.rollCallGridView.Name = "rollCallGridView";
             this.rollCallGridView.ReadOnly = true;
             this.rollCallGridView.Size = new System.Drawing.Size(586, 430);

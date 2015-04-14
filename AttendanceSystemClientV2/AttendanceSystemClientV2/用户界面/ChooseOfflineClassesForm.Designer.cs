@@ -49,6 +49,7 @@
             this.OkBtn = new Telerik.WinControls.UI.RadButton();
             this.UpBtn = new Telerik.WinControls.UI.RadButton();
             this.DownBtn = new Telerik.WinControls.UI.RadButton();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DownBtn)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -82,10 +84,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.DownBtn);
-            this.panel1.Controls.Add(this.UpBtn);
-            this.panel1.Controls.Add(this.ReturnBtn);
-            this.panel1.Controls.Add(this.OkBtn);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 85);
@@ -100,7 +100,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(696, 604);
+            this.panel2.Size = new System.Drawing.Size(696, 602);
             this.panel2.TabIndex = 0;
             // 
             // panel3
@@ -110,7 +110,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(694, 602);
+            this.panel3.Size = new System.Drawing.Size(694, 600);
             this.panel3.TabIndex = 9;
             // 
             // panel15
@@ -172,7 +172,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 366);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(694, 236);
+            this.panel4.Size = new System.Drawing.Size(694, 234);
             this.panel4.TabIndex = 3;
             // 
             // panel16
@@ -182,7 +182,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(694, 236);
+            this.panel16.Size = new System.Drawing.Size(694, 234);
             this.panel16.TabIndex = 3;
             // 
             // panel39
@@ -198,7 +198,7 @@
             this.panel39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel39.Location = new System.Drawing.Point(0, 55);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(694, 181);
+            this.panel39.Size = new System.Drawing.Size(694, 179);
             this.panel39.TabIndex = 15;
             // 
             // label24
@@ -308,7 +308,7 @@
             // ReturnBtn
             // 
             this.ReturnBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.ReturnBtn.Location = new System.Drawing.Point(715, 536);
+            this.ReturnBtn.Location = new System.Drawing.Point(6, 537);
             this.ReturnBtn.Name = "ReturnBtn";
             this.ReturnBtn.Size = new System.Drawing.Size(161, 56);
             this.ReturnBtn.TabIndex = 13;
@@ -317,7 +317,7 @@
             // OkBtn
             // 
             this.OkBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.OkBtn.Location = new System.Drawing.Point(715, 465);
+            this.OkBtn.Location = new System.Drawing.Point(6, 466);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(161, 56);
             this.OkBtn.TabIndex = 12;
@@ -326,7 +326,7 @@
             // UpBtn
             // 
             this.UpBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.UpBtn.Location = new System.Drawing.Point(715, 55);
+            this.UpBtn.Location = new System.Drawing.Point(6, 56);
             this.UpBtn.Name = "UpBtn";
             this.UpBtn.Size = new System.Drawing.Size(161, 56);
             this.UpBtn.TabIndex = 14;
@@ -335,11 +335,24 @@
             // DownBtn
             // 
             this.DownBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.DownBtn.Location = new System.Drawing.Point(715, 152);
+            this.DownBtn.Location = new System.Drawing.Point(6, 153);
             this.DownBtn.Name = "DownBtn";
             this.DownBtn.Size = new System.Drawing.Size(161, 56);
             this.DownBtn.TabIndex = 15;
             this.DownBtn.Text = "下一个";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.UpBtn);
+            this.panel5.Controls.Add(this.DownBtn);
+            this.panel5.Controls.Add(this.OkBtn);
+            this.panel5.Controls.Add(this.ReturnBtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(696, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(204, 602);
+            this.panel5.TabIndex = 16;
             // 
             // ChooseOfflineClassesForm
             // 
@@ -369,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DownBtn)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,5 +415,6 @@
         private Telerik.WinControls.UI.RadButton OkBtn;
         private Telerik.WinControls.UI.RadButton DownBtn;
         private Telerik.WinControls.UI.RadButton UpBtn;
+        private System.Windows.Forms.Panel panel5;
     }
 }

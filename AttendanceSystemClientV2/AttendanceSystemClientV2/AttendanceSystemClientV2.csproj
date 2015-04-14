@@ -175,6 +175,12 @@
     <Compile Include="DataModule.Designer.cs">
       <DependentUpon>DataModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="用户界面\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用户界面\MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="用户界面\SetTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataModule.resx">
       <DependentUpon>DataModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="用户界面\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="用户界面\SetTimeForm.resx">
       <DependentUpon>SetTimeForm.cs</DependentUpon>

@@ -34,6 +34,7 @@
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.notSignBtn = new Telerik.WinControls.UI.RadButton();
             this.absentBtn = new Telerik.WinControls.UI.RadButton();
@@ -58,10 +59,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDczt = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notSignBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.absentBtn)).BeginInit();
@@ -80,7 +81,6 @@
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -115,6 +115,27 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(475, 274);
             this.panel6.TabIndex = 2;
+            // 
+            // chart1
+            // 
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(475, 274);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
             // 
             // panel5
             // 
@@ -305,12 +326,13 @@
             // 
             this.lbStudentClass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbStudentClass.Font = new System.Drawing.Font("微软雅黑", 17F);
+            this.lbStudentClass.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbStudentClass.Location = new System.Drawing.Point(3, 0);
             this.lbStudentClass.Name = "lbStudentClass";
             this.lbStudentClass.Size = new System.Drawing.Size(147, 70);
             this.lbStudentClass.TabIndex = 14;
             this.lbStudentClass.Tag = "";
-            this.lbStudentClass.Text = "测试测试测试测试";
+            this.lbStudentClass.Text = "所在班级";
             // 
             // label6
             // 
@@ -328,6 +350,7 @@
             this.lbStudentId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbStudentId.AutoSize = true;
             this.lbStudentId.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.lbStudentId.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbStudentId.Location = new System.Drawing.Point(346, 185);
             this.lbStudentId.Name = "lbStudentId";
             this.lbStudentId.Size = new System.Drawing.Size(123, 35);
@@ -382,32 +405,12 @@
             this.lbDczt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbDczt.AutoSize = true;
             this.lbDczt.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.lbDczt.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbDczt.Location = new System.Drawing.Point(346, 228);
             this.lbDczt.Name = "lbDczt";
             this.lbDczt.Size = new System.Drawing.Size(177, 35);
             this.lbDczt.TabIndex = 32;
             this.lbDczt.Text = "测试测试测试";
-            // 
-            // chart1
-            // 
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Area3DStyle.IsRightAngleAxes = false;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(475, 274);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1";
             // 
             // ManualRollCallForm
             // 
@@ -423,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.notSignBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.absentBtn)).EndInit();
@@ -442,7 +446,6 @@
             this.panel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
