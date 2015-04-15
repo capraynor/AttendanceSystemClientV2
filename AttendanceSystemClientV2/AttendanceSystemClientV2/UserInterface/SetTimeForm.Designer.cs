@@ -1,4 +1,4 @@
-﻿namespace AttendanceSystemClientV2 {
+﻿namespace AttendanceSystemClientV2.UserInterface {
     partial class SetTimeForm {
         /// <summary>
         /// Required designer variable.

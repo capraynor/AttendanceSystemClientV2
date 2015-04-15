@@ -1,4 +1,4 @@
-﻿namespace AttendanceSystemClientV2
+﻿namespace AttendanceSystemClientV2.UserInterface
 {
     partial class WaitForm
     {
@@ -59,7 +59,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 20F);
-            this.label6.Location = new System.Drawing.Point(58, 118);
+            this.label6.Location = new System.Drawing.Point(58, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(231, 35);
             this.label6.TabIndex = 28;
@@ -70,7 +70,7 @@
             this.operationNameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.operationNameLbl.AutoSize = true;
             this.operationNameLbl.Font = new System.Drawing.Font("微软雅黑", 20F);
-            this.operationNameLbl.Location = new System.Drawing.Point(58, 170);
+            this.operationNameLbl.Location = new System.Drawing.Point(58, 162);
             this.operationNameLbl.Name = "operationNameLbl";
             this.operationNameLbl.Size = new System.Drawing.Size(123, 35);
             this.operationNameLbl.TabIndex = 29;

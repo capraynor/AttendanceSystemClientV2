@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AttendanceSystemClientV2 {
-    public partial class SetTimeForm : Form {
-        public SetTimeForm ( ) {
+namespace AttendanceSystemClientV2.UserInterface {
+    public partial class ViewStudentsForm : Form {
+        public ViewStudentsForm ( ) {
             InitializeComponent ();
         }
     }

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using AttendanceSystemClientV2.UserInterface;
 using Telerik.WinControls.UI;
 
-namespace AttendanceSystemClientV2.用户界面 {
+namespace AttendanceSystemClientV2.UserInterface {
     public partial class MainForm : RadForm {
         #region Private fields
         private readonly DataModule _fDataModule;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AttendanceSystemClientV2 {
+namespace AttendanceSystemClientV2.UserInterface {
     public partial class LogOnForm : Form {
 
         #region Constructor

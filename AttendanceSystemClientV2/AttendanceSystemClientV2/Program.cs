@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using AttendanceSystemClientV2.用户界面;
+using AttendanceSystemClientV2.UserInterface;
 
 namespace AttendanceSystemClientV2
 {

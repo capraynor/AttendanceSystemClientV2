@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AttendanceSystemClientV2.用户界面 {
+namespace AttendanceSystemClientV2.UserInterface {
     public partial class MsgBox : Form {
         public MsgBox ( ) {
             InitializeComponent ();

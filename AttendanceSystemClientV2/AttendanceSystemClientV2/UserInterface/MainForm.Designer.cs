@@ -1,4 +1,4 @@
-﻿namespace AttendanceSystemClientV2.用户界面
+﻿namespace AttendanceSystemClientV2.UserInterface
 {
     partial class MainForm
     {

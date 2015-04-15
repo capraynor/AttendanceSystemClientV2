@@ -8,13 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AttendanceSystemClientV2
-{
-    public partial class WaitForm : Form
-    {
-        public WaitForm()
-        {
-            InitializeComponent();
+namespace AttendanceSystemClientV2.UserInterface {
+    public partial class ChooseOfflineClassesForm : Form {
+        public ChooseOfflineClassesForm ( ) {
+            InitializeComponent ();
         }
     }
 }

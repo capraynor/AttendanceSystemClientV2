@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-
-namespace AttendanceSystemClientV2.用户界面 {
+using System.Threading;
+namespace AttendanceSystemClientV2.UserInterface {
     public partial class ShowServerClassesForm : Form {
         private DataModule _fDataModule;
         public ShowServerClassesForm ( ) {
@@ -18,17 +18,9 @@ namespace AttendanceSystemClientV2.用户界面 {
             if (lonOnForm.DialogResult == DialogResult.Cancel)
                 return;
 
-            _fDataModule.Getdata();
-
-            MessageBox.Show(_fDataModule.IsLoggedOn.ToString());
+            new Thread(() => MessageBox.Show(_fDataModule.Getdata().ToString())).Start();
 
             _fDataModule.LogOff();
-
-            MessageBox.Show(_fDataModule.IsLoggedOn.ToString());
-
-            new LogOnForm ().ShowDialog ();
-
-            _fDataModule.Getdata ();
 
         }
     }
