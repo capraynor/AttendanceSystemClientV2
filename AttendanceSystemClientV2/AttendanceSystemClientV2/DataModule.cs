@@ -158,21 +158,22 @@ namespace AttendanceSystemClientV2 {
         #region PublicMethods
         public int Getdata ( ) {
             //测试代码
+            new Thread (( ) => {
+                try {
+                    IQueryable<DMTABLE_08_NOPIC_VIEW> ttt = from c in remoteDataAdapter.GetTable<DMTABLE_08_NOPIC_VIEW> ()
+                                                            where c.KKNO == 20131232
+                                                            select c;
 
-            new Thread(()=>{try {
-                IQueryable<XKTABLE_VIEWRO> ttt = from c in remoteDataAdapter.GetTable<XKTABLE_VIEWRO> ()
-                                                        where c.KKNO == 20120405
-                                                        select c;
+                    foreach (var dmtable08NopicView in ttt) {
+                        MessageBox.Show (dmtable08NopicView.KKNAME);
+                    }
 
-                foreach (var dmtable08NopicView in ttt) {
-                    MessageBox.Show (dmtable08NopicView.KKNAME);
+
+                } catch (RemObjects.SDK.Exceptions.SessionNotFoundException) {
+
+                    MessageBox.Show ("登录失败 请重新登录");
                 }
-
-                
-            } catch (RemObjects.SDK.Exceptions.SessionNotFoundException) {
-
-                MessageBox.Show ("登录失败 请重新登录");
-            }}).Start();
+            }).Start ();
 
             return -1;
             
@@ -181,61 +182,28 @@ namespace AttendanceSystemClientV2 {
 
         #region PrivateMethods
 
-        private void ShowWaitForm ( ) {
-            _waitForm = new WaitForm (operation);
-
-            //init increase event
-
-            _increaseHandle = new IncreaseHandle (_waitForm.Increase);//  实例化 增加 委托（进度窗口） 
-
-            _setHandle = new SetHandle (_waitForm.SetValue);//实例化 设置 委托（进度窗口）
-
-            _waitForm.Show ();
-        }
+        
 
         private void CloseWaitForm ( ) {
-            _waitForm.Close ();
-            _waitForm = null;
+            _waitForm.BeginInvoke(new MethodInvoker(() => { _waitForm.Close(); }));
         }
 
         #endregion
 
         private void clientChannel_OnTransferProgress ( object sender, TransferProgressEventArgs e ) {
-            //正在传输数据的时候触发
-            //MessageBox.Show (e.Current.ToString ());
-            
-            new Thread(() => MessageBox.Show(e.Current.ToString())).Start();
-            //_waitForm.Invoke (_setHandle, new object[] { Convert.ToInt32 (e.Current / total) });
 
-            //MessageBox.Show(e.Current.ToString());
-
-            //MessageBox.Show(e.Current.ToString());
 
         }
 
         private void clientChannel_OnTransferEnd ( object sender, TransferEndEventArgs e ) {
-            //结束数据传输时触发
-            //MessageBox.Show ("End:" + e.TransferDirection);
-
-            CloseWaitForm ();
+            
 
         }
 
         private void clientChannel_OnTransferStart ( object sender, TransferStartEventArgs e ) {
-            //开始传输数据时触发
-            //MessageBox.Show ("Total:" + e.Total);
 
-
-
-            total = e.Total;
-
-            operation = "正在获取数据";//指定操作名称
-
-            _waitForm = new WaitForm (operation);
-
-            var mi = new MethodInvoker (ShowWaitForm); //声明一个委托
-
-            mi ();
+            
         }
+        
     }
 }

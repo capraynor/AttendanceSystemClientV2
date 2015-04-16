@@ -15,13 +15,21 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             lonOnForm.ShowDialog ();
 
+
             if (lonOnForm.DialogResult == DialogResult.Cancel)
                 return;
 
-            new Thread(() => MessageBox.Show(_fDataModule.Getdata().ToString())).Start();
+            new Thread(() => {
+                MessageBox.Show(_fDataModule.Getdata().ToString());
+
+            }).Start();
+
+            
 
             _fDataModule.LogOff();
 
         }
+
+        
     }
 }

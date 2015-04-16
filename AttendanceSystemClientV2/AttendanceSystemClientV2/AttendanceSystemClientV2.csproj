@@ -132,6 +132,7 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
@@ -169,12 +170,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DataDownloadControl.cs" />
+    <Compile Include="Controls\DataUploadControl.cs" />
+    <Compile Include="Controls\FingerPrintControl.cs" />
+    <Compile Include="Controls\OfflineDataControl.cs" />
     <Compile Include="DataModule.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataModule.Designer.cs">
       <DependentUpon>DataModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EnumerableExtension.cs" />
+    <Compile Include="Helpers\HDFingerPrintHelper.cs" />
     <Compile Include="UserInterface\MsgBox.cs">
       <SubType>Form</SubType>
     </Compile>

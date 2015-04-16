@@ -40,6 +40,7 @@
             // 
             this.clientChannel.Password = "";
             this.clientChannel.TargetUrl = "http://172.16.120.3:7099/bin";
+            this.clientChannel.TimeoutEnabled = false;
             this.clientChannel.UserName = "";
             this.clientChannel.OnTransferStart += new RemObjects.SDK.TransferStartEventHandler(this.clientChannel_OnTransferStart);
             this.clientChannel.OnTransferEnd += new RemObjects.SDK.TransferEndEventHandler(this.clientChannel_OnTransferEnd);
