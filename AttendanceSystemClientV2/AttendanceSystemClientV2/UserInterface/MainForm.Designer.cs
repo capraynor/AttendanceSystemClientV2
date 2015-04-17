@@ -287,7 +287,7 @@
             this.mainPageView.Font = new System.Drawing.Font("微软雅黑", 25F);
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.dataManagementPage;
+            this.mainPageView.SelectedPage = this.startRollCallPage;
             this.mainPageView.Size = new System.Drawing.Size(1278, 599);
             this.mainPageView.TabIndex = 0;
             this.mainPageView.Text = "radPageView1";

@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 namespace AttendanceSystemClientV2.Helpers {
 
 
-    public class HdFingerprintHelper {
+    public static class HdFingerprintHelper {
         private const int FP_OK = 0x00;
-        protected IntPtr m_hFpDrive;
+        private static IntPtr m_hFpDrive;
 
         [DllImport ("fplib.dll")]
         public static extern IntPtr FpOpenUsb ( UInt32 nAddr, UInt32 timeout ); // naddr = 0xFFFFFFFF

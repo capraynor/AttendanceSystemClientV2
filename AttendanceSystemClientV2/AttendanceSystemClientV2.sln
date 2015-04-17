@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceSystemClientV2", "AttendanceSystemClientV2\AttendanceSystemClientV2.csproj", "{F6112C3B-27F2-4960-800F-0BFA4EDADB77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,16 @@ Global
 		{F6112C3B-27F2-4960-800F-0BFA4EDADB77}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F6112C3B-27F2-4960-800F-0BFA4EDADB77}.Release|x86.ActiveCfg = Release|x86
 		{F6112C3B-27F2-4960-800F-0BFA4EDADB77}.Release|x86.Build.0 = Release|x86
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Debug|x86.ActiveCfg = Debug|x86
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1AA74301-F671-4D60-9D9F-F2AE65E26FF2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
