@@ -20,7 +20,6 @@ namespace UnitTestProject1 {
 
             Assert.AreEqual((string)dr.First()[@"BJNAME"] , "2013级软件工程4班");//比对结果 若结果与预期不一致则宣告失败
 
-
         }
 
 

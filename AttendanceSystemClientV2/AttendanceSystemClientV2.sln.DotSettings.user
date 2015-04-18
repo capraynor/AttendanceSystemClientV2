@@ -5,7 +5,13 @@
   &lt;Assembly Path="C:\Program Files (x86)\RemObjects Software\Data Abstract for .NET\Bin\RemObjects.DataAbstract.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files (x86)\RemObjects Software\RemObjects SDK for .NET\Bin\RemObjects.SDK.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2F45156031CA41ADA47945591DB0B97A/@KeyIndexDefined">True</s:Boolean>
-	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2F45156031CA41ADA47945591DB0B97A/Name/@EntryValue">TestMethod1</s:String>
 	
-	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2F45156031CA41ADA47945591DB0B97A/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;Elements&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:UnitTestProject1.UnitTest1" type="MsTestTestClassElement" TypeName="UnitTestProject1.UnitTest1" Project="1AA74301-F671-4D60-9D9F-F2AE65E26FF2" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:UnitTestProject1.UnitTest1.GetClassNameTest" ParentId="MsTest:UnitTestProject1.UnitTest1" type="MsTestTestMethodElement" MethodName="GetClassNameTest" TypeName="UnitTestProject1.UnitTest1" Project="1AA74301-F671-4D60-9D9F-F2AE65E26FF2" /&gt;&lt;/Elements&gt;&lt;/Session&gt;</s:String></wpf:ResourceDictionary>
+	
+	
+	
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=301C953AB0CC4745AC217D46C7FE5A39/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=301C953AB0CC4745AC217D46C7FE5A39/Name/@EntryValue">GetClassNameTest</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=301C953AB0CC4745AC217D46C7FE5A39/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;Elements&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:UnitTestProject1.UnitTest1" type="MsTestTestClassElement" TypeName="UnitTestProject1.UnitTest1" Project="1AA74301-F671-4D60-9D9F-F2AE65E26FF2" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:UnitTestProject1.UnitTest1.GetClassNameTest" ParentId="MsTest:UnitTestProject1.UnitTest1" type="MsTestTestMethodElement" MethodName="GetClassNameTest" TypeName="UnitTestProject1.UnitTest1" Project="1AA74301-F671-4D60-9D9F-F2AE65E26FF2" /&gt;&lt;/Elements&gt;&lt;/Session&gt;</s:String>
+	
+	
+	</wpf:ResourceDictionary>

@@ -294,6 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\App.ico" />
+    <None Include="Resources\female.jpg" />
+    <None Include="Resources\male.jpg" />
+    <None Include="Resources\maleDefaultPhoto.bmp" />
     <None Include="资源文件\list.png" />
     <None Include="资源文件\rollcall.png" />
     <None Include="资源文件\upload.png" />
