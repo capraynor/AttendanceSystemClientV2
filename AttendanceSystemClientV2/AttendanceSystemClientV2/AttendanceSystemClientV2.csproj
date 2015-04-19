@@ -187,6 +187,12 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="UserInterface\ConfirmBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\ConfirmBox.Designer.cs">
+      <DependentUpon>ConfirmBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\MsgBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataModule.resx">
       <DependentUpon>DataModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\ConfirmBox.resx">
+      <DependentUpon>ConfirmBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>

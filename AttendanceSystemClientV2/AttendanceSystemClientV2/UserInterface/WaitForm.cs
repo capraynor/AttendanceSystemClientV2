@@ -2,12 +2,15 @@
 
 namespace AttendanceSystemClientV2.UserInterface {
     public partial class WaitForm : Form {
-        public WaitForm (string operation) {
+
+        public WaitForm (string operation) {//构造函数 传入操作名称
             InitializeComponent ();
 
             operationNameLbl.Text = operation;
-        }
 
+            var a = 1;
+        }
+        
         private int ProgressValue {
 
             get { return progressBar1.Value; }
@@ -39,6 +42,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             return false;
         }
+
 
         public bool SetValue(int value) {
             if (value <= 0) return false;

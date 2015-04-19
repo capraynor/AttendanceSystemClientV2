@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.panel1_default = new System.Windows.Forms.Panel();
             this.panel2_down = new System.Windows.Forms.Panel();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
@@ -287,7 +287,7 @@
             this.mainPageView.Font = new System.Drawing.Font("微软雅黑", 25F);
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.startRollCallPage;
+            this.mainPageView.SelectedPage = this.downloadDataPage;
             this.mainPageView.Size = new System.Drawing.Size(1278, 599);
             this.mainPageView.TabIndex = 0;
             this.mainPageView.Text = "radPageView1";
@@ -423,15 +423,15 @@
             this.radGridView1.MasterTemplate.AllowColumnReorder = false;
             this.radGridView1.MasterTemplate.AllowDragToGroup = false;
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.HeaderText = "上课时间";
-            gridViewTextBoxColumn1.Name = "col1";
-            gridViewTextBoxColumn1.Width = 317;
-            gridViewTextBoxColumn2.HeaderText = "签到情况";
-            gridViewTextBoxColumn2.Name = "col2";
-            gridViewTextBoxColumn2.Width = 197;
+            gridViewTextBoxColumn8.HeaderText = "上课时间";
+            gridViewTextBoxColumn8.Name = "col1";
+            gridViewTextBoxColumn8.Width = 317;
+            gridViewTextBoxColumn9.HeaderText = "签到情况";
+            gridViewTextBoxColumn9.Name = "col2";
+            gridViewTextBoxColumn9.Width = 197;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.Size = new System.Drawing.Size(533, 449);
@@ -834,21 +834,21 @@
             // 
             // chart1
             // 
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Area3DStyle.IsRightAngleAxes = false;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Area3DStyle.IsRightAngleAxes = false;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(533, 283);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1299,19 +1299,19 @@
             this.rollCallStudentListGv.MasterTemplate.AllowColumnReorder = false;
             this.rollCallStudentListGv.MasterTemplate.AllowDragToGroup = false;
             this.rollCallStudentListGv.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.HeaderText = "学生姓名";
-            gridViewTextBoxColumn3.Name = "col1";
-            gridViewTextBoxColumn3.Width = 187;
-            gridViewTextBoxColumn4.HeaderText = "签到时间";
-            gridViewTextBoxColumn4.Name = "col2";
-            gridViewTextBoxColumn4.Width = 205;
-            gridViewTextBoxColumn5.HeaderText = "到课情况";
-            gridViewTextBoxColumn5.Name = "column1";
-            gridViewTextBoxColumn5.Width = 186;
+            gridViewTextBoxColumn10.HeaderText = "学生姓名";
+            gridViewTextBoxColumn10.Name = "col1";
+            gridViewTextBoxColumn10.Width = 187;
+            gridViewTextBoxColumn11.HeaderText = "签到时间";
+            gridViewTextBoxColumn11.Name = "col2";
+            gridViewTextBoxColumn11.Width = 205;
+            gridViewTextBoxColumn12.HeaderText = "到课情况";
+            gridViewTextBoxColumn12.Name = "column1";
+            gridViewTextBoxColumn12.Width = 186;
             this.rollCallStudentListGv.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12});
             this.rollCallStudentListGv.Name = "rollCallStudentListGv";
             this.rollCallStudentListGv.ReadOnly = true;
             this.rollCallStudentListGv.Size = new System.Drawing.Size(596, 587);
@@ -1423,15 +1423,15 @@
             this.radGridView2.MasterTemplate.AllowColumnReorder = false;
             this.radGridView2.MasterTemplate.AllowDragToGroup = false;
             this.radGridView2.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn6.HeaderText = "上课时间";
-            gridViewTextBoxColumn6.Name = "col1";
-            gridViewTextBoxColumn6.Width = 316;
-            gridViewTextBoxColumn7.HeaderText = "数据提交情况";
-            gridViewTextBoxColumn7.Name = "col2";
-            gridViewTextBoxColumn7.Width = 196;
+            gridViewTextBoxColumn13.HeaderText = "上课时间";
+            gridViewTextBoxColumn13.Name = "col1";
+            gridViewTextBoxColumn13.Width = 316;
+            gridViewTextBoxColumn14.HeaderText = "数据提交情况";
+            gridViewTextBoxColumn14.Name = "col2";
+            gridViewTextBoxColumn14.Width = 196;
             this.radGridView2.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7});
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14});
             this.radGridView2.Name = "radGridView2";
             this.radGridView2.ReadOnly = true;
             this.radGridView2.Size = new System.Drawing.Size(531, 362);

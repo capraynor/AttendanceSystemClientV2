@@ -156,6 +156,26 @@ namespace AttendanceSystemClientV2 {
         #endregion
 
         #region PublicMethods
+
+        /// <summary>
+        /// 获取jsnadkkviewro视图 该函数不会立即拉取数据(延迟加载).
+        /// </summary>
+        /// <returns>jsnadkkviewro视图(延迟加载)</returns>
+        public RemoteTable<JSANDKKVIEWRO> GetJsandkkviewro() {
+
+            return remoteDataAdapter.GetTable<JSANDKKVIEWRO>();
+
+        }
+
+
+        /// <summary>
+        /// 获取GetsSktable07Viewro视图 该函数不会立即拉取数据(延迟加载).
+        /// </summary>
+        /// <returns>GetsSktable07Viewro视图(延迟加载)</returns>
+        public RemoteTable<SKTABLE_07_VIEWRO> GetsSktable07Viewro  ( ) {
+            return remoteDataAdapter.GetTable<SKTABLE_07_VIEWRO> ();
+        } 
+
         public int Getdata ( ) {
             //测试代码
             new Thread (( ) => {

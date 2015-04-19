@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+using AttendanceSystemClientV2.PC;
 using AttendanceSystemClientV2.UserInterface;
 using Telerik.WinControls.UI;
 
@@ -28,7 +30,27 @@ namespace AttendanceSystemClientV2.UserInterface {
 
 
         private void radButton1_Click ( object sender, EventArgs e ) {
-            new ShowServerClassesForm ().ShowDialog ();
+
+            var resault = new LogOnForm().ShowDialog();
+
+            if (resault == DialogResult.Cancel)
+                return;
+
+            try {
+
+                new ShowServerClassesForm().Show();
+
+            }catch (RemObjects.SDK.Exceptions.SessionNotFoundException) {
+
+                MsgBox.ShowMsgBoxDialog("登录异常");
+
+            }
+            //catch (Exception expException) {
+
+            //    MsgBox.ShowMsgBoxDialog(expException.Message);
+            //}
+
+            
         }
     }
 }

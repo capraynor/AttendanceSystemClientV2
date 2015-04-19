@@ -25,13 +25,13 @@
         private void InitializeComponent ( ) {
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.UpBtn = new Telerik.WinControls.UI.RadButton();
+            this.DownBtn = new Telerik.WinControls.UI.RadButton();
+            this.OkBtn = new Telerik.WinControls.UI.RadButton();
+            this.ReturnBtn = new Telerik.WinControls.UI.RadButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.coursesListBox = new System.Windows.Forms.ListBox();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
@@ -45,29 +45,29 @@
             this.label37 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
-            this.ReturnBtn = new Telerik.WinControls.UI.RadButton();
-            this.OkBtn = new Telerik.WinControls.UI.RadButton();
-            this.UpBtn = new Telerik.WinControls.UI.RadButton();
-            this.DownBtn = new Telerik.WinControls.UI.RadButton();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.coursesListBox = new System.Windows.Forms.ListBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DownBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel39.SuspendLayout();
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReturnBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DownBtn)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -93,6 +93,55 @@
             this.panel1.Size = new System.Drawing.Size(902, 604);
             this.panel1.TabIndex = 8;
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.UpBtn);
+            this.panel5.Controls.Add(this.DownBtn);
+            this.panel5.Controls.Add(this.OkBtn);
+            this.panel5.Controls.Add(this.ReturnBtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(696, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(204, 602);
+            this.panel5.TabIndex = 16;
+            // 
+            // UpBtn
+            // 
+            this.UpBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.UpBtn.Location = new System.Drawing.Point(6, 56);
+            this.UpBtn.Name = "UpBtn";
+            this.UpBtn.Size = new System.Drawing.Size(161, 56);
+            this.UpBtn.TabIndex = 14;
+            this.UpBtn.Text = "上一个";
+            // 
+            // DownBtn
+            // 
+            this.DownBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.DownBtn.Location = new System.Drawing.Point(6, 366);
+            this.DownBtn.Name = "DownBtn";
+            this.DownBtn.Size = new System.Drawing.Size(161, 56);
+            this.DownBtn.TabIndex = 15;
+            this.DownBtn.Text = "下一个";
+            // 
+            // OkBtn
+            // 
+            this.OkBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.OkBtn.Location = new System.Drawing.Point(6, 466);
+            this.OkBtn.Name = "OkBtn";
+            this.OkBtn.Size = new System.Drawing.Size(161, 56);
+            this.OkBtn.TabIndex = 12;
+            this.OkBtn.Text = "确   定";
+            // 
+            // ReturnBtn
+            // 
+            this.ReturnBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.ReturnBtn.Location = new System.Drawing.Point(6, 537);
+            this.ReturnBtn.Name = "ReturnBtn";
+            this.ReturnBtn.Size = new System.Drawing.Size(161, 56);
+            this.ReturnBtn.TabIndex = 13;
+            this.ReturnBtn.Text = "返   回";
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -112,59 +161,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(694, 600);
             this.panel3.TabIndex = 9;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.panel18);
-            this.panel15.Controls.Add(this.panel17);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(694, 366);
-            this.panel15.TabIndex = 2;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.coursesListBox);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(0, 55);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(694, 311);
-            this.panel18.TabIndex = 2;
-            // 
-            // coursesListBox
-            // 
-            this.coursesListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.coursesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coursesListBox.Font = new System.Drawing.Font("微软雅黑", 21.75F);
-            this.coursesListBox.FormattingEnabled = true;
-            this.coursesListBox.ItemHeight = 38;
-            this.coursesListBox.Items.AddRange(new object[] {
-            "2014级软件1，2班计算机组成原理"});
-            this.coursesListBox.Location = new System.Drawing.Point(0, 0);
-            this.coursesListBox.Name = "coursesListBox";
-            this.coursesListBox.Size = new System.Drawing.Size(694, 311);
-            this.coursesListBox.TabIndex = 0;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.radPanel4);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(694, 55);
-            this.panel17.TabIndex = 1;
-            // 
-            // radPanel4
-            // 
-            this.radPanel4.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.radPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel4.Font = new System.Drawing.Font("微软雅黑", 21.75F);
-            this.radPanel4.Location = new System.Drawing.Point(0, 0);
-            this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(694, 55);
-            this.radPanel4.TabIndex = 1;
-            this.radPanel4.Text = "课程列表";
             // 
             // panel4
             // 
@@ -305,54 +301,58 @@
             this.radPanel5.TabIndex = 1;
             this.radPanel5.Text = "课程详情";
             // 
-            // ReturnBtn
+            // panel15
             // 
-            this.ReturnBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.ReturnBtn.Location = new System.Drawing.Point(6, 537);
-            this.ReturnBtn.Name = "ReturnBtn";
-            this.ReturnBtn.Size = new System.Drawing.Size(161, 56);
-            this.ReturnBtn.TabIndex = 13;
-            this.ReturnBtn.Text = "返   回";
+            this.panel15.Controls.Add(this.panel18);
+            this.panel15.Controls.Add(this.panel17);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(694, 366);
+            this.panel15.TabIndex = 2;
             // 
-            // OkBtn
+            // panel18
             // 
-            this.OkBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.OkBtn.Location = new System.Drawing.Point(6, 466);
-            this.OkBtn.Name = "OkBtn";
-            this.OkBtn.Size = new System.Drawing.Size(161, 56);
-            this.OkBtn.TabIndex = 12;
-            this.OkBtn.Text = "确   定";
+            this.panel18.Controls.Add(this.coursesListBox);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(0, 55);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(694, 311);
+            this.panel18.TabIndex = 2;
             // 
-            // UpBtn
+            // coursesListBox
             // 
-            this.UpBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.UpBtn.Location = new System.Drawing.Point(6, 56);
-            this.UpBtn.Name = "UpBtn";
-            this.UpBtn.Size = new System.Drawing.Size(161, 56);
-            this.UpBtn.TabIndex = 14;
-            this.UpBtn.Text = "上一个";
+            this.coursesListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.coursesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coursesListBox.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.coursesListBox.FormattingEnabled = true;
+            this.coursesListBox.ItemHeight = 38;
+            this.coursesListBox.Items.AddRange(new object[] {
+            "2014级软件1，2班计算机组成原理"});
+            this.coursesListBox.Location = new System.Drawing.Point(0, 0);
+            this.coursesListBox.Name = "coursesListBox";
+            this.coursesListBox.Size = new System.Drawing.Size(694, 311);
+            this.coursesListBox.TabIndex = 0;
             // 
-            // DownBtn
+            // panel17
             // 
-            this.DownBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.DownBtn.Location = new System.Drawing.Point(6, 153);
-            this.DownBtn.Name = "DownBtn";
-            this.DownBtn.Size = new System.Drawing.Size(161, 56);
-            this.DownBtn.TabIndex = 15;
-            this.DownBtn.Text = "下一个";
+            this.panel17.Controls.Add(this.radPanel4);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(694, 55);
+            this.panel17.TabIndex = 1;
             // 
-            // panel5
+            // radPanel4
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.UpBtn);
-            this.panel5.Controls.Add(this.DownBtn);
-            this.panel5.Controls.Add(this.OkBtn);
-            this.panel5.Controls.Add(this.ReturnBtn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(696, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(204, 602);
-            this.panel5.TabIndex = 16;
+            this.radPanel4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.radPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radPanel4.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel4.Location = new System.Drawing.Point(0, 0);
+            this.radPanel4.Name = "radPanel4";
+            this.radPanel4.Size = new System.Drawing.Size(694, 55);
+            this.radPanel4.TabIndex = 1;
+            this.radPanel4.Text = "课程列表";
             // 
             // ChooseOfflineClassesForm
             // 
@@ -366,23 +366,23 @@
             this.Text = "ChooseOfflineClassesForm";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UpBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DownBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel39.ResumeLayout(false);
             this.panel39.PerformLayout();
             this.panel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReturnBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DownBtn)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
             this.ResumeLayout(false);
 
         }
