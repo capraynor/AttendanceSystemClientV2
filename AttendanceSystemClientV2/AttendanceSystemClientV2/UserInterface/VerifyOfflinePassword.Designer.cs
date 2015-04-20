@@ -1,5 +1,5 @@
 ﻿namespace AttendanceSystemClientV2.UserInterface {
-    partial class ConfirmBox {
+    partial class VerifyOfflinePassword {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,11 +24,13 @@
         /// </summary>
         private void InitializeComponent ( ) {
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbUsername = new System.Windows.Forms.Label();
             this.btnOk = new Telerik.WinControls.UI.RadButton();
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
+            this.UserIdTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.SuspendLayout();
@@ -40,64 +42,77 @@
             this.radPanel1.Font = new System.Drawing.Font("微软雅黑", 30F);
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(689, 85);
-            this.radPanel1.TabIndex = 8;
-            this.radPanel1.Text = "请确认";
+            this.radPanel1.Size = new System.Drawing.Size(548, 85);
+            this.radPanel1.TabIndex = 9;
+            this.radPanel1.Text = "请输入离线密码";
             this.radPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radPanel2
+            // panel1
             // 
-            this.radPanel2.BackColor = System.Drawing.Color.Azure;
-            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel2.Font = new System.Drawing.Font("微软雅黑", 15.75F);
-            this.radPanel2.Location = new System.Drawing.Point(0, 85);
-            this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(689, 175);
-            this.radPanel2.TabIndex = 9;
-            this.radPanel2.Text = "请确认";
-            this.radPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.Controls.Add(this.lbUsername);
+            this.panel1.Controls.Add(this.btnOk);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.UserIdTextBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 85);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(548, 233);
+            this.panel1.TabIndex = 10;
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUsername.Location = new System.Drawing.Point(46, 77);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(116, 31);
+            this.lbUsername.TabIndex = 18;
+            this.lbUsername.Text = "输入密码:";
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.btnOk.Location = new System.Drawing.Point(82, 281);
+            this.btnOk.Location = new System.Drawing.Point(52, 167);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(155, 54);
-            this.btnOk.TabIndex = 10;
+            this.btnOk.TabIndex = 16;
             this.btnOk.Text = "确  定";
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(468, 281);
+            this.btnCancel.Location = new System.Drawing.Point(332, 167);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(155, 54);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "取  消";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // ConfirmBox
+            // UserIdTextBox
             // 
-            this.AcceptButton = this.btnOk;
+            this.UserIdTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserIdTextBox.Font = new System.Drawing.Font("微软雅黑", 18F);
+            this.UserIdTextBox.Location = new System.Drawing.Point(199, 74);
+            this.UserIdTextBox.Name = "UserIdTextBox";
+            this.UserIdTextBox.Size = new System.Drawing.Size(288, 39);
+            this.UserIdTextBox.TabIndex = 15;
+            // 
+            // VerifyOfflinePassword
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(689, 358);
-            this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.radPanel2);
+            this.ClientSize = new System.Drawing.Size(548, 318);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ConfirmBox";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConfirmBox";
+            this.Name = "VerifyOfflinePassword";
+            this.Text = "VerifyOfflinePassword";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             this.ResumeLayout(false);
@@ -107,8 +122,10 @@
         #endregion
 
         private Telerik.WinControls.UI.RadPanel radPanel1;
-        private Telerik.WinControls.UI.RadPanel radPanel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbUsername;
         private Telerik.WinControls.UI.RadButton btnOk;
         private Telerik.WinControls.UI.RadButton btnCancel;
+        private System.Windows.Forms.TextBox UserIdTextBox;
     }
 }

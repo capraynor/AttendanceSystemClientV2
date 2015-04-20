@@ -82,5 +82,17 @@ namespace AttendanceSystemClientV2.Properties {
                 this["Schema"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OffliePassword {
+            get {
+                return ((string)(this["OffliePassword"]));
+            }
+            set {
+                this["OffliePassword"] = value;
+            }
+        }
     }
 }

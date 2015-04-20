@@ -44,7 +44,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
                 MsgBox.ShowMsgBoxDialog("登录异常");
 
-            }
+            }//todo:将下面的catch放出来
             //catch (Exception expException) {
 
             //    MsgBox.ShowMsgBoxDialog(expException.Message);

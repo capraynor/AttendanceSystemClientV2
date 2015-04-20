@@ -43,6 +43,41 @@ namespace AttendanceSystemClientV2 {
             }
         }
 
+        #region briefcase属性字符串
+        //briefcase属性字符串 BPK: briefcase properties key
+        
+        /// <summary>
+        /// 离线密码
+        /// </summary>
+        public static string BpkPassword = "Password";
+        
+        /// <summary>
+        /// 课程名称
+        /// </summary>
+        public static string BpkCourseName = "CourseName";
+
+        /// <summary>
+        /// 教师名称
+        /// </summary>
+        public static string BpkTeacherName = "TeacherName";
+
+        /// <summary>
+        /// 教师编号
+        /// </summary>
+        public static string BpkTeacherNo = "TeacherNo";
+
+        /// <summary>
+        /// 课程编号
+        /// </summary>
+        public static string BpkCourseNo = "CourseNo";
+
+        /// <summary>
+        /// 最后一次签到时间 里面存的应该是预计上课时间
+        /// </summary>
+        public static string BpkLastModifiedDate = "LastModified";
+
+        #endregion
+
 
     }
 }

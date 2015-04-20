@@ -87,6 +87,7 @@
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WaitForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WaitForm";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.ResumeLayout(false);

@@ -27,27 +27,27 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.studentsGridView = new Telerik.WinControls.UI.RadGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.upBtn = new Telerik.WinControls.UI.RadButton();
-            this.downBtn = new Telerik.WinControls.UI.RadButton();
-            this.changeToLateBtn = new Telerik.WinControls.UI.RadButton();
-            this.changeToNormalBtn = new Telerik.WinControls.UI.RadButton();
-            this.changeToAskForLeaveBtn = new Telerik.WinControls.UI.RadButton();
-            this.changeToLeaveEarly = new Telerik.WinControls.UI.RadButton();
-            this.changeToAbsentBtn = new Telerik.WinControls.UI.RadButton();
             this.returnBtn = new Telerik.WinControls.UI.RadButton();
+            this.changeToAbsentBtn = new Telerik.WinControls.UI.RadButton();
+            this.changeToLeaveEarly = new Telerik.WinControls.UI.RadButton();
+            this.changeToAskForLeaveBtn = new Telerik.WinControls.UI.RadButton();
+            this.changeToNormalBtn = new Telerik.WinControls.UI.RadButton();
+            this.changeToLateBtn = new Telerik.WinControls.UI.RadButton();
+            this.downBtn = new Telerik.WinControls.UI.RadButton();
+            this.upBtn = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView.MasterTemplate)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.downBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToLateBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToNormalBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToAskForLeaveBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToLeaveEarly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToAbsentBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.returnBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToAbsentBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToLeaveEarly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToAskForLeaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToNormalBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToLateBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -108,59 +108,14 @@
             this.panel2.Size = new System.Drawing.Size(743, 126);
             this.panel2.TabIndex = 8;
             // 
-            // upBtn
+            // returnBtn
             // 
-            this.upBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.upBtn.Location = new System.Drawing.Point(37, 6);
-            this.upBtn.Name = "upBtn";
-            this.upBtn.Size = new System.Drawing.Size(161, 56);
-            this.upBtn.TabIndex = 7;
-            this.upBtn.Text = "上一个";
-            // 
-            // downBtn
-            // 
-            this.downBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.downBtn.Location = new System.Drawing.Point(37, 67);
-            this.downBtn.Name = "downBtn";
-            this.downBtn.Size = new System.Drawing.Size(161, 56);
-            this.downBtn.TabIndex = 8;
-            this.downBtn.Text = "下一个";
-            // 
-            // changeToLateBtn
-            // 
-            this.changeToLateBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.changeToLateBtn.Location = new System.Drawing.Point(204, 6);
-            this.changeToLateBtn.Name = "changeToLateBtn";
-            this.changeToLateBtn.Size = new System.Drawing.Size(161, 56);
-            this.changeToLateBtn.TabIndex = 9;
-            this.changeToLateBtn.Text = "更改为迟到";
-            // 
-            // changeToNormalBtn
-            // 
-            this.changeToNormalBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.changeToNormalBtn.Location = new System.Drawing.Point(204, 67);
-            this.changeToNormalBtn.Name = "changeToNormalBtn";
-            this.changeToNormalBtn.Size = new System.Drawing.Size(161, 56);
-            this.changeToNormalBtn.TabIndex = 10;
-            this.changeToNormalBtn.Text = "更改为正常";
-            // 
-            // changeToAskForLeaveBtn
-            // 
-            this.changeToAskForLeaveBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.changeToAskForLeaveBtn.Location = new System.Drawing.Point(371, 6);
-            this.changeToAskForLeaveBtn.Name = "changeToAskForLeaveBtn";
-            this.changeToAskForLeaveBtn.Size = new System.Drawing.Size(161, 56);
-            this.changeToAskForLeaveBtn.TabIndex = 11;
-            this.changeToAskForLeaveBtn.Text = "更改为请假";
-            // 
-            // changeToLeaveEarly
-            // 
-            this.changeToLeaveEarly.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.changeToLeaveEarly.Location = new System.Drawing.Point(371, 67);
-            this.changeToLeaveEarly.Name = "changeToLeaveEarly";
-            this.changeToLeaveEarly.Size = new System.Drawing.Size(161, 56);
-            this.changeToLeaveEarly.TabIndex = 12;
-            this.changeToLeaveEarly.Text = "更改为早退";
+            this.returnBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.returnBtn.Location = new System.Drawing.Point(538, 67);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(161, 56);
+            this.returnBtn.TabIndex = 14;
+            this.returnBtn.Text = "返回";
             // 
             // changeToAbsentBtn
             // 
@@ -171,14 +126,59 @@
             this.changeToAbsentBtn.TabIndex = 13;
             this.changeToAbsentBtn.Text = "更改为旷课";
             // 
-            // returnBtn
+            // changeToLeaveEarly
             // 
-            this.returnBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.returnBtn.Location = new System.Drawing.Point(538, 67);
-            this.returnBtn.Name = "returnBtn";
-            this.returnBtn.Size = new System.Drawing.Size(161, 56);
-            this.returnBtn.TabIndex = 14;
-            this.returnBtn.Text = "返回";
+            this.changeToLeaveEarly.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.changeToLeaveEarly.Location = new System.Drawing.Point(371, 67);
+            this.changeToLeaveEarly.Name = "changeToLeaveEarly";
+            this.changeToLeaveEarly.Size = new System.Drawing.Size(161, 56);
+            this.changeToLeaveEarly.TabIndex = 12;
+            this.changeToLeaveEarly.Text = "更改为早退";
+            // 
+            // changeToAskForLeaveBtn
+            // 
+            this.changeToAskForLeaveBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.changeToAskForLeaveBtn.Location = new System.Drawing.Point(371, 6);
+            this.changeToAskForLeaveBtn.Name = "changeToAskForLeaveBtn";
+            this.changeToAskForLeaveBtn.Size = new System.Drawing.Size(161, 56);
+            this.changeToAskForLeaveBtn.TabIndex = 11;
+            this.changeToAskForLeaveBtn.Text = "更改为请假";
+            // 
+            // changeToNormalBtn
+            // 
+            this.changeToNormalBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.changeToNormalBtn.Location = new System.Drawing.Point(204, 67);
+            this.changeToNormalBtn.Name = "changeToNormalBtn";
+            this.changeToNormalBtn.Size = new System.Drawing.Size(161, 56);
+            this.changeToNormalBtn.TabIndex = 10;
+            this.changeToNormalBtn.Text = "更改为正常";
+            // 
+            // changeToLateBtn
+            // 
+            this.changeToLateBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.changeToLateBtn.Location = new System.Drawing.Point(204, 6);
+            this.changeToLateBtn.Name = "changeToLateBtn";
+            this.changeToLateBtn.Size = new System.Drawing.Size(161, 56);
+            this.changeToLateBtn.TabIndex = 9;
+            this.changeToLateBtn.Text = "更改为迟到";
+            // 
+            // downBtn
+            // 
+            this.downBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.downBtn.Location = new System.Drawing.Point(37, 67);
+            this.downBtn.Name = "downBtn";
+            this.downBtn.Size = new System.Drawing.Size(161, 56);
+            this.downBtn.TabIndex = 8;
+            this.downBtn.Text = "下一个";
+            // 
+            // upBtn
+            // 
+            this.upBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.upBtn.Location = new System.Drawing.Point(37, 6);
+            this.upBtn.Name = "upBtn";
+            this.upBtn.Size = new System.Drawing.Size(161, 56);
+            this.upBtn.TabIndex = 7;
+            this.upBtn.Text = "上一个";
             // 
             // ViewStudentsForm
             // 
@@ -190,20 +190,21 @@
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewStudentsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewStudentsForm";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsGridView)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.upBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.downBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToLateBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToNormalBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToAskForLeaveBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToLeaveEarly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.changeToAbsentBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.returnBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToAbsentBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToLeaveEarly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToAskForLeaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToNormalBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.changeToLateBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upBtn)).EndInit();
             this.ResumeLayout(false);
 
         }

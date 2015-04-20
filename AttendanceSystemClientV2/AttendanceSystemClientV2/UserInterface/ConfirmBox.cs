@@ -12,6 +12,7 @@ namespace AttendanceSystemClientV2.UserInterface {
     public partial class ConfirmBox : Form {
         public ConfirmBox (string information) {
             InitializeComponent ();
+            radPanel2.Text = information;
         }
 
         private void btnOk_Click ( object sender, EventArgs e ) {

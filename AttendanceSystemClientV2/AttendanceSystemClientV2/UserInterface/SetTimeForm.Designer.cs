@@ -25,7 +25,6 @@
         private void InitializeComponent ( ) {
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.telerikMetroTouchTheme1 = new Telerik.WinControls.Themes.TelerikMetroTouchTheme();
-            this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -322,6 +321,7 @@
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SetTimeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SetTimeForm";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
@@ -349,7 +349,6 @@
 
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.Themes.TelerikMetroTouchTheme telerikMetroTouchTheme1;
-        private Telerik.WinControls.RadThemeManager radThemeManager1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker1;

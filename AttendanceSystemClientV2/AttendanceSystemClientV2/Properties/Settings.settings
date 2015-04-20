@@ -17,5 +17,8 @@
     <Setting Name="Schema" Type="System.String" Scope="User">
       <Value Profile="(Default)">PC</Value>
     </Setting>
+    <Setting Name="OffliePassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

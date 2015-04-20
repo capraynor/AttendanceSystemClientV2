@@ -421,7 +421,7 @@
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManualRollCallForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "手动签到";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel1.ResumeLayout(false);

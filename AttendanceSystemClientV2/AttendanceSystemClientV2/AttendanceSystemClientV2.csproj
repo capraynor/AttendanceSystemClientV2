@@ -170,6 +170,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BriefcaseControl.cs" />
     <Compile Include="Controls\DataDownloadControl.cs" />
     <Compile Include="Controls\DataUploadControl.cs" />
     <Compile Include="Controls\FingerPrintControl.cs" />
@@ -198,6 +199,12 @@
     </Compile>
     <Compile Include="UserInterface\MsgBox.Designer.cs">
       <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\SetOfflinePasswdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\SetOfflinePasswdForm.Designer.cs">
+      <DependentUpon>SetOfflinePasswdForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\SetTimeForm.cs">
       <SubType>Form</SubType>
@@ -248,6 +255,12 @@
       <DependentUpon>ShowServerClassesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TableDefinitions_PC.cs" />
+    <Compile Include="UserInterface\VerifyOfflinePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\VerifyOfflinePassword.Designer.cs">
+      <DependentUpon>VerifyOfflinePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\ViewStudentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +284,9 @@
     <EmbeddedResource Include="UserInterface\MsgBox.resx">
       <DependentUpon>MsgBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\SetOfflinePasswdForm.resx">
+      <DependentUpon>SetOfflinePasswdForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\SetTimeForm.resx">
       <DependentUpon>SetTimeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\ShowServerClassesForm.resx">
       <DependentUpon>ShowServerClassesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\VerifyOfflinePassword.resx">
+      <DependentUpon>VerifyOfflinePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\ViewStudentsForm.resx">
       <DependentUpon>ViewStudentsForm.cs</DependentUpon>

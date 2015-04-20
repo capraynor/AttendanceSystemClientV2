@@ -44,12 +44,18 @@ namespace AttendanceSystemClientV2.UserInterface {
         }
 
 
-        public bool SetValue(int value) {
-            if (value <= 0) return false;
+        /// <summary>
+        /// 为进度条设置进度
+        /// </summary>
+        /// <param name="value">进度值</param>
+        /// <returns>设置成功或者失败</returns>
+        public bool SetValue(int value) { // 为进度条设置进度
 
-            if ( value < progressBar1.Maximum) {
+            if (value <= 0) return false;//如果传进的参数小于0 , 则返回失败
 
-                ProgressValue = value;
+            if ( value < progressBar1.Maximum) { // 如果传进的数值大于0 , 则对进度条进行更改
+
+                ProgressValue = value; 
 
                 return true;
             }
@@ -57,6 +63,12 @@ namespace AttendanceSystemClientV2.UserInterface {
             ProgressValue = progressBar1.Maximum;
 
             return false;
+        }
+
+        public void SetInfo(string information) {
+
+            operationNameLbl.Text = information;
+
         }
 
 

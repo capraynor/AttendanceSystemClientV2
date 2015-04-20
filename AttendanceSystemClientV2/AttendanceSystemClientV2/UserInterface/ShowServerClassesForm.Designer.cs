@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +44,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.classDurationLbl = new System.Windows.Forms.Label();
+            this.studentTotalLbl = new System.Windows.Forms.Label();
             this.teacherNameLbl = new System.Windows.Forms.Label();
             this.courseNameLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -131,7 +129,7 @@
             // radButton1
             // 
             this.radButton1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.radButton1.Location = new System.Drawing.Point(398, 23);
+            this.radButton1.Location = new System.Drawing.Point(383, 23);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(161, 56);
             this.radButton1.TabIndex = 2;
@@ -142,7 +140,7 @@
             // 
             this.undoDownloading.Enabled = false;
             this.undoDownloading.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.undoDownloading.Location = new System.Drawing.Point(231, 23);
+            this.undoDownloading.Location = new System.Drawing.Point(216, 23);
             this.undoDownloading.Name = "undoDownloading";
             this.undoDownloading.Size = new System.Drawing.Size(161, 56);
             this.undoDownloading.TabIndex = 1;
@@ -172,7 +170,7 @@
             // rollCallGridView
             // 
             this.rollCallGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rollCallGridView.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.rollCallGridView.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rollCallGridView.Location = new System.Drawing.Point(0, 51);
             // 
             // rollCallGridView
@@ -181,15 +179,6 @@
             this.rollCallGridView.MasterTemplate.AllowColumnReorder = false;
             this.rollCallGridView.MasterTemplate.AllowDragToGroup = false;
             this.rollCallGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.HeaderText = "上课时间";
-            gridViewTextBoxColumn1.Name = "col1";
-            gridViewTextBoxColumn1.Width = 350;
-            gridViewTextBoxColumn2.HeaderText = "签到情况";
-            gridViewTextBoxColumn2.Name = "col2";
-            gridViewTextBoxColumn2.Width = 217;
-            this.rollCallGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
             this.rollCallGridView.Name = "rollCallGridView";
             this.rollCallGridView.ReadOnly = true;
             this.rollCallGridView.Size = new System.Drawing.Size(586, 430);
@@ -257,7 +246,7 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.classDurationLbl);
+            this.panel9.Controls.Add(this.studentTotalLbl);
             this.panel9.Controls.Add(this.teacherNameLbl);
             this.panel9.Controls.Add(this.courseNameLbl);
             this.panel9.Controls.Add(this.label4);
@@ -269,20 +258,22 @@
             this.panel9.Size = new System.Drawing.Size(482, 225);
             this.panel9.TabIndex = 3;
             // 
-            // classDurationLbl
+            // studentTotalLbl
             // 
-            this.classDurationLbl.AutoSize = true;
-            this.classDurationLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.classDurationLbl.Location = new System.Drawing.Point(135, 162);
-            this.classDurationLbl.Name = "classDurationLbl";
-            this.classDurationLbl.Size = new System.Drawing.Size(53, 28);
-            this.classDurationLbl.TabIndex = 6;
-            this.classDurationLbl.Text = "N/A";
+            this.studentTotalLbl.AutoSize = true;
+            this.studentTotalLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.studentTotalLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.studentTotalLbl.Location = new System.Drawing.Point(135, 162);
+            this.studentTotalLbl.Name = "studentTotalLbl";
+            this.studentTotalLbl.Size = new System.Drawing.Size(53, 28);
+            this.studentTotalLbl.TabIndex = 6;
+            this.studentTotalLbl.Text = "N/A";
             // 
             // teacherNameLbl
             // 
             this.teacherNameLbl.AutoSize = true;
             this.teacherNameLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.teacherNameLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.teacherNameLbl.Location = new System.Drawing.Point(135, 95);
             this.teacherNameLbl.Name = "teacherNameLbl";
             this.teacherNameLbl.Size = new System.Drawing.Size(53, 28);
@@ -293,6 +284,7 @@
             // 
             this.courseNameLbl.AutoSize = true;
             this.courseNameLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.courseNameLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.courseNameLbl.Location = new System.Drawing.Point(135, 32);
             this.courseNameLbl.Name = "courseNameLbl";
             this.courseNameLbl.Size = new System.Drawing.Size(53, 28);
@@ -317,7 +309,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 28);
             this.label2.TabIndex = 1;
-            this.label2.Text = "连上节数：";
+            this.label2.Text = "选学人数：";
             // 
             // label1
             // 
@@ -403,7 +395,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShowServerClassesForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowServerClassesForm";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -458,7 +450,7 @@
         private Telerik.WinControls.UI.RadGridView rollCallGridView;
         private Telerik.WinControls.UI.RadButton undoDownloading;
         private Telerik.WinControls.UI.RadButton downloadCourseBtn;
-        private System.Windows.Forms.Label classDurationLbl;
+        private System.Windows.Forms.Label studentTotalLbl;
         private System.Windows.Forms.Label teacherNameLbl;
         private System.Windows.Forms.Label courseNameLbl;
         private Telerik.WinControls.UI.RadButton radButton1;

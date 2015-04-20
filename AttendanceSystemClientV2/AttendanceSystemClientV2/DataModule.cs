@@ -167,13 +167,25 @@ namespace AttendanceSystemClientV2 {
 
         }
 
+        /// <summary>
+        /// 获取XKTABLE_VIEWRO视图 该函数不会立即拉取数据(延迟加载).
+        /// </summary>
+        /// <returns>XKTABLE_VIEWRO视图(延迟加载)</returns>
+        public RemoteTable<XKTABLE_VIEWRO> GetxktableViewros() {
+            return remoteDataAdapter.GetTable<XKTABLE_VIEWRO>();
+        }
+        
 
         /// <summary>
         /// 获取GetsSktable07Viewro视图 该函数不会立即拉取数据(延迟加载).
         /// </summary>
         /// <returns>GetsSktable07Viewro视图(延迟加载)</returns>
-        public RemoteTable<SKTABLE_07_VIEWRO> GetsSktable07Viewro  ( ) {
+        public RemoteTable<SKTABLE_07_VIEWRO> GetSktable07Viewro  ( ) {
             return remoteDataAdapter.GetTable<SKTABLE_07_VIEWRO> ();
+        }
+
+        public RemoteTable<DMTABLE_08_NOPIC_VIEW> GetdmTable() {
+            return remoteDataAdapter.GetTable<DMTABLE_08_NOPIC_VIEW>();
         } 
 
         public int Getdata ( ) {
