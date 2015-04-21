@@ -184,8 +184,18 @@ namespace AttendanceSystemClientV2 {
             return remoteDataAdapter.GetTable<SKTABLE_07_VIEWRO> ();
         }
 
+        /// <summary>
+        /// 获取点名表
+        /// </summary>
+        /// <returns></returns>
         public RemoteTable<DMTABLE_08_NOPIC_VIEW> GetdmTable() {
             return remoteDataAdapter.GetTable<DMTABLE_08_NOPIC_VIEW>();
+        }
+
+        public RemoteTable<BJTABLE_09_VIEWRO> GetBjTable() {
+
+            return remoteDataAdapter.GetTable<BJTABLE_09_VIEWRO>();
+
         } 
 
         public int Getdata ( ) {

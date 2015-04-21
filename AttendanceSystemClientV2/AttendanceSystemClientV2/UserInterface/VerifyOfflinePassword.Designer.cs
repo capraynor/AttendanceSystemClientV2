@@ -63,7 +63,7 @@
             // 
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUsername.Location = new System.Drawing.Point(46, 77);
+            this.lbUsername.Location = new System.Drawing.Point(55, 77);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(116, 31);
             this.lbUsername.TabIndex = 18;
@@ -95,7 +95,7 @@
             // 
             this.UserIdTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UserIdTextBox.Font = new System.Drawing.Font("微软雅黑", 18F);
-            this.UserIdTextBox.Location = new System.Drawing.Point(199, 74);
+            this.UserIdTextBox.Location = new System.Drawing.Point(186, 74);
             this.UserIdTextBox.Name = "UserIdTextBox";
             this.UserIdTextBox.Size = new System.Drawing.Size(288, 39);
             this.UserIdTextBox.TabIndex = 15;

@@ -31,7 +31,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         private void radButton1_Click ( object sender, EventArgs e ) {
 
-            var resault = new LogOnForm().ShowDialog();
+            var resault = new LogOnForm().ShowDialog();//显示下载课程窗口
 
             if (resault == DialogResult.Cancel)
                 return;
@@ -45,12 +45,10 @@ namespace AttendanceSystemClientV2.UserInterface {
                 MsgBox.ShowMsgBoxDialog("登录异常");
 
             }//todo:将下面的catch放出来
-            //catch (Exception expException) {
+            catch (Exception expException) {
 
-            //    MsgBox.ShowMsgBoxDialog(expException.Message);
-            //}
-
-            
+                MsgBox.ShowMsgBoxDialog(expException.Message+"\n" +expException.StackTrace);
+            }
         }
     }
 }

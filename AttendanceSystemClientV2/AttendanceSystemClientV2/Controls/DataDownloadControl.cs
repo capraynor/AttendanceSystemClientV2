@@ -70,19 +70,25 @@ namespace AttendanceSystemClientV2.Controls {
                               select c;
 
             var kkrecord = jsandkkview.First();//取第一条记录
-
-            var courseBriefcase = BriefcaseControl.CreateBriefcase(kkrecord);
+            
+            var courseBriefcase = BriefcaseControl.CreateBriefcase(kkrecord);//根据开课表的一行记录建立briefcase
 
             if (courseBriefcase == null) {
+
                 return;
             }
 
             _waitform = new WaitForm("初始化下载进程");
 
-            new Thread (( ) => DownloadData (kkno, courseBriefcase)).Start ();
+            new Thread (( ) => DownloadData (kkno, courseBriefcase)).Start ();//将费时的操作放在一个线程中
+
+
 
             _waitform.ShowDialog();
 
+            MsgBox.ShowMsgBoxDialog("选定的课程下载完毕.");
+
+            
         }
 
         /// <summary>
@@ -92,7 +98,7 @@ namespace AttendanceSystemClientV2.Controls {
         /// <param name="courseBriefcase">该堂课要存的briefcase</param>
         private static void DownloadData ( long kkno, Briefcase courseBriefcase ) {
 
-            Thread.Sleep(1000);
+            Thread.Sleep(1000);//等待进度条窗口建立完毕
 
             _waitform.Invoke (new MethodInvoker (( ) => _waitform.SetInfo ("下载学生信息 \n 该过程可能会比较耗时")));
 
@@ -143,12 +149,47 @@ namespace AttendanceSystemClientV2.Controls {
  
                 courseBriefcase.AddTable(dmtableSingleDatatable);
 
-                _waitform.Invoke (new MethodInvoker (( ) => _waitform.Increase(1)));
+                _waitform.Invoke (new MethodInvoker (( ) => _waitform.Increase(1))); // 每次下载都在进度条上加1
             }
+
+            courseBriefcase.WriteBriefcase(); // 保存将对briefcase的更改写入硬盘
+
+            var classInfoTable = courseBriefcase.FindTable("ClassInfo");
+
+            //以下注释的代码作为参考用.
+            //courseInfoTable.Columns.Add ("上课编号", typeof (string));
+
+            //courseInfoTable.Columns.Add ("上课日期", typeof (string));
+
+            //courseInfoTable.Columns.Add ("上课状态", typeof (string));
+
+            foreach (var sktable07Viewro in sktableList) {
+
+                var viewro = sktable07Viewro;//resharper说要这么写
+
+                var classInfoRow = classInfoTable.NewRow();//新建一行
+
+                classInfoRow["上课编号"] = viewro.SKNO.ToString(CultureInfo.InvariantCulture);//指定这一行的上课编号
+
+                classInfoRow["上课日期"] = viewro.YDSKDATE.ToString();//指定这一行的上课日期
+                
+                if (viewro.SKZT == 0) {//将上课状态转换成文字
+
+                    classInfoRow["上课状态"] = "未签到";
+                }
+                else {
+
+                    classInfoRow["上课状态"] = "已签到";
+                }
+
+                classInfoTable.Rows.Add(classInfoRow);//将这一行加到datatable里
+            }
+
+            courseBriefcase.AddTable(classInfoTable);//将datatable加到briefcase里
 
             courseBriefcase.WriteBriefcase();
 
-            _waitform.Invoke (new MethodInvoker (( ) => _waitform.Close()));
+            _waitform.Invoke (new MethodInvoker (( ) => _waitform.Close()));//关闭进度窗口
         }
 
     }

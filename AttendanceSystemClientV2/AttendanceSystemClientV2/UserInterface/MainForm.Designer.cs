@@ -374,7 +374,7 @@
             // 
             this.deleteCourseBtn.Enabled = false;
             this.deleteCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.deleteCourseBtn.Location = new System.Drawing.Point(320, 519);
+            this.deleteCourseBtn.Location = new System.Drawing.Point(286, 519);
             this.deleteCourseBtn.Name = "deleteCourseBtn";
             this.deleteCourseBtn.Size = new System.Drawing.Size(161, 56);
             this.deleteCourseBtn.TabIndex = 7;
@@ -383,7 +383,7 @@
             // downloadCourseBtn
             // 
             this.downloadCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.downloadCourseBtn.Location = new System.Drawing.Point(88, 519);
+            this.downloadCourseBtn.Location = new System.Drawing.Point(62, 519);
             this.downloadCourseBtn.Name = "downloadCourseBtn";
             this.downloadCourseBtn.Size = new System.Drawing.Size(161, 56);
             this.downloadCourseBtn.TabIndex = 6;
