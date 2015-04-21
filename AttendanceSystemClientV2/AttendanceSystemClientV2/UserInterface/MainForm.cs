@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using AttendanceSystemClientV2.Controls;
@@ -59,6 +61,14 @@ namespace AttendanceSystemClientV2.UserInterface {
 
                 MsgBox.ShowMsgBoxDialog(expException.Message+"\n" +expException.StackTrace);
             }
+        }
+
+        private void coursesListBox_SelectedIndexChanged ( object sender, EventArgs e ) {
+
+            var selectedproperty = (KeyValuePair<long, string>)coursesListBox.SelectedItem; // 获取已经选择的项目
+
+
+
         }
     }
 }

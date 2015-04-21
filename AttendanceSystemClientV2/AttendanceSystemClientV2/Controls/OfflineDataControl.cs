@@ -72,9 +72,9 @@ namespace AttendanceSystemClientV2.Controls {
             }
 
             foreach (DataRow courseInfo in courseInfoDataTable.Rows) {
-                
-                courseInfoDictionary.Add((long)courseInfo["课程编号"] , 
-                    (string)courseInfo["课程名称"]);
+
+                courseInfoDictionary.Add (Convert.ToInt64 (courseInfo["课程编号"]),
+                    Convert.ToString (courseInfo["课程名称"]));
 
             }
 
