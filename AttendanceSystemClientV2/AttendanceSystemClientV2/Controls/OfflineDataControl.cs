@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AttendanceSystemClientV2.Helpers;
 using AttendanceSystemClientV2.PC;
 
 namespace AttendanceSystemClientV2.Controls {
@@ -42,8 +44,59 @@ namespace AttendanceSystemClientV2.Controls {
             return null;
         }
 
+        /// <summary>
+        /// 开始点名时 保存点名表
+        /// </summary>
+        /// <param name="dmtable08NopicViews">传进来的点名表</param>
+        /// <param name="skno">上课编号</param>
         public static void SaveDmtable(List<DMTABLE_08_NOPIC_VIEW> dmtable08NopicViews, long skno) {
             
-        } 
+        }
+
+        /// <summary>
+        /// 将传进来的courseInfo 转换成Dictionary
+        /// </summary>
+        /// <param name="courseInfoDataTable">所有的课程信息 里面的字段有: 课程编号 和 课程名称</param>
+        /// <returns></returns>
+        private static Dictionary<long, string> CourseInfoToDictionary
+            (DataTable courseInfoDataTable) {
+
+            var courseInfoDictionary = new Dictionary<long, string>();
+
+            if (courseInfoDataTable.Rows.Count == 0) {
+                
+                courseInfoDictionary.Add(-1 , "找不到数据");
+
+                return courseInfoDictionary;
+
+            }
+
+            foreach (DataRow courseInfo in courseInfoDataTable.Rows) {
+                
+                courseInfoDictionary.Add((long)courseInfo["课程编号"] , 
+                    (string)courseInfo["课程名称"]);
+
+            }
+
+            return courseInfoDictionary;
+
+        }
+
+
+        /// <summary>
+        /// 显示辅助函数 获取第一个页面的Listbox的数据源(Dictionary)
+        /// </summary>
+        /// <returns>可直接绑定在listbox的Dictionary</returns>
+        public static Dictionary<long, string> Dp_GetCourseInfoDictionary() {
+
+            var courseInfoDatatable = BriefcaseControl.GetCourseInfoDataTable();
+
+            var courseInfoDictionary = CourseInfoToDictionary(courseInfoDatatable);
+
+            return courseInfoDictionary;
+
+        }  
+
+
     }
 }

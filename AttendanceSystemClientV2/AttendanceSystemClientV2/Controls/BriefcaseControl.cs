@@ -149,5 +149,47 @@ namespace AttendanceSystemClientV2.Controls {
 
             }
         }
+
+        /// <summary>
+        /// 获取PropertiesBriefcase , 里面包含了班级信息和每门课的信息
+        /// </summary>
+        /// <returns></returns>
+        private static FileBriefcase GetPropertiesBriefcase() { //判断properties briefcase是否存在
+            if (!File.Exists(GlobalParams.BriefcasePath + @"Properties.daBriefcase")) {
+                return null;//不存在 则返回null
+            }
+
+            return new FileBriefcase (GlobalParams.BriefcasePath + @"Properties.daBriefcase" , true);
+            //若存在 则返回对应的briefcase对象
+
+        }
+
+        /// <summary>
+        /// 获取CourseInfo表,这张表将会绑定在第一个页面的左侧部分.
+        /// TODO:写一个转换函数.将datatable转换成Dictionary
+        /// </summary>
+        /// <returns>可供转换的datatable</returns>
+        public static DataTable GetCourseInfoDataTable() {
+            
+            var propertiesBriefcase = GetPropertiesBriefcase();
+
+            if (propertiesBriefcase != null) {
+
+                return propertiesBriefcase.FindTable("CourseInfo");
+
+            }
+            else {
+
+                var courseInfoTable = new DataTable ("CourseInfo");
+                //如果找不到properties briefcase , 那就新建一个空的courseinfo表. 并返回
+
+                courseInfoTable.Columns.Add ("课程名称", typeof (string));
+
+                courseInfoTable.Columns.Add ("课程编号", typeof (string));
+
+                return courseInfoTable;
+            }
+        }
+
     }
 }

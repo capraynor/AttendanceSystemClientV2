@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using AttendanceSystemClientV2.Controls;
 using AttendanceSystemClientV2.PC;
 using AttendanceSystemClientV2.UserInterface;
 using Telerik.WinControls.UI;
@@ -19,7 +20,16 @@ namespace AttendanceSystemClientV2.UserInterface {
         public MainForm ( ) {
             InitializeComponent ();
             _rollCalling = false;//标记是否正在进行考勤工作
-            _fDataModule = new DataModule ();//datamodule 用于下载数据。
+
+            _fDataModule = new DataModule ();//datamodule 用于查看数据(好像没什么用耶)。
+
+            var dpCourseInfoDictionary = OfflineDataControl.Dp_GetCourseInfoDictionary();
+
+            coursesListBox.DataSource = new BindingSource(dpCourseInfoDictionary,null);
+
+            coursesListBox.DisplayMember = "Value"; //设置显示字段
+
+            coursesListBox.ValueMember = "Key";//设置值字段
         }
 
 
