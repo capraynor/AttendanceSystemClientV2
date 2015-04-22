@@ -7,8 +7,6 @@ namespace AttendanceSystemClientV2.UserInterface {
             InitializeComponent ();
 
             operationNameLbl.Text = operation;
-
-            var a = 1;
         }
         
         private int ProgressValue {

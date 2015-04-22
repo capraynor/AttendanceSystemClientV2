@@ -164,6 +164,22 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="AttendanceSystemClientV2.relativityClient" />
+    <None Include="Briefcase\2012020307.daBriefcase">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Briefcase\2012021207.daBriefcase">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Briefcase\2012021207.daBriefcase20150421040455" />
+    <None Include="Briefcase\2013021202.daBriefcase">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Briefcase\2013021202.daBriefcase20150321040314" />
+    <None Include="Briefcase\2013021202.daBriefcase20150421040410" />
+    <None Include="Briefcase\2013021202.daBriefcase20150421040435" />
+    <None Include="Briefcase\Properties.daBriefcase">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.panel1_default = new System.Windows.Forms.Panel();
             this.panel2_down = new System.Windows.Forms.Panel();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
@@ -49,14 +47,14 @@
             this.downloadCourseBtn = new Telerik.WinControls.UI.RadButton();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.classInfoGview1 = new Telerik.WinControls.UI.RadGridView();
             this.panel14 = new System.Windows.Forms.Panel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel5_left = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
             this.lastTimeSubmit1 = new System.Windows.Forms.Label();
-            this.courseDateLbl1 = new System.Windows.Forms.Label();
+            this.courseNoLbl1 = new System.Windows.Forms.Label();
             this.courseNameLbl1 = new System.Windows.Forms.Label();
             this.teacherNameLbl1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -132,13 +130,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel36 = new System.Windows.Forms.Panel();
-            this.panel38 = new System.Windows.Forms.Panel();
+            this.showDataSubmissionDetailBtnPanel = new System.Windows.Forms.Panel();
             this.showDataSubmissionDetailBtn = new Telerik.WinControls.UI.RadButton();
-            this.panel37 = new System.Windows.Forms.Panel();
+            this.dataSubmissionDetailGviewPanel = new System.Windows.Forms.Panel();
             this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
             this.panel35 = new System.Windows.Forms.Panel();
             this.radPanel9 = new Telerik.WinControls.UI.RadPanel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.dataManagementOperationButtonsPanel = new System.Windows.Forms.Panel();
             this.viewDataStateBtn = new Telerik.WinControls.UI.RadButton();
             this.viewStudentListBtn = new Telerik.WinControls.UI.RadButton();
             this.uploadDataBtn = new Telerik.WinControls.UI.RadButton();
@@ -146,8 +144,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.lastTimeSubmitData3 = new System.Windows.Forms.Label();
-            this.lastTimeRollCallLbl3 = new System.Windows.Forms.Label();
+            this.lastTimeSubmit3 = new System.Windows.Forms.Label();
+            this.courseNoLbl3 = new System.Windows.Forms.Label();
             this.courseNameLbl3 = new System.Windows.Forms.Label();
             this.teacherNameLbl3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -158,7 +156,7 @@
             this.radPanel8 = new Telerik.WinControls.UI.RadPanel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel34 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.courseListLbox3 = new System.Windows.Forms.ListBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
@@ -179,8 +177,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.downloadCourseBtn)).BeginInit();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classInfoGview1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classInfoGview1.MasterTemplate)).BeginInit();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel5_left.SuspendLayout();
@@ -228,14 +226,14 @@
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel36.SuspendLayout();
-            this.panel38.SuspendLayout();
+            this.showDataSubmissionDetailBtnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showDataSubmissionDetailBtn)).BeginInit();
-            this.panel37.SuspendLayout();
+            this.dataSubmissionDetailGviewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
             this.panel35.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel9)).BeginInit();
-            this.panel8.SuspendLayout();
+            this.dataManagementOperationButtonsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataStateBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewStudentListBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uploadDataBtn)).BeginInit();
@@ -282,10 +280,10 @@
             this.mainPageView.Controls.Add(this.dataManagementPage);
             this.mainPageView.DefaultPage = this.downloadDataPage;
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPageView.Font = new System.Drawing.Font("微软雅黑", 25F);
+            this.mainPageView.Font = new System.Drawing.Font("Microsoft YaHei", 25F);
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.downloadDataPage;
+            this.mainPageView.SelectedPage = this.dataManagementPage;
             this.mainPageView.Size = new System.Drawing.Size(1278, 599);
             this.mainPageView.TabIndex = 0;
             this.mainPageView.Text = "radPageView1";
@@ -352,7 +350,7 @@
             // deleteCourseBtn
             // 
             this.deleteCourseBtn.Enabled = false;
-            this.deleteCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.deleteCourseBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.deleteCourseBtn.Location = new System.Drawing.Point(329, 522);
             this.deleteCourseBtn.Name = "deleteCourseBtn";
             this.deleteCourseBtn.Size = new System.Drawing.Size(161, 56);
@@ -361,7 +359,7 @@
             // 
             // downloadCourseBtn
             // 
-            this.downloadCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.downloadCourseBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.downloadCourseBtn.Location = new System.Drawing.Point(62, 519);
             this.downloadCourseBtn.Name = "downloadCourseBtn";
             this.downloadCourseBtn.Size = new System.Drawing.Size(161, 56);
@@ -381,30 +379,31 @@
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.radGridView1);
+            this.panel21.Controls.Add(this.classInfoGview1);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(0, 55);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(531, 449);
             this.panel21.TabIndex = 3;
             // 
-            // radGridView1
+            // classInfoGview1
             // 
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.radGridView1.Location = new System.Drawing.Point(0, 0);
+            this.classInfoGview1.AutoSizeRows = true;
+            this.classInfoGview1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classInfoGview1.Font = new System.Drawing.Font("Microsoft YaHei", 15F);
+            this.classInfoGview1.Location = new System.Drawing.Point(0, 0);
             // 
-            // radGridView1
+            // classInfoGview1
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AllowColumnReorder = false;
-            this.radGridView1.MasterTemplate.AllowDragToGroup = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.Size = new System.Drawing.Size(531, 449);
-            this.radGridView1.TabIndex = 1;
-            this.radGridView1.Text = "radGridView1";
+            this.classInfoGview1.MasterTemplate.AllowAddNewRow = false;
+            this.classInfoGview1.MasterTemplate.AllowColumnReorder = false;
+            this.classInfoGview1.MasterTemplate.AllowDragToGroup = false;
+            this.classInfoGview1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.classInfoGview1.Name = "classInfoGview1";
+            this.classInfoGview1.ReadOnly = true;
+            this.classInfoGview1.Size = new System.Drawing.Size(531, 449);
+            this.classInfoGview1.TabIndex = 1;
+            this.classInfoGview1.Text = "radGridView1";
             // 
             // panel14
             // 
@@ -419,7 +418,7 @@
             // 
             this.radPanel1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel1.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel1.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(531, 55);
@@ -450,7 +449,7 @@
             // panel39
             // 
             this.panel39.Controls.Add(this.lastTimeSubmit1);
-            this.panel39.Controls.Add(this.courseDateLbl1);
+            this.panel39.Controls.Add(this.courseNoLbl1);
             this.panel39.Controls.Add(this.courseNameLbl1);
             this.panel39.Controls.Add(this.teacherNameLbl1);
             this.panel39.Controls.Add(this.label34);
@@ -465,87 +464,91 @@
             // 
             // lastTimeSubmit1
             // 
-            this.lastTimeSubmit1.AutoSize = true;
-            this.lastTimeSubmit1.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lastTimeSubmit1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lastTimeSubmit1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lastTimeSubmit1.Location = new System.Drawing.Point(342, 135);
             this.lastTimeSubmit1.Name = "lastTimeSubmit1";
             this.lastTimeSubmit1.Size = new System.Drawing.Size(230, 28);
             this.lastTimeSubmit1.TabIndex = 35;
             this.lastTimeSubmit1.Text = "2001年01月01日 17:17";
+            this.lastTimeSubmit1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // courseDateLbl1
+            // courseNoLbl1
             // 
-            this.courseDateLbl1.AutoSize = true;
-            this.courseDateLbl1.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.courseDateLbl1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.courseDateLbl1.Location = new System.Drawing.Point(60, 135);
-            this.courseDateLbl1.Name = "courseDateLbl1";
-            this.courseDateLbl1.Size = new System.Drawing.Size(230, 28);
-            this.courseDateLbl1.TabIndex = 34;
-            this.courseDateLbl1.Text = "2001年01月01日 17:17";
+            this.courseNoLbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.courseNoLbl1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.courseNoLbl1.Location = new System.Drawing.Point(60, 135);
+            this.courseNoLbl1.Name = "courseNoLbl1";
+            this.courseNoLbl1.Size = new System.Drawing.Size(230, 28);
+            this.courseNoLbl1.TabIndex = 34;
+            this.courseNoLbl1.Text = "2001年01月01日 17:17";
+            this.courseNoLbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // courseNameLbl1
             // 
-            this.courseNameLbl1.AutoSize = true;
-            this.courseNameLbl1.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.courseNameLbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
             this.courseNameLbl1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.courseNameLbl1.Location = new System.Drawing.Point(27, 44);
             this.courseNameLbl1.Name = "courseNameLbl1";
             this.courseNameLbl1.Size = new System.Drawing.Size(294, 28);
             this.courseNameLbl1.TabIndex = 33;
             this.courseNameLbl1.Text = "2012级1，2班计算机组成原理";
+            this.courseNameLbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // teacherNameLbl1
             // 
-            this.teacherNameLbl1.AutoSize = true;
-            this.teacherNameLbl1.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.teacherNameLbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
             this.teacherNameLbl1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.teacherNameLbl1.Location = new System.Drawing.Point(427, 44);
             this.teacherNameLbl1.Name = "teacherNameLbl1";
             this.teacherNameLbl1.Size = new System.Drawing.Size(75, 28);
             this.teacherNameLbl1.TabIndex = 32;
             this.teacherNameLbl1.Text = "孙少波";
+            this.teacherNameLbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label34.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label34.Location = new System.Drawing.Point(341, 97);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(231, 35);
             this.label34.TabIndex = 31;
             this.label34.Text = "上次提交数据时间";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label35.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label35.Location = new System.Drawing.Point(398, 9);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(123, 35);
             this.label35.TabIndex = 30;
             this.label35.Text = "授课教师";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label36.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label36.Location = new System.Drawing.Point(110, 97);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(123, 35);
             this.label36.TabIndex = 29;
-            this.label36.Text = "开课日期";
+            this.label36.Text = "课程编号";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label37.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label37.Location = new System.Drawing.Point(110, 9);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(123, 35);
             this.label37.TabIndex = 28;
             this.label37.Text = "课程名称";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel19
             // 
@@ -560,7 +563,7 @@
             // 
             this.radPanel5.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel5.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel5.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel5.Location = new System.Drawing.Point(0, 0);
             this.radPanel5.Name = "radPanel5";
             this.radPanel5.Size = new System.Drawing.Size(598, 55);
@@ -590,7 +593,7 @@
             // 
             this.coursesListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.coursesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coursesListBox.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.coursesListBox.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.coursesListBox.FormattingEnabled = true;
             this.coursesListBox.ItemHeight = 38;
             this.coursesListBox.Location = new System.Drawing.Point(0, 0);
@@ -612,7 +615,7 @@
             // 
             this.radPanel4.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel4.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel4.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel4.Location = new System.Drawing.Point(0, 0);
             this.radPanel4.Name = "radPanel4";
             this.radPanel4.Size = new System.Drawing.Size(598, 55);
@@ -701,7 +704,7 @@
             // 
             this.leaveEarlyStudentLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.leaveEarlyStudentLbl.AutoSize = true;
-            this.leaveEarlyStudentLbl.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.leaveEarlyStudentLbl.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.leaveEarlyStudentLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.leaveEarlyStudentLbl.Location = new System.Drawing.Point(403, 37);
             this.leaveEarlyStudentLbl.Name = "leaveEarlyStudentLbl";
@@ -713,7 +716,7 @@
             // 
             this.didNotSubmitStudentNumLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.didNotSubmitStudentNumLbl.AutoSize = true;
-            this.didNotSubmitStudentNumLbl.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.didNotSubmitStudentNumLbl.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.didNotSubmitStudentNumLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.didNotSubmitStudentNumLbl.Location = new System.Drawing.Point(403, 2);
             this.didNotSubmitStudentNumLbl.Name = "didNotSubmitStudentNumLbl";
@@ -725,7 +728,7 @@
             // 
             this.actualStudentNumLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.actualStudentNumLbl.AutoSize = true;
-            this.actualStudentNumLbl.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.actualStudentNumLbl.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.actualStudentNumLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.actualStudentNumLbl.Location = new System.Drawing.Point(183, 37);
             this.actualStudentNumLbl.Name = "actualStudentNumLbl";
@@ -737,7 +740,7 @@
             // 
             this.expectedStudentNumLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.expectedStudentNumLbl.AutoSize = true;
-            this.expectedStudentNumLbl.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.expectedStudentNumLbl.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.expectedStudentNumLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.expectedStudentNumLbl.Location = new System.Drawing.Point(183, 2);
             this.expectedStudentNumLbl.Name = "expectedStudentNumLbl";
@@ -749,7 +752,7 @@
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label18.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label18.Location = new System.Drawing.Point(285, 37);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(96, 35);
@@ -760,7 +763,7 @@
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label19.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label19.Location = new System.Drawing.Point(285, 2);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(123, 35);
@@ -771,7 +774,7 @@
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label14.Location = new System.Drawing.Point(96, 37);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(96, 35);
@@ -782,7 +785,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label13.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label13.Location = new System.Drawing.Point(96, 2);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 35);
@@ -801,21 +804,21 @@
             // 
             // chart1
             // 
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Area3DStyle.IsRightAngleAxes = false;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Area3DStyle.IsRightAngleAxes = false;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(531, 283);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -833,7 +836,7 @@
             // 
             this.radPanel7.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel7.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel7.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel7.Location = new System.Drawing.Point(0, 0);
             this.radPanel7.Name = "radPanel7";
             this.radPanel7.Size = new System.Drawing.Size(533, 55);
@@ -855,7 +858,7 @@
             // manualRollCallBtn
             // 
             this.manualRollCallBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.manualRollCallBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.manualRollCallBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.manualRollCallBtn.Location = new System.Drawing.Point(32, 93);
             this.manualRollCallBtn.Name = "manualRollCallBtn";
             this.manualRollCallBtn.Size = new System.Drawing.Size(221, 66);
@@ -868,7 +871,7 @@
             // chooseClassBtn
             // 
             this.chooseClassBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.chooseClassBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.chooseClassBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.chooseClassBtn.Location = new System.Drawing.Point(32, 10);
             this.chooseClassBtn.Name = "chooseClassBtn";
             this.chooseClassBtn.Size = new System.Drawing.Size(221, 66);
@@ -880,7 +883,7 @@
             // stopRollCallBtn
             // 
             this.stopRollCallBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.stopRollCallBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.stopRollCallBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.stopRollCallBtn.Location = new System.Drawing.Point(281, 93);
             this.stopRollCallBtn.Name = "stopRollCallBtn";
             this.stopRollCallBtn.Size = new System.Drawing.Size(221, 66);
@@ -892,7 +895,7 @@
             // showBriefStudentListBtn
             // 
             this.showBriefStudentListBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.showBriefStudentListBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.showBriefStudentListBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.showBriefStudentListBtn.Location = new System.Drawing.Point(281, 10);
             this.showBriefStudentListBtn.Name = "showBriefStudentListBtn";
             this.showBriefStudentListBtn.Size = new System.Drawing.Size(221, 66);
@@ -951,8 +954,7 @@
             // 
             // actualTeachingTimeLbl
             // 
-            this.actualTeachingTimeLbl.AutoSize = true;
-            this.actualTeachingTimeLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.actualTeachingTimeLbl.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.actualTeachingTimeLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.actualTeachingTimeLbl.Location = new System.Drawing.Point(346, 131);
             this.actualTeachingTimeLbl.Name = "actualTeachingTimeLbl";
@@ -962,8 +964,7 @@
             // 
             // courseNameLbl2
             // 
-            this.courseNameLbl2.AutoSize = true;
-            this.courseNameLbl2.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.courseNameLbl2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.courseNameLbl2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.courseNameLbl2.Location = new System.Drawing.Point(32, 46);
             this.courseNameLbl2.Name = "courseNameLbl2";
@@ -973,8 +974,7 @@
             // 
             // teacherNameLbl2
             // 
-            this.teacherNameLbl2.AutoSize = true;
-            this.teacherNameLbl2.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.teacherNameLbl2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.teacherNameLbl2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.teacherNameLbl2.Location = new System.Drawing.Point(430, 46);
             this.teacherNameLbl2.Name = "teacherNameLbl2";
@@ -984,8 +984,7 @@
             // 
             // expectedTeachingTimeLbl
             // 
-            this.expectedTeachingTimeLbl.AutoSize = true;
-            this.expectedTeachingTimeLbl.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.expectedTeachingTimeLbl.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.expectedTeachingTimeLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.expectedTeachingTimeLbl.Location = new System.Drawing.Point(46, 131);
             this.expectedTeachingTimeLbl.Name = "expectedTeachingTimeLbl";
@@ -996,7 +995,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label30.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label30.Location = new System.Drawing.Point(377, 96);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(177, 35);
@@ -1006,7 +1005,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label31.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label31.Location = new System.Drawing.Point(411, 13);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(123, 35);
@@ -1016,7 +1015,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label32.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label32.Location = new System.Drawing.Point(79, 96);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(177, 35);
@@ -1026,7 +1025,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label33.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label33.Location = new System.Drawing.Point(105, 13);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(123, 35);
@@ -1046,7 +1045,7 @@
             // 
             this.radPanel6.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel6.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel6.Location = new System.Drawing.Point(0, 0);
             this.radPanel6.Name = "radPanel6";
             this.radPanel6.Size = new System.Drawing.Size(596, 55);
@@ -1091,7 +1090,7 @@
             // studentClassLbl2
             // 
             this.studentClassLbl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.studentClassLbl2.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.studentClassLbl2.Font = new System.Drawing.Font("Microsoft YaHei", 15F);
             this.studentClassLbl2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.studentClassLbl2.Location = new System.Drawing.Point(3, 0);
             this.studentClassLbl2.Name = "studentClassLbl2";
@@ -1104,7 +1103,7 @@
             // 
             this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label40.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label40.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label40.Location = new System.Drawing.Point(390, 265);
             this.label40.Name = "label40";
@@ -1116,7 +1115,7 @@
             // 
             this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label39.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label39.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label39.Location = new System.Drawing.Point(390, 222);
             this.label39.Name = "label39";
@@ -1128,7 +1127,7 @@
             // 
             this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label38.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label38.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label38.Location = new System.Drawing.Point(390, 179);
             this.label38.Name = "label38";
@@ -1140,7 +1139,7 @@
             // 
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label27.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label27.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label27.Location = new System.Drawing.Point(390, 136);
             this.label27.Name = "label27";
@@ -1163,7 +1162,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label9.Location = new System.Drawing.Point(234, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(150, 35);
@@ -1174,7 +1173,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 39.75F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 39.75F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(228, 1);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(348, 70);
@@ -1185,7 +1184,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label8.Location = new System.Drawing.Point(234, 179);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 35);
@@ -1196,7 +1195,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label12.Location = new System.Drawing.Point(234, 265);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(150, 35);
@@ -1207,7 +1206,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label10.Location = new System.Drawing.Point(234, 222);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(150, 35);
@@ -1218,7 +1217,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label11.Location = new System.Drawing.Point(234, 78);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(150, 35);
@@ -1238,7 +1237,7 @@
             // 
             this.radPanel2.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel2.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel2.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel2.Location = new System.Drawing.Point(0, 0);
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(596, 55);
@@ -1257,28 +1256,28 @@
             // rollCallStudentListGv
             // 
             this.rollCallStudentListGv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rollCallStudentListGv.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.rollCallStudentListGv.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.rollCallStudentListGv.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // rollCallStudentListGv
             // 
             this.rollCallStudentListGv.MasterTemplate.AllowAddNewRow = false;
             this.rollCallStudentListGv.MasterTemplate.AllowColumnReorder = false;
             this.rollCallStudentListGv.MasterTemplate.AllowDragToGroup = false;
             this.rollCallStudentListGv.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.HeaderText = "学生姓名";
-            gridViewTextBoxColumn1.Name = "col1";
-            gridViewTextBoxColumn1.Width = 187;
-            gridViewTextBoxColumn2.HeaderText = "签到时间";
-            gridViewTextBoxColumn2.Name = "col2";
-            gridViewTextBoxColumn2.Width = 205;
-            gridViewTextBoxColumn3.HeaderText = "到课情况";
-            gridViewTextBoxColumn3.Name = "column1";
-            gridViewTextBoxColumn3.Width = 186;
+            gridViewTextBoxColumn4.HeaderText = "学生姓名";
+            gridViewTextBoxColumn4.Name = "col1";
+            gridViewTextBoxColumn4.Width = 187;
+            gridViewTextBoxColumn5.HeaderText = "签到时间";
+            gridViewTextBoxColumn5.Name = "col2";
+            gridViewTextBoxColumn5.Width = 205;
+            gridViewTextBoxColumn6.HeaderText = "到课情况";
+            gridViewTextBoxColumn6.Name = "column1";
+            gridViewTextBoxColumn6.Width = 186;
             this.rollCallStudentListGv.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.rollCallStudentListGv.Name = "rollCallStudentListGv";
             this.rollCallStudentListGv.ReadOnly = true;
             this.rollCallStudentListGv.Size = new System.Drawing.Size(596, 587);
@@ -1320,7 +1319,7 @@
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.dataManagementOperationButtonsPanel);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(596, 0);
             this.panel7.Name = "panel7";
@@ -1340,48 +1339,49 @@
             // 
             // panel36
             // 
-            this.panel36.Controls.Add(this.panel38);
-            this.panel36.Controls.Add(this.panel37);
+            this.panel36.Controls.Add(this.showDataSubmissionDetailBtnPanel);
+            this.panel36.Controls.Add(this.dataSubmissionDetailGviewPanel);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel36.Location = new System.Drawing.Point(0, 55);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(531, 362);
             this.panel36.TabIndex = 22;
             // 
-            // panel38
+            // showDataSubmissionDetailBtnPanel
             // 
-            this.panel38.Controls.Add(this.showDataSubmissionDetailBtn);
-            this.panel38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel38.Location = new System.Drawing.Point(0, 0);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(531, 362);
-            this.panel38.TabIndex = 1;
+            this.showDataSubmissionDetailBtnPanel.Controls.Add(this.showDataSubmissionDetailBtn);
+            this.showDataSubmissionDetailBtnPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showDataSubmissionDetailBtnPanel.Location = new System.Drawing.Point(0, 0);
+            this.showDataSubmissionDetailBtnPanel.Name = "showDataSubmissionDetailBtnPanel";
+            this.showDataSubmissionDetailBtnPanel.Size = new System.Drawing.Size(531, 362);
+            this.showDataSubmissionDetailBtnPanel.TabIndex = 1;
             // 
             // showDataSubmissionDetailBtn
             // 
             this.showDataSubmissionDetailBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.showDataSubmissionDetailBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.showDataSubmissionDetailBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.showDataSubmissionDetailBtn.Location = new System.Drawing.Point(154, 122);
             this.showDataSubmissionDetailBtn.Name = "showDataSubmissionDetailBtn";
             this.showDataSubmissionDetailBtn.Size = new System.Drawing.Size(229, 127);
             this.showDataSubmissionDetailBtn.TabIndex = 22;
-            this.showDataSubmissionDetailBtn.Text = "<html><p>点击这里查看</p><p>数据提交情况</p></html>";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.showDataSubmissionDetailBtn.GetChildAt(0))).Text = "<html><p>点击这里查看</p><p>数据提交情况</p></html>";
+            this.showDataSubmissionDetailBtn.Text = "<html><p>点击这里查看</p><p>课堂考勤情况</p></html>";
+            this.showDataSubmissionDetailBtn.Click += new System.EventHandler(this.showDataSubmissionDetailBtn_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.showDataSubmissionDetailBtn.GetChildAt(0))).Text = "<html><p>点击这里查看</p><p>课堂考勤情况</p></html>";
             ((Telerik.WinControls.UI.RadButtonElement)(this.showDataSubmissionDetailBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
-            // panel37
+            // dataSubmissionDetailGviewPanel
             // 
-            this.panel37.Controls.Add(this.radGridView2);
-            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Location = new System.Drawing.Point(0, 0);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(531, 362);
-            this.panel37.TabIndex = 4;
+            this.dataSubmissionDetailGviewPanel.Controls.Add(this.radGridView2);
+            this.dataSubmissionDetailGviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataSubmissionDetailGviewPanel.Location = new System.Drawing.Point(0, 0);
+            this.dataSubmissionDetailGviewPanel.Name = "dataSubmissionDetailGviewPanel";
+            this.dataSubmissionDetailGviewPanel.Size = new System.Drawing.Size(531, 362);
+            this.dataSubmissionDetailGviewPanel.TabIndex = 4;
             // 
             // radGridView2
             // 
             this.radGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView2.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radGridView2.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radGridView2.Location = new System.Drawing.Point(0, 0);
             // 
             // 
@@ -1390,15 +1390,6 @@
             this.radGridView2.MasterTemplate.AllowColumnReorder = false;
             this.radGridView2.MasterTemplate.AllowDragToGroup = false;
             this.radGridView2.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.HeaderText = "上课时间";
-            gridViewTextBoxColumn4.Name = "col1";
-            gridViewTextBoxColumn4.Width = 316;
-            gridViewTextBoxColumn5.HeaderText = "数据提交情况";
-            gridViewTextBoxColumn5.Name = "col2";
-            gridViewTextBoxColumn5.Width = 196;
-            this.radGridView2.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
             this.radGridView2.Name = "radGridView2";
             this.radGridView2.ReadOnly = true;
             this.radGridView2.Size = new System.Drawing.Size(531, 362);
@@ -1418,30 +1409,31 @@
             // 
             this.radPanel9.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel9.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel9.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel9.Location = new System.Drawing.Point(0, 0);
             this.radPanel9.Name = "radPanel9";
             this.radPanel9.Size = new System.Drawing.Size(531, 55);
             this.radPanel9.TabIndex = 2;
             this.radPanel9.Text = "数据提交情况（每节课）";
             // 
-            // panel8
+            // dataManagementOperationButtonsPanel
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.viewDataStateBtn);
-            this.panel8.Controls.Add(this.viewStudentListBtn);
-            this.panel8.Controls.Add(this.uploadDataBtn);
-            this.panel8.Controls.Add(this.viewRollCallDetailsBtn);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 419);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(533, 166);
-            this.panel8.TabIndex = 0;
+            this.dataManagementOperationButtonsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dataManagementOperationButtonsPanel.Controls.Add(this.viewDataStateBtn);
+            this.dataManagementOperationButtonsPanel.Controls.Add(this.viewStudentListBtn);
+            this.dataManagementOperationButtonsPanel.Controls.Add(this.uploadDataBtn);
+            this.dataManagementOperationButtonsPanel.Controls.Add(this.viewRollCallDetailsBtn);
+            this.dataManagementOperationButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataManagementOperationButtonsPanel.Enabled = false;
+            this.dataManagementOperationButtonsPanel.Location = new System.Drawing.Point(0, 419);
+            this.dataManagementOperationButtonsPanel.Name = "dataManagementOperationButtonsPanel";
+            this.dataManagementOperationButtonsPanel.Size = new System.Drawing.Size(533, 166);
+            this.dataManagementOperationButtonsPanel.TabIndex = 0;
             // 
             // viewDataStateBtn
             // 
             this.viewDataStateBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.viewDataStateBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.viewDataStateBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.viewDataStateBtn.Location = new System.Drawing.Point(278, 90);
             this.viewDataStateBtn.Name = "viewDataStateBtn";
             this.viewDataStateBtn.Size = new System.Drawing.Size(250, 66);
@@ -1453,7 +1445,7 @@
             // viewStudentListBtn
             // 
             this.viewStudentListBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.viewStudentListBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.viewStudentListBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.viewStudentListBtn.Location = new System.Drawing.Point(4, 90);
             this.viewStudentListBtn.Name = "viewStudentListBtn";
             this.viewStudentListBtn.Size = new System.Drawing.Size(268, 66);
@@ -1465,7 +1457,7 @@
             // uploadDataBtn
             // 
             this.uploadDataBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.uploadDataBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.uploadDataBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.uploadDataBtn.Location = new System.Drawing.Point(278, 18);
             this.uploadDataBtn.Name = "uploadDataBtn";
             this.uploadDataBtn.Size = new System.Drawing.Size(250, 66);
@@ -1477,7 +1469,7 @@
             // viewRollCallDetailsBtn
             // 
             this.viewRollCallDetailsBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.viewRollCallDetailsBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.viewRollCallDetailsBtn.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold);
             this.viewRollCallDetailsBtn.Location = new System.Drawing.Point(4, 18);
             this.viewRollCallDetailsBtn.Name = "viewRollCallDetailsBtn";
             this.viewRollCallDetailsBtn.Size = new System.Drawing.Size(268, 66);
@@ -1509,8 +1501,8 @@
             // 
             // panel33
             // 
-            this.panel33.Controls.Add(this.lastTimeSubmitData3);
-            this.panel33.Controls.Add(this.lastTimeRollCallLbl3);
+            this.panel33.Controls.Add(this.lastTimeSubmit3);
+            this.panel33.Controls.Add(this.courseNoLbl3);
             this.panel33.Controls.Add(this.courseNameLbl3);
             this.panel33.Controls.Add(this.teacherNameLbl3);
             this.panel33.Controls.Add(this.label1);
@@ -1523,54 +1515,54 @@
             this.panel33.Size = new System.Drawing.Size(594, 166);
             this.panel33.TabIndex = 21;
             // 
-            // lastTimeSubmitData3
+            // lastTimeSubmit3
             // 
-            this.lastTimeSubmitData3.AutoSize = true;
-            this.lastTimeSubmitData3.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lastTimeSubmitData3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lastTimeSubmitData3.Location = new System.Drawing.Point(350, 129);
-            this.lastTimeSubmitData3.Name = "lastTimeSubmitData3";
-            this.lastTimeSubmitData3.Size = new System.Drawing.Size(230, 28);
-            this.lastTimeSubmitData3.TabIndex = 27;
-            this.lastTimeSubmitData3.Text = "2001年01月01日 17:17";
+            this.lastTimeSubmit3.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lastTimeSubmit3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lastTimeSubmit3.Location = new System.Drawing.Point(350, 129);
+            this.lastTimeSubmit3.Name = "lastTimeSubmit3";
+            this.lastTimeSubmit3.Size = new System.Drawing.Size(230, 28);
+            this.lastTimeSubmit3.TabIndex = 27;
+            this.lastTimeSubmit3.Text = "2001年01月01日 17:17";
+            this.lastTimeSubmit3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lastTimeRollCallLbl3
+            // courseNoLbl3
             // 
-            this.lastTimeRollCallLbl3.AutoSize = true;
-            this.lastTimeRollCallLbl3.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lastTimeRollCallLbl3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lastTimeRollCallLbl3.Location = new System.Drawing.Point(68, 129);
-            this.lastTimeRollCallLbl3.Name = "lastTimeRollCallLbl3";
-            this.lastTimeRollCallLbl3.Size = new System.Drawing.Size(230, 28);
-            this.lastTimeRollCallLbl3.TabIndex = 26;
-            this.lastTimeRollCallLbl3.Text = "2001年01月01日 17:17";
+            this.courseNoLbl3.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.courseNoLbl3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.courseNoLbl3.Location = new System.Drawing.Point(68, 129);
+            this.courseNoLbl3.Name = "courseNoLbl3";
+            this.courseNoLbl3.Size = new System.Drawing.Size(230, 28);
+            this.courseNoLbl3.TabIndex = 26;
+            this.courseNoLbl3.Text = "2001年01月01日 17:17";
+            this.courseNoLbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // courseNameLbl3
             // 
-            this.courseNameLbl3.AutoSize = true;
-            this.courseNameLbl3.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.courseNameLbl3.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
             this.courseNameLbl3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.courseNameLbl3.Location = new System.Drawing.Point(35, 38);
             this.courseNameLbl3.Name = "courseNameLbl3";
             this.courseNameLbl3.Size = new System.Drawing.Size(294, 28);
             this.courseNameLbl3.TabIndex = 19;
             this.courseNameLbl3.Text = "2012级1，2班计算机组成原理";
+            this.courseNameLbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // teacherNameLbl3
             // 
-            this.teacherNameLbl3.AutoSize = true;
-            this.teacherNameLbl3.Font = new System.Drawing.Font("微软雅黑", 15.75F);
+            this.teacherNameLbl3.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
             this.teacherNameLbl3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.teacherNameLbl3.Location = new System.Drawing.Point(435, 38);
             this.teacherNameLbl3.Name = "teacherNameLbl3";
             this.teacherNameLbl3.Size = new System.Drawing.Size(75, 28);
             this.teacherNameLbl3.TabIndex = 18;
             this.teacherNameLbl3.Text = "孙少波";
+            this.teacherNameLbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label1.Location = new System.Drawing.Point(349, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 35);
@@ -1580,7 +1572,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label2.Location = new System.Drawing.Point(406, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 35);
@@ -1590,17 +1582,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 20F);
-            this.label4.Location = new System.Drawing.Point(89, 91);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
+            this.label4.Location = new System.Drawing.Point(118, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 35);
+            this.label4.Size = new System.Drawing.Size(123, 35);
             this.label4.TabIndex = 14;
-            this.label4.Text = "上次签到时间";
+            this.label4.Text = "课程编号";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("微软雅黑", 20F);
+            this.label28.Font = new System.Drawing.Font("Microsoft YaHei", 20F);
             this.label28.Location = new System.Drawing.Point(118, 3);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(123, 35);
@@ -1620,7 +1612,7 @@
             // 
             this.radPanel8.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel8.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel8.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel8.Location = new System.Drawing.Point(0, 0);
             this.radPanel8.Name = "radPanel8";
             this.radPanel8.Size = new System.Drawing.Size(594, 55);
@@ -1639,26 +1631,25 @@
             // 
             // panel34
             // 
-            this.panel34.Controls.Add(this.listBox1);
+            this.panel34.Controls.Add(this.courseListLbox3);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel34.Location = new System.Drawing.Point(0, 55);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(594, 309);
             this.panel34.TabIndex = 20;
             // 
-            // listBox1
+            // courseListLbox3
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.Font = new System.Drawing.Font("微软雅黑", 21.75F);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 38;
-            this.listBox1.Items.AddRange(new object[] {
-            "2014级软件1，2班计算机组成原理"});
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(594, 309);
-            this.listBox1.TabIndex = 0;
+            this.courseListLbox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.courseListLbox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.courseListLbox3.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
+            this.courseListLbox3.FormattingEnabled = true;
+            this.courseListLbox3.ItemHeight = 38;
+            this.courseListLbox3.Location = new System.Drawing.Point(0, 0);
+            this.courseListLbox3.Name = "courseListLbox3";
+            this.courseListLbox3.Size = new System.Drawing.Size(594, 309);
+            this.courseListLbox3.TabIndex = 0;
+            this.courseListLbox3.SelectedIndexChanged += new System.EventHandler(this.courseListLbox3_SelectedIndexChanged);
             // 
             // panel13
             // 
@@ -1673,7 +1664,7 @@
             // 
             this.radPanel3.BackColor = System.Drawing.Color.PaleTurquoise;
             this.radPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel3.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.radPanel3.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F);
             this.radPanel3.Location = new System.Drawing.Point(0, 0);
             this.radPanel3.Name = "radPanel3";
             this.radPanel3.Size = new System.Drawing.Size(594, 55);
@@ -1712,7 +1703,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 750);
             this.Controls.Add(this.panel1_default);
@@ -1740,8 +1731,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.downloadCourseBtn)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classInfoGview1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classInfoGview1)).EndInit();
             this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel5_left.ResumeLayout(false);
@@ -1793,14 +1784,14 @@
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
-            this.panel38.ResumeLayout(false);
+            this.showDataSubmissionDetailBtnPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.showDataSubmissionDetailBtn)).EndInit();
-            this.panel37.ResumeLayout(false);
+            this.dataSubmissionDetailGviewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
             this.panel35.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel9)).EndInit();
-            this.panel8.ResumeLayout(false);
+            this.dataManagementOperationButtonsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.viewDataStateBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewStudentListBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uploadDataBtn)).EndInit();
@@ -1846,7 +1837,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel dataManagementOperationButtonsPanel;
         private System.Windows.Forms.Panel panel6;
         private Telerik.WinControls.UI.RadButton manualRollCallBtn;
         private System.Windows.Forms.Panel panel10;
@@ -1860,7 +1851,7 @@
         private Telerik.WinControls.UI.RadPanel radPanel5;
         private Telerik.WinControls.UI.RadPanel radPanel4;
         private System.Windows.Forms.Panel panel20;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView classInfoGview1;
         private Telerik.WinControls.UI.RadButton deleteCourseBtn;
         private Telerik.WinControls.UI.RadButton downloadCourseBtn;
         private System.Windows.Forms.Panel panel21;
@@ -1904,15 +1895,15 @@
         private System.Windows.Forms.Panel panel32;
         private Telerik.WinControls.UI.RadPanel radPanel8;
         private System.Windows.Forms.Panel panel34;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox courseListLbox3;
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Panel panel35;
         private Telerik.WinControls.UI.RadPanel radPanel9;
-        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel dataSubmissionDetailGviewPanel;
         private Telerik.WinControls.UI.RadGridView radGridView2;
         private Telerik.WinControls.UI.RadButton uploadDataBtn;
         private Telerik.WinControls.UI.RadButton viewRollCallDetailsBtn;
-        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Panel showDataSubmissionDetailBtnPanel;
         private Telerik.WinControls.UI.RadButton showDataSubmissionDetailBtn;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Label label1;
@@ -1931,10 +1922,10 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label lastTimeSubmitData3;
-        private System.Windows.Forms.Label lastTimeRollCallLbl3;
+        private System.Windows.Forms.Label lastTimeSubmit3;
+        private System.Windows.Forms.Label courseNoLbl3;
         private System.Windows.Forms.Label lastTimeSubmit1;
-        private System.Windows.Forms.Label courseDateLbl1;
+        private System.Windows.Forms.Label courseNoLbl1;
         private System.Windows.Forms.Label courseNameLbl1;
         private System.Windows.Forms.Label teacherNameLbl1;
         private System.Windows.Forms.Label label34;
