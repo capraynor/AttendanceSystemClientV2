@@ -164,6 +164,39 @@ namespace AttendanceSystemClientV2.Controls {
 
         }
 
+
+        /// <summary>
+        /// 根据 开课编号获取对应的Briefcase
+        /// </summary>
+        /// <param name="kkno">开课编号</param>
+        /// <returns></returns>
+        public static FileBriefcase GetBriefcase(long kkno) {
+
+            if (!File.Exists(GlobalParams.BriefcasePath + kkno + @".daBriefcase")) {
+                return null;
+            } 
+            
+            return new FileBriefcase (GlobalParams.BriefcasePath + kkno + @".daBriefcase");
+
+        }
+
+        /// <summary>
+        /// 把点名表转成list 再转换成Datatable 然后再存.
+        /// </summary>
+        /// <param name="classBriefcase">要存的那门课对应的briefcase</param>
+        /// <param name="dmTable">要保存的点名表</param>
+        public static void SaveDmTable(FileBriefcase classBriefcase , DataTable dmTable) {
+
+            var listToSave = dmTable.ToList<DMTABLE_08_NOPIC_VIEW>(); // 将Dmtable转成list
+
+            var datatableToSave = EnumerableExtension.ListToDataTable(listToSave, dmTable.TableName); // 从list再转回来
+
+            classBriefcase.AddTable(datatableToSave);//把转完的Datatable放到Briefcase中.
+
+            classBriefcase.WriteBriefcase();//保存
+
+        }
+
         /// <summary>
         /// 获取CourseInfo表,这张表将会绑定在第一个页面的左侧部分.
         /// TODO:写一个转换函数.将datatable转换成Dictionary

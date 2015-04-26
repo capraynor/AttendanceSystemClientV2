@@ -103,7 +103,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// </summary>
         private void dp_BindDataSourceForFirstClassListBox() {
 
-            var dpCourseInfoDictionary = OfflineDataControl.Dp_GetCourseInfoDictionary ();
+            var dpCourseInfoDictionary = OfflineDataControl.GetCourseInfoDictionary ();
 
             coursesListBox.DataSource = new BindingSource (dpCourseInfoDictionary, null);
 
@@ -113,10 +113,11 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         }
 
+        
         /// <summary>
         /// 刷新第一个标签页中Gridview的显示状态.  
-        /// 该Gridview显示
         /// </summary>
+        /// <param name="skno">上课编号</param>
         private void dp_BindDataSourceForFirstClassStatusGridView(long skno) {
 
             var classInfoDatatable = OfflineDataControl.GetClassInfoTable(skno);
@@ -133,7 +134,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// </summary>
         private void dp_BindDataSourceForThirdClassListBox() {
 
-            var dpCourseInfoDictionary = OfflineDataControl.Dp_GetCourseInfoDictionary ();
+            var dpCourseInfoDictionary = OfflineDataControl.GetCourseInfoDictionary ();
 
             courseListLbox3.DataSource = new BindingSource (dpCourseInfoDictionary, null);
 
@@ -161,16 +162,40 @@ namespace AttendanceSystemClientV2.UserInterface {
                 return;
             }
 
-            var courseInfo = new CourseInfo (selectedproperty.Key);
+            var courseInfo = new CourseInfo (selectedproperty.Key); // 
 
-            dp_RefreshThirdDetails (courseInfo);
+            dp_RefreshThirdDetails (courseInfo); // 刷新左下方的显示
+            
+            dp_BindDataSourceForThirdClassStatusGridView(selectedproperty.Key); // 设置第三个标签页右侧的gridview数据源
         }
 
-        private void showDataSubmissionDetailBtn_Click ( object sender, EventArgs e ) {
-
+        private void showRollCallingDetailBtn_Click ( object sender, EventArgs e ) {
+            //显示课程提交状态按钮 点击之后 后面的签到状态表会显示出来.
             dataManagementOperationButtonsPanel.Enabled = (!dataManagementOperationButtonsPanel.Enabled);
 
-            showDataSubmissionDetailBtnPanel.Visible = (!showDataSubmissionDetailBtnPanel.Visible);
+            showRollCallingDetailBtnPanel.Visible = (!showRollCallingDetailBtnPanel.Visible);
+
+        }
+
+
+        /// <summary>
+        /// 刷新第三个标签页中Gridview的显示状态.(进行绑定操作)  
+        /// 需要操作界面中的控件 所以讲函数放在了这里.
+        /// </summary>
+        /// <param name="skno">上课编号</param>
+        private void dp_BindDataSourceForThirdClassStatusGridView ( long skno ) {
+
+            var classInfoDatatable = OfflineDataControl.GetClassInfoTable (skno); // 获取ClassInfo表
+
+            classInfoDatatable.DefaultView.Sort = "上课日期 DESC"; // 按照日期 降序排序
+
+            rollCallingDetailGview.DataSource = classInfoDatatable; // 绑定得到的datatable
+
+        }
+
+        private void viewRollCallDetailsBtn_Click ( object sender, EventArgs e ) {
+
+            //显示 View StudentsForm 窗口.
 
         }
     }
