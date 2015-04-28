@@ -192,5 +192,8 @@ namespace AttendanceSystemClientV2.Controls {
             _waitform.Invoke (new MethodInvoker (( ) => _waitform.Close()));//关闭进度窗口
         }
 
+
+
+
     }
 }

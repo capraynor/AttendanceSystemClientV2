@@ -176,7 +176,7 @@ namespace AttendanceSystemClientV2.Controls {
                 return null;
             } 
             
-            return new FileBriefcase (GlobalParams.BriefcasePath + kkno + @".daBriefcase");
+            return new FileBriefcase (GlobalParams.BriefcasePath + kkno + @".daBriefcase" , true);
 
         }
 
@@ -223,6 +223,28 @@ namespace AttendanceSystemClientV2.Controls {
                 return courseInfoTable;
             }
         }
+
+        /// <summary>
+        /// 验证Briefcase的密码
+        /// </summary>
+        /// <param name="skno">需要验证的那节课</param>
+        /// <returns></returns>
+        public static bool VerifyOfflinePasswd(long skno) {
+
+            var briefcaseToVerify = GetBriefcase(skno);
+
+            if (briefcaseToVerify == null) return false;
+
+            var passwd = briefcaseToVerify.Properties["Password"]; // 取密码
+
+            var verifyResault = new VerifyOfflinePasswordForm(passwd).ShowDialog(); //获取弹出对话框的结果
+
+            return (verifyResault == DialogResult.Yes);//比对结果并返回验证结果....
+            //此结果非彼结果..
+
+        }
+
+        
 
     }
 }

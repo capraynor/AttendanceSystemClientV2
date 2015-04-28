@@ -44,5 +44,6 @@ namespace AttendanceSystemClientV2.Models {
 
             BriefcaseFileName = kkno + @".daBriefcase";
         }
+        
     }
 }

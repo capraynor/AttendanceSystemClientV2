@@ -1,5 +1,5 @@
 ﻿namespace AttendanceSystemClientV2.UserInterface {
-    partial class VerifyOfflinePassword {
+    partial class VerifyOfflinePasswordForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -28,7 +28,7 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.btnOk = new Telerik.WinControls.UI.RadButton();
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
-            this.UserIdTextBox = new System.Windows.Forms.TextBox();
+            this.passwdTbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).BeginInit();
@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.lbUsername);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.UserIdTextBox);
+            this.panel1.Controls.Add(this.passwdTbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 85);
             this.panel1.Name = "panel1";
@@ -79,6 +79,7 @@
             this.btnOk.Size = new System.Drawing.Size(155, 54);
             this.btnOk.TabIndex = 16;
             this.btnOk.Text = "确  定";
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -90,26 +91,31 @@
             this.btnCancel.Size = new System.Drawing.Size(155, 54);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "取  消";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // UserIdTextBox
+            // passwdTbox
             // 
-            this.UserIdTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UserIdTextBox.Font = new System.Drawing.Font("微软雅黑", 18F);
-            this.UserIdTextBox.Location = new System.Drawing.Point(186, 74);
-            this.UserIdTextBox.Name = "UserIdTextBox";
-            this.UserIdTextBox.Size = new System.Drawing.Size(288, 39);
-            this.UserIdTextBox.TabIndex = 15;
+            this.passwdTbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passwdTbox.Font = new System.Drawing.Font("微软雅黑", 18F);
+            this.passwdTbox.Location = new System.Drawing.Point(186, 74);
+            this.passwdTbox.Name = "passwdTbox";
+            this.passwdTbox.PasswordChar = '*';
+            this.passwdTbox.Size = new System.Drawing.Size(288, 39);
+            this.passwdTbox.TabIndex = 15;
             // 
-            // VerifyOfflinePassword
+            // VerifyOfflinePasswordForm
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(548, 318);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VerifyOfflinePassword";
-            this.Text = "VerifyOfflinePassword";
+            this.Name = "VerifyOfflinePasswordForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "验证离线密码";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -126,6 +132,6 @@
         private System.Windows.Forms.Label lbUsername;
         private Telerik.WinControls.UI.RadButton btnOk;
         private Telerik.WinControls.UI.RadButton btnCancel;
-        private System.Windows.Forms.TextBox UserIdTextBox;
+        private System.Windows.Forms.TextBox passwdTbox;
     }
 }

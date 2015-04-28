@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using AttendanceSystemClientV2.Helpers;
 using AttendanceSystemClientV2.PC;
 using RemObjects.DataAbstract;
@@ -46,18 +47,10 @@ namespace AttendanceSystemClientV2.Controls {
             //todo:完成此方法.
             return null;
         }
+        
 
         /// <summary>
-        /// 开始点名时 保存点名表
-        /// </summary>
-        /// <param name="dmtable08NopicViews">传进来的点名表</param>
-        /// <param name="skno">上课编号</param>
-        public static void SaveDmtable ( List<DMTABLE_08_NOPIC_VIEW> dmtable08NopicViews, long skno ) {
-
-        }
-
-        /// <summary>
-        /// 将传进来的courseInfo 转换成Dictionary 作为Listbox的数据源
+        /// 将传进来的courseInfo 转换成Dictionary 作为Listbox的数据源 如果没数据就返回一条数据 -1 找不到数据
         /// </summary>
         /// <param name="courseInfoDataTable">所有的课程信息 里面的字段有: 课程编号 和 课程名称</param>
         /// <returns>ListBox的数据源</returns>
@@ -117,20 +110,26 @@ namespace AttendanceSystemClientV2.Controls {
 
         /// <summary>
         /// 根据 kkno 和skno 获取点名表
+        /// 需要对空值进行判断
         /// </summary>
         /// <param name="kkno"></param>
         /// <param name="skno"></param>
         /// <returns></returns>
         public static DataTable GetDmDatatable ( long kkno, long skno ) {
-            var classBriefcase = BriefcaseControl.GetBriefcase (skno); // 获取这门课对应的Briefcase
+            var classBriefcase = BriefcaseControl.GetBriefcase (kkno); // 获取这门课对应的Briefcase
 
             if (classBriefcase == null) {
                 return null; // 如果获取到的Briefcase为空,则返回的Datatable也应为空
             } else {
-                return classBriefcase.FindTable (kkno.ToString (CultureInfo.InvariantCulture));
+                return classBriefcase.FindTable (skno.ToString (CultureInfo.InvariantCulture));
             }
         }
 
+        /// <summary>
+        /// 将点名表转换成显示用的Datatable.
+        /// </summary>
+        /// <param name="dmTable"></param>
+        /// <returns></returns>
         public static DataTable DmtableToDisplayTable ( DataTable dmTable ) {
 
             var dmtableList = dmTable.ToList<DMTABLE_08_NOPIC_VIEW> ();
@@ -198,13 +197,13 @@ namespace AttendanceSystemClientV2.Controls {
 
                 }
 
-                dr["签到时间1"] = dmtable08NopicView.DMSJ1.ToString();
+                dr["签到时间1"] = dmtable08NopicView.DMSJ1.ToString ();
 
                 dr["签到时间2"] = dmtable08NopicView.DMSJ2.ToString ();
 
                 dr["签到时间3"] = dmtable08NopicView.DMSJ3.ToString ();
 
-                dmDisplayTable.Rows.Add(dr);
+                dmDisplayTable.Rows.Add (dr);
 
             }
 
@@ -222,15 +221,65 @@ namespace AttendanceSystemClientV2.Controls {
         public static void SaveDmDatatable ( long kkno, DataTable dmTable ) {
             //该函数已经在BriefcaseControl中实现 但是在BriefcaseControl中, 传入的是Briefcase.
 
-            var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
+            var classBriefcase = BriefcaseControl.GetBriefcase (kkno);
 
             if (null != classBriefcase) {
-                
-                BriefcaseControl.SaveDmTable(classBriefcase , dmTable);
+
+                BriefcaseControl.SaveDmTable (classBriefcase, dmTable);
 
             }
 
 
+        }
+
+        /// <summary>
+        /// 改变点名表的一条记录
+        /// </summary>
+        /// <param name="kkno">开课编号</param>
+        /// <param name="dmTable">引用!!! 点名表</param>
+        /// <param name="studentNo">学生学号</param>
+        /// <param name="status">签到状态</param>
+        /// <param name="dmsj">签到时间</param>
+        /// <param name="rollcallNo">哪一次签到</param>
+        public static void ChangeDmRecord ( ref DataTable dmTable, string studentNo,
+            short status, DateTime dmsj, short rollcallNo ) {
+
+            var dmTableList = dmTable.ToList<DMTABLE_08_NOPIC_VIEW> ();
+
+            var dmRecord = from c in dmTableList where c.XSID == studentNo select c;
+
+            var index = dmTableList.FindIndex (s => s.XSID == studentNo);
+
+            if (-1 != index) {
+
+                dmTableList[index].DKZT = status;
+
+                switch (rollcallNo) {//根据签到次数来指定点名时间
+
+                    case 1: {
+
+                            dmTableList[index].DMSJ1 = dmsj;
+
+                            break;
+                        }
+
+                    case 2: {
+
+                            dmTableList[index].DMSJ2 = dmsj;
+
+                            break;
+                        }
+                    case 3: {
+
+                            dmTableList[index].DMSJ3 = dmsj;
+
+                            break;
+
+                        }
+                }
+
+                dmTable = EnumerableExtension.ListToDataTable(dmTableList, dmTable.TableName); // list转datatable 并这张表带出去.
+            }
         }
 
 
@@ -248,5 +297,74 @@ namespace AttendanceSystemClientV2.Controls {
             return courseInfoDictionary;
 
         }
+
+        /// <summary>
+        /// 计算正常出勤学生
+        /// </summary>
+        /// <param name="dmList"></param>
+        /// <returns></returns>
+        public static int CountNormalStudent(IEnumerable<DMTABLE_08_NOPIC_VIEW> dmList ) {
+
+            var counter = from c in dmList where c.DKZT == 0 select c;
+
+            return counter.Count();
+
+
+        }
+
+        /// <summary>
+        /// 计算缺勤学生
+        /// </summary>
+        /// <param name="dmList"></param>
+        /// <returns></returns>
+        public static int CountAbsentStudent ( IEnumerable<DMTABLE_08_NOPIC_VIEW> dmList ) {
+
+            var counter = from c in dmList where c.DKZT == 3 select c;
+
+            return counter.Count ();
+
+        }
+
+        /// <summary>
+        /// 计算迟到学生
+        /// </summary>
+        /// <param name="dmList"></param>
+        /// <returns></returns>
+        public static int CountLateStudent ( IEnumerable<DMTABLE_08_NOPIC_VIEW> dmList ) {
+
+            var counter = from c in dmList where c.DKZT == 1 select c;
+
+            return counter.Count ();
+
+        }
+
+        /// <summary>
+        /// 计算请假学生
+        /// </summary>
+        /// <param name="dmList"></param>
+        /// <returns></returns>
+        public static int CountAskForLeaveStudent ( IEnumerable<DMTABLE_08_NOPIC_VIEW> dmList ) {
+
+            var counter = from c in dmList where c.DKZT == 4 select c;
+
+            return counter.Count ();
+
+        }
+
+        /// <summary>
+        /// 计算早退学生
+        /// </summary>
+        /// <param name="dmList"></param>
+        /// <returns></returns>
+        public static int CountLeaveEarlyStudent(IEnumerable<DMTABLE_08_NOPIC_VIEW> dmList) {
+
+            var counter = from c in dmList where c.DKZT == 2 select c;
+
+            return counter.Count ();
+
+        }
+
+
+        
     }
 }

@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent ( ) {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbPasswd = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
@@ -32,11 +31,12 @@
             this.btnOk = new Telerik.WinControls.UI.RadButton();
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
             this.passwordTbox = new System.Windows.Forms.TextBox();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,18 +49,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(548, 318);
             this.panel1.TabIndex = 10;
-            // 
-            // radPanel1
-            // 
-            this.radPanel1.BackColor = System.Drawing.Color.LightBlue;
-            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radPanel1.Font = new System.Drawing.Font("微软雅黑", 30F);
-            this.radPanel1.Location = new System.Drawing.Point(0, 0);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(546, 85);
-            this.radPanel1.TabIndex = 10;
-            this.radPanel1.Text = "请设置离线密码";
-            this.radPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -138,9 +126,22 @@
             this.passwordTbox.Font = new System.Drawing.Font("微软雅黑", 18F);
             this.passwordTbox.Location = new System.Drawing.Point(215, 27);
             this.passwordTbox.Name = "passwordTbox";
+            this.passwordTbox.PasswordChar = '*';
             this.passwordTbox.Size = new System.Drawing.Size(288, 39);
             this.passwordTbox.TabIndex = 10;
             this.passwordTbox.TextChanged += new System.EventHandler(this.UserIdTextBox_TextChanged);
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.BackColor = System.Drawing.Color.LightBlue;
+            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radPanel1.Font = new System.Drawing.Font("微软雅黑", 30F);
+            this.radPanel1.Location = new System.Drawing.Point(0, 0);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(546, 85);
+            this.radPanel1.TabIndex = 10;
+            this.radPanel1.Text = "请设置离线密码";
+            this.radPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SetOfflinePasswdForm
             // 
@@ -155,11 +156,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SetOfflinePasswdForm";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.ResumeLayout(false);
 
         }

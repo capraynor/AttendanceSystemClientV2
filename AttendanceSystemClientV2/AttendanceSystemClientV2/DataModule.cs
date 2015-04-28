@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading;
@@ -196,7 +197,57 @@ namespace AttendanceSystemClientV2 {
 
             return remoteDataAdapter.GetTable<BJTABLE_09_VIEWRO>();
 
-        } 
+        }
+
+
+        /// <summary>
+        /// 向服务器提交更改
+        /// </summary>
+        public void ApplyChanges() {
+            
+            remoteDataAdapter.ApplyChanges();
+
+        }
+
+        public void SaveDmTable(List<DMTABLE_08_NOPIC_VIEW> dmList) {
+
+            remoteDataAdapter.UpdateRow(dmList);
+
+        }
+
+        /// <summary>
+        /// 获取一条上课记录.  上传时需要.
+        /// </summary>
+        /// <param name="skno">上课编号</param>
+        /// <returns></returns>
+        public SKTABLE_07_VIEWRO GSktable07Record(long  skno ) {
+
+            var sktable07S = from c in remoteDataAdapter.GetTable<SKTABLE_07_VIEWRO>() 
+                             where c.SKNO == skno 
+                             select c;
+
+            var skRecord = sktable07S.First();
+
+            return skRecord;
+            
+        }
+
+        /// <summary>
+        /// 上传上课表的一条数据
+        /// </summary>
+        /// <param name="skRow">上课表的一条记录</param>
+        public void UpdateSkTableRow(SKTABLE_07_VIEWRO skRow) {
+
+            remoteDataAdapter.UpdateRow(skRow);
+
+        }
+
+        public void UpdateDmRow(DMTABLE_08_NOPIC_VIEW dmRow) {
+
+            remoteDataAdapter.UpdateRow(dmRow);
+
+        }
+
 
         public int Getdata ( ) {
             //测试代码

@@ -116,6 +116,7 @@
             this.returnBtn.Size = new System.Drawing.Size(161, 56);
             this.returnBtn.TabIndex = 14;
             this.returnBtn.Text = "返回";
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // changeToAbsentBtn
             // 
@@ -125,6 +126,7 @@
             this.changeToAbsentBtn.Size = new System.Drawing.Size(161, 56);
             this.changeToAbsentBtn.TabIndex = 13;
             this.changeToAbsentBtn.Text = "更改为旷课";
+            this.changeToAbsentBtn.Click += new System.EventHandler(this.changeToAbsentBtn_Click);
             // 
             // changeToLeaveEarly
             // 
@@ -134,6 +136,7 @@
             this.changeToLeaveEarly.Size = new System.Drawing.Size(161, 56);
             this.changeToLeaveEarly.TabIndex = 12;
             this.changeToLeaveEarly.Text = "更改为早退";
+            this.changeToLeaveEarly.Click += new System.EventHandler(this.changeToLeaveEarly_Click);
             // 
             // changeToAskForLeaveBtn
             // 
@@ -143,6 +146,7 @@
             this.changeToAskForLeaveBtn.Size = new System.Drawing.Size(161, 56);
             this.changeToAskForLeaveBtn.TabIndex = 11;
             this.changeToAskForLeaveBtn.Text = "更改为请假";
+            this.changeToAskForLeaveBtn.Click += new System.EventHandler(this.changeToAskForLeaveBtn_Click);
             // 
             // changeToNormalBtn
             // 
@@ -152,6 +156,7 @@
             this.changeToNormalBtn.Size = new System.Drawing.Size(161, 56);
             this.changeToNormalBtn.TabIndex = 10;
             this.changeToNormalBtn.Text = "更改为正常";
+            this.changeToNormalBtn.Click += new System.EventHandler(this.changeToNormalBtn_Click);
             // 
             // changeToLateBtn
             // 
@@ -161,6 +166,7 @@
             this.changeToLateBtn.Size = new System.Drawing.Size(161, 56);
             this.changeToLateBtn.TabIndex = 9;
             this.changeToLateBtn.Text = "更改为迟到";
+            this.changeToLateBtn.Click += new System.EventHandler(this.changeToLateBtn_Click);
             // 
             // downBtn
             // 
@@ -170,6 +176,7 @@
             this.downBtn.Size = new System.Drawing.Size(161, 56);
             this.downBtn.TabIndex = 8;
             this.downBtn.Text = "下一个";
+            this.downBtn.Click += new System.EventHandler(this.downBtn_Click);
             // 
             // upBtn
             // 
@@ -179,6 +186,7 @@
             this.upBtn.Size = new System.Drawing.Size(161, 56);
             this.upBtn.TabIndex = 7;
             this.upBtn.Text = "上一个";
+            this.upBtn.Click += new System.EventHandler(this.upBtn_Click);
             // 
             // ViewStudentsForm
             // 
