@@ -10,5 +10,7 @@ namespace AttendanceSystemClientV2.Controls {
     /// </summary>
     public static class FingerPrintControl {
 
+
+
     }
 }

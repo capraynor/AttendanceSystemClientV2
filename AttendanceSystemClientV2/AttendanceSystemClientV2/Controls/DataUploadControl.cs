@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AttendanceSystemClientV2.Helpers;
 using AttendanceSystemClientV2.Models;
 using AttendanceSystemClientV2.PC;
+using AttendanceSystemClientV2.UserInterface;
+using Telerik.WinControls.UI;
 
 namespace AttendanceSystemClientV2.Controls {
     /// <summary>
     /// 用于提供上传数据时操作的类。
     /// </summary>
     public static class DataUploadControl {
+
+        private static WaitForm _waitForm;
+
 
         /// <summary>
         /// 
@@ -24,9 +31,19 @@ namespace AttendanceSystemClientV2.Controls {
         /// <returns></returns>
         public static string GenerateConfirmString(long kkno ,string kkName , long skno , string dateTime) {
 
-            const string basestring = "开课编号:{0}\n开课名称:{1}\n上课时间:{2}\n";
+            const string basestring = "开课编号:{0}\n开课名称:{1}\n上课时间:{2}\n正常到课:{3} 迟到:{4} 旷课:{5} 早退:{6} ";
 
-            return string.Format (basestring, kkno, kkName, dateTime);
+            var dmList = OfflineDataControl.GetDmtable (kkno, skno); // 这已经是List了... 我干了什么...
+
+            var ztrs = OfflineDataControl.CountLeaveEarlyStudent (dmList);
+
+            var zcrs = OfflineDataControl.CountNormalStudent (dmList);
+
+            var cdrs = OfflineDataControl.CountLateStudent (dmList);
+
+            var kkrs = OfflineDataControl.CountAbsentStudent (dmList);
+
+            return string.Format (basestring, kkno, kkName, dateTime , zcrs , cdrs , kkrs, ztrs);
 
         }
 
@@ -43,6 +60,11 @@ namespace AttendanceSystemClientV2.Controls {
             //4.todo:如果需要更新指纹信息,则需要再开启一个函数,用来更新指纹信息.
             
             //下面这个东西直接往数据库里塞就行
+
+            _waitForm = new WaitForm("正在上传课程");
+            
+            
+
             var dmList = OfflineDataControl.GetDmtable(kkno, skno); // 这已经是List了... 我干了什么...
 
             var fDataModule = new DataModule();
@@ -60,12 +82,40 @@ namespace AttendanceSystemClientV2.Controls {
 
             }
 
-            fDataModule.ApplyChanges();
+            new Thread(() => {
 
-            var skrecord = fDataModule.GSktable07Record(skno);// 将来需要把这个拿来更新上课表
+                Thread.Sleep(1000);
+
+                _waitForm.BeginInvoke(new MethodInvoker(() => {
+
+                    _waitForm.SetInfo("正在上传点名信息");
+
+                    _waitForm.SetValue(30);
+
+                }));
+
+                fDataModule.ApplyChanges (); //需要将该操作放到线程中.
+
+                _waitForm.BeginInvoke(new MethodInvoker(() => {
+                    
+                    _waitForm.SetInfo("点名信息上传完成");
+
+                    _waitForm.SetValue (45);
+
+                    _waitForm.Close(); // 关闭进度条框
+
+                }));
+
+            }).Start();
+
+            _waitForm.ShowDialog();
+
+            var skrecordList = OfflineDataControl.GetSktable(kkno);// 将来需要把这个拿来更新上课表
+
+            var skrecord = (from c in skrecordList where c.SKNO == skno select c).First(); // linq  完了以后把第一条记录取出来(一共就有一条记录.)
 
             var ztrs = OfflineDataControl.CountLeaveEarlyStudent(dmList);
-
+            
             var zcrs = OfflineDataControl.CountNormalStudent(dmList);
 
             var cdrs = OfflineDataControl.CountLateStudent(dmList);
@@ -88,11 +138,23 @@ namespace AttendanceSystemClientV2.Controls {
 
             fDataModule.UpdateSkTableRow(skrecord); // 上传上课信息.
 
-            fDataModule.ApplyChanges();
+            fDataModule.ApplyChanges (); //需要将该操作放到线程中.
 
+            //再下载一遍上课表 该操作将会刷新PropertiesBriefcase中的ClassInfo表.
+            
+            _waitForm = new WaitForm("正在同步课程信息");
+
+            new Thread(() => {
+
+                Thread.Sleep (1000);
+
+                _waitForm.BeginInvoke (new MethodInvoker (( ) => _waitForm.SetValue (70)));
+
+                DataDownloadControl.SaveSkTable (kkno);
+
+            }).Start();
+            
         }
-
-
 
     }
 }

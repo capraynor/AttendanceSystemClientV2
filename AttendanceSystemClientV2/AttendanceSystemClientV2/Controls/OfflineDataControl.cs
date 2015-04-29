@@ -17,19 +17,24 @@ namespace AttendanceSystemClientV2.Controls {
     /// </summary>
     public static class OfflineDataControl {
         /// <summary>
-        /// 根据开课编号和上课编号找到点名表
+        /// 从离线数据中  根据开课编号和上课编号找到点名表
         /// </summary>
         /// <param name="kkno">开课编号</param>
         /// <param name="skno">上课编号</param>
         /// <returns>DMTABLE的一个List</returns>
         public static List<DMTABLE_08_NOPIC_VIEW> GetDmtable ( long kkno, long skno ) {
-            //todo:完成此方法.
-            return null;
+
+            var courseBriefcase = BriefcaseControl.GetBriefcase(kkno);
+
+            var dmDatatable = courseBriefcase.FindTable(skno.ToString());
+
+            return dmDatatable.ToList<DMTABLE_08_NOPIC_VIEW>();
+
         }
 
 
         /// <summary>
-        /// 获取选课表 里面包含学生信息
+        /// 从离线数据中 获取选课表 里面包含学生信息
         /// </summary>
         /// <param name="kkno">开课编号</param>
         /// <returns>开课编号对应的选课表(学生信息 一个学生一条记录)</returns>
@@ -39,13 +44,18 @@ namespace AttendanceSystemClientV2.Controls {
         }
 
         /// <summary>
-        /// 获取上课表 其中包含该门课程每节课的信息.
+        /// 从离线数据中 获取上课表 其中包含该门课程每节课的信息.
         /// </summary>
         /// <param name="skno">上课编号</param>
         /// <returns>开课编号对应的上课表(上课信息 一堂课一条记录)</returns>
-        public static List<SKTABLE_07_VIEWRO> GetSktable ( long skno ) {
-            //todo:完成此方法.
-            return null;
+        public static List<SKTABLE_07_VIEWRO> GetSktable ( long kkno ) {
+
+            var courseBriefcase = BriefcaseControl.GetBriefcase (kkno);
+
+            var skDatatable = courseBriefcase.FindTable ("SKTABLE");
+
+            return skDatatable.ToList<SKTABLE_07_VIEWRO> ();
+            
         }
         
 
@@ -319,7 +329,7 @@ namespace AttendanceSystemClientV2.Controls {
         /// <returns></returns>
         public static int CountAbsentStudent ( IEnumerable<DMTABLE_08_NOPIC_VIEW> dmList ) {
 
-            var counter = from c in dmList where c.DKZT == 3 select c;
+            var counter = from c in dmList where c.DKZT == 3 || c.DKZT == 5 select c;
 
             return counter.Count ();
 
@@ -363,8 +373,7 @@ namespace AttendanceSystemClientV2.Controls {
             return counter.Count ();
 
         }
-
-
         
+
     }
 }

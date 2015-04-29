@@ -164,22 +164,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="AttendanceSystemClientV2.relativityClient" />
-    <None Include="Briefcase\2012020307.daBriefcase">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Briefcase\2012021207.daBriefcase">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Briefcase\2012021207.daBriefcase20150421040455" />
-    <None Include="Briefcase\2013021202.daBriefcase">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Briefcase\2013021202.daBriefcase20150321040314" />
-    <None Include="Briefcase\2013021202.daBriefcase20150421040410" />
-    <None Include="Briefcase\2013021202.daBriefcase20150421040435" />
-    <None Include="Briefcase\Properties.daBriefcase">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -362,6 +346,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Briefcase\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\RemObjects SDK\RemObjects.SDK.targets" />

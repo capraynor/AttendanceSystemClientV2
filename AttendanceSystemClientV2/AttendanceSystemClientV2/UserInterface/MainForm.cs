@@ -302,7 +302,9 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             //todo:在这里写上传数据的业务逻辑
 
+           DataUploadControl.UploadOneClass(kkno , skno);
 
+           MsgBox.ShowMsgBoxDialog(displayString+"\n\n上传完成");
         }
     }
 }

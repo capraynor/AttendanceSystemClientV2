@@ -192,8 +192,81 @@ namespace AttendanceSystemClientV2.Controls {
             _waitform.Invoke (new MethodInvoker (( ) => _waitform.Close()));//关闭进度窗口
         }
 
+        /// <summary>
+        /// 保存上课表 并更新PropertiesBriefcase中的上课状态.
+        /// </summary>
+        /// <param name="kkno"></param>
+        public static void SaveSkTable(long kkno) {
+
+            var fDataModule = new DataModule();
+
+            var sktable = from c in fDataModule.GetSktable07Viewro () where c.KKNO == kkno select c; // 拉取上课表
+
+            var sktableList = sktable.ToList ();
+
+            var skdatatable = EnumerableExtension.ListToDataTable (sktableList, "SKTABLE"); //将上课表转换成datatable
+
+            var courseBriefcase = BriefcaseControl.GetBriefcase (kkno);
+
+            courseBriefcase.AddTable (skdatatable); // 将datatable写入briefcase中
+
+            courseBriefcase.WriteBriefcase (); // 写入硬盘
+
+            //刷新PropertiesBriefcase
+
+            RefreshClassInfoTable(courseBriefcase , sktableList);
+
+        }
 
 
+        /// <summary>
+        /// 刷新上课表 可用于下载数据时的操作.
+        /// </summary>
+        /// <param name="courseBriefcase">skno对应的Briefcase</param>
+        /// <param name="sktableList">上课表对应的List</param>
+        public static void RefreshClassInfoTable ( FileBriefcase courseBriefcase, IEnumerable<SKTABLE_07_VIEWRO> sktableList ) {
+
+            var classInfoTable = courseBriefcase.FindTable ("ClassInfo");
+
+            //以下注释的代码作为参考用.
+            //courseInfoTable.Columns.Add ("上课编号", typeof (string));
+
+            //courseInfoTable.Columns.Add ("上课日期", typeof (string));
+
+            //courseInfoTable.Columns.Add ("上课状态", typeof (string));
+
+            foreach (var sktable07Viewro in sktableList) {
+
+                var viewro = sktable07Viewro;//resharper说要这么写
+
+                var classInfoRow = classInfoTable.NewRow ();//新建一行
+
+                classInfoRow["上课编号"] = viewro.SKNO.ToString (CultureInfo.InvariantCulture);//指定这一行的上课编号
+
+                classInfoRow["上课日期"] = viewro.YDSKDATE.ToString ();//指定这一行的上课日期
+
+                if (viewro.SKZT == 0) {//将上课状态转换成文字
+
+                    classInfoRow["上课状态"] = "未签到";
+                } else {
+
+                    classInfoRow["上课状态"] = "已签到";
+                }
+
+                classInfoTable.Rows.Add (classInfoRow);//将这一行加到datatable里
+            }
+
+            courseBriefcase.AddTable (classInfoTable);//将datatable加到briefcase里
+
+            courseBriefcase.WriteBriefcase ();
+
+        }
+
+        public static void RefreshStudentInformation(long skno) {
+            
+
+
+        }
 
     }
 }
