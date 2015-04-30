@@ -39,8 +39,13 @@ namespace AttendanceSystemClientV2.Controls {
         /// <param name="kkno">开课编号</param>
         /// <returns>开课编号对应的选课表(学生信息 一个学生一条记录)</returns>
         public static List<XKTABLE_VIEWRO> GetXktable ( long kkno ) {
-            //todo:完成此方法.
-            return null;
+
+            var courseBriefCase = BriefcaseControl.GetBriefcase(kkno);
+
+            var xkTable = courseBriefCase.FindTable("XKTABLE");
+
+            return xkTable.ToList<XKTABLE_VIEWRO>();
+
         }
 
         /// <summary>
@@ -48,13 +53,13 @@ namespace AttendanceSystemClientV2.Controls {
         /// </summary>
         /// <param name="skno">上课编号</param>
         /// <returns>开课编号对应的上课表(上课信息 一堂课一条记录)</returns>
-        public static List<SKTABLE_07_VIEWRO> GetSktable ( long kkno ) {
+        public static List<SKTABLE_07_VIEW> GetSktable ( long kkno ) {
 
             var courseBriefcase = BriefcaseControl.GetBriefcase (kkno);
 
             var skDatatable = courseBriefcase.FindTable ("SKTABLE");
 
-            return skDatatable.ToList<SKTABLE_07_VIEWRO> ();
+            return skDatatable.ToList<SKTABLE_07_VIEW> ();
             
         }
         

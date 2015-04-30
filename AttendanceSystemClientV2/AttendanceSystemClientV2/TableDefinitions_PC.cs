@@ -1482,9 +1482,9 @@ namespace AttendanceSystemClientV2.PC {
             }
         }
     }
-    [RemObjects.DataAbstract.Linq.TableName("SKTABLE_07_VIEWRO")]
-    public partial class SKTABLE_07_VIEWRO : System.ICloneable, System.ComponentModel.INotifyPropertyChanged, System.ComponentModel.INotifyPropertyChanging {
-        protected SKTABLE_07_VIEWRO m____OldValues;
+    [RemObjects.DataAbstract.Linq.TableName("SKTABLE_07_VIEW")]
+    public partial class SKTABLE_07_VIEW : System.ICloneable, System.ComponentModel.INotifyPropertyChanged, System.ComponentModel.INotifyPropertyChanging {
+        protected SKTABLE_07_VIEW m____OldValues;
         private long f____SKNO;
         private System.Nullable<long> f____KKNO;
         private string f____KKNAME;
@@ -1773,7 +1773,7 @@ namespace AttendanceSystemClientV2.PC {
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
         object System.ICloneable.Clone() {
-            SKTABLE_07_VIEWRO v____new = new SKTABLE_07_VIEWRO();
+            SKTABLE_07_VIEW v____new = new SKTABLE_07_VIEW();
             v____new.f____SKNO = this.f____SKNO;
             v____new.f____KKNO = this.f____KKNO;
             v____new.f____KKNAME = this.f____KKNAME;
@@ -1795,10 +1795,10 @@ namespace AttendanceSystemClientV2.PC {
             return v____new;
         }
         public virtual void BeginUpdate() {
-            this.m____OldValues = ((SKTABLE_07_VIEWRO)(((System.ICloneable)(this)).Clone()));
+            this.m____OldValues = ((SKTABLE_07_VIEW)(((System.ICloneable)(this)).Clone()));
         }
         public virtual void EndUpdate(RemObjects.DataAbstract.Linq.LinqDataAdapter dataAdapter) {
-            dataAdapter.UpdateRow<SKTABLE_07_VIEWRO>(this.m____OldValues, this);
+            dataAdapter.UpdateRow<SKTABLE_07_VIEW>(this.m____OldValues, this);
             this.m____OldValues = null;
         }
         public virtual void CancelUpdate() {
@@ -1824,7 +1824,7 @@ namespace AttendanceSystemClientV2.PC {
         private System.Collections.Generic.IEnumerable<XKTABLE_VIEWRO> f____XKTABLE_VIEWRO;
         private System.Collections.Generic.IEnumerable<XYTABLE_02RO> f____XYTABLE_02RO;
         private System.Collections.Generic.IEnumerable<JSTABLE_03_VIEW> f____JSTABLE_03_VIEW;
-        private System.Collections.Generic.IEnumerable<SKTABLE_07_VIEWRO> f____SKTABLE_07_VIEWRO;
+        private System.Collections.Generic.IEnumerable<SKTABLE_07_VIEW> f____SKTABLE_07_VIEW;
         public DataContext() {
         }
         public virtual System.Collections.Generic.IEnumerable<BJTABLE_09_VIEWRO> BJTABLE_09_VIEWRO {
@@ -1883,12 +1883,12 @@ namespace AttendanceSystemClientV2.PC {
                 f____JSTABLE_03_VIEW = value;
             }
         }
-        public virtual System.Collections.Generic.IEnumerable<SKTABLE_07_VIEWRO> SKTABLE_07_VIEWRO {
+        public virtual System.Collections.Generic.IEnumerable<SKTABLE_07_VIEW> SKTABLE_07_VIEW {
             get {
-                return f____SKTABLE_07_VIEWRO;
+                return f____SKTABLE_07_VIEW;
             }
             set {
-                f____SKTABLE_07_VIEWRO = value;
+                f____SKTABLE_07_VIEW = value;
             }
         }
     }

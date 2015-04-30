@@ -25,7 +25,7 @@ namespace AttendanceSystemClientV2.Controls {
         /// </summary>
         /// <param name="kktable"></param>
         /// <returns></returns>
-        public static DataTable GetDisplayClassStatusTable(IEnumerable<SKTABLE_07_VIEWRO> kktable) {
+        public static DataTable GetDisplayClassStatusTable(IEnumerable<SKTABLE_07_VIEW> kktable) {
             var kkdatatable = new DataTable("kktable");
 
             kkdatatable.Columns.Add ("上课时间", typeof (string));
@@ -210,7 +210,10 @@ namespace AttendanceSystemClientV2.Controls {
 
             courseBriefcase.AddTable (skdatatable); // 将datatable写入briefcase中
 
+            var ttttt = courseBriefcase.FindTable("SKTABLE");
+
             courseBriefcase.WriteBriefcase (); // 写入硬盘
+
 
             //刷新PropertiesBriefcase
 
@@ -224,9 +227,11 @@ namespace AttendanceSystemClientV2.Controls {
         /// </summary>
         /// <param name="courseBriefcase">skno对应的Briefcase</param>
         /// <param name="sktableList">上课表对应的List</param>
-        public static void RefreshClassInfoTable ( FileBriefcase courseBriefcase, IEnumerable<SKTABLE_07_VIEWRO> sktableList ) {
+        public static void RefreshClassInfoTable ( FileBriefcase courseBriefcase, IEnumerable<SKTABLE_07_VIEW> sktableList ) {
 
             var classInfoTable = courseBriefcase.FindTable ("ClassInfo");
+
+            classInfoTable.Rows.Clear();
 
             //以下注释的代码作为参考用.
             //courseInfoTable.Columns.Add ("上课编号", typeof (string));

@@ -27,7 +27,7 @@
             this.telerikMetroTouchTheme1 = new Telerik.WinControls.Themes.TelerikMetroTouchTheme();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.actualCourseTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radDateTimePicker2 = new Telerik.WinControls.UI.RadDateTimePicker();
             this.addMonthBtn = new Telerik.WinControls.UI.RadButton();
             this.minusMonthBtn = new Telerik.WinControls.UI.RadButton();
@@ -39,12 +39,13 @@
             this.addHourBtn = new Telerik.WinControls.UI.RadButton();
             this.addYearBtn = new Telerik.WinControls.UI.RadButton();
             this.minusYearBtn = new Telerik.WinControls.UI.RadButton();
-            this.radButton10 = new Telerik.WinControls.UI.RadButton();
-            this.radButton11 = new Telerik.WinControls.UI.RadButton();
+            this.OkBtn = new Telerik.WinControls.UI.RadButton();
+            this.CancelBtn = new Telerik.WinControls.UI.RadButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actualCourseTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMonthBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minusMonthBtn)).BeginInit();
@@ -56,10 +57,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.addHourBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addYearBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minusYearBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CancelBtn)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // radPanel1
@@ -96,23 +98,23 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "计划授课时间";
             // 
-            // radDateTimePicker1
+            // actualCourseTimePicker
             // 
-            this.radDateTimePicker1.CalendarSize = new System.Drawing.Size(300, 300);
-            this.radDateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm";
-            this.radDateTimePicker1.Font = new System.Drawing.Font("宋体", 15F);
-            this.radDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.radDateTimePicker1.Location = new System.Drawing.Point(287, 212);
-            this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.ShowUpDown = true;
-            this.radDateTimePicker1.Size = new System.Drawing.Size(477, 72);
-            this.radDateTimePicker1.TabIndex = 25;
-            this.radDateTimePicker1.TabStop = false;
-            this.radDateTimePicker1.Text = "2014-09-07 13:53";
-            this.radDateTimePicker1.ThemeName = "TelerikMetroTouch";
-            this.radDateTimePicker1.Value = new System.DateTime(2014, 9, 7, 13, 53, 30, 7);
-            ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.radDateTimePicker1.GetChildAt(0))).CalendarSize = new System.Drawing.Size(300, 300);
-            ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.radDateTimePicker1.GetChildAt(0))).Font = new System.Drawing.Font("微软雅黑", 35F);
+            this.actualCourseTimePicker.CalendarSize = new System.Drawing.Size(300, 300);
+            this.actualCourseTimePicker.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.actualCourseTimePicker.Font = new System.Drawing.Font("宋体", 15F);
+            this.actualCourseTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.actualCourseTimePicker.Location = new System.Drawing.Point(287, 212);
+            this.actualCourseTimePicker.Name = "actualCourseTimePicker";
+            this.actualCourseTimePicker.ShowUpDown = true;
+            this.actualCourseTimePicker.Size = new System.Drawing.Size(477, 72);
+            this.actualCourseTimePicker.TabIndex = 25;
+            this.actualCourseTimePicker.TabStop = false;
+            this.actualCourseTimePicker.Text = "2014-09-07 13:53";
+            this.actualCourseTimePicker.ThemeName = "TelerikMetroTouch";
+            this.actualCourseTimePicker.Value = new System.DateTime(2014, 9, 7, 13, 53, 30, 7);
+            ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.actualCourseTimePicker.GetChildAt(0))).CalendarSize = new System.Drawing.Size(300, 300);
+            ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.actualCourseTimePicker.GetChildAt(0))).Font = new System.Drawing.Font("微软雅黑", 35F);
             // 
             // radDateTimePicker2
             // 
@@ -130,6 +132,7 @@
             this.radDateTimePicker2.Text = "2014-09-07 13:53";
             this.radDateTimePicker2.ThemeName = "TelerikMetroTouch";
             this.radDateTimePicker2.Value = new System.DateTime(2014, 9, 7, 13, 53, 30, 7);
+            this.radDateTimePicker2.Click += new System.EventHandler(this.radDateTimePicker2_Click);
             ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.radDateTimePicker2.GetChildAt(0))).CalendarSize = new System.Drawing.Size(300, 300);
             ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.radDateTimePicker2.GetChildAt(0))).Font = new System.Drawing.Font("微软雅黑", 35F);
             // 
@@ -142,6 +145,7 @@
             this.addMonthBtn.Size = new System.Drawing.Size(61, 66);
             this.addMonthBtn.TabIndex = 29;
             this.addMonthBtn.Text = "+";
+            this.addMonthBtn.Click += new System.EventHandler(this.addMonthBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.addMonthBtn.GetChildAt(0))).Text = "+";
             ((Telerik.WinControls.UI.RadButtonElement)(this.addMonthBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -154,6 +158,7 @@
             this.minusMonthBtn.Size = new System.Drawing.Size(61, 66);
             this.minusMonthBtn.TabIndex = 30;
             this.minusMonthBtn.Text = "-";
+            this.minusMonthBtn.Click += new System.EventHandler(this.minusMonthBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusMonthBtn.GetChildAt(0))).Text = "-";
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusMonthBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -166,6 +171,7 @@
             this.addDateBtn.Size = new System.Drawing.Size(61, 66);
             this.addDateBtn.TabIndex = 31;
             this.addDateBtn.Text = "+";
+            this.addDateBtn.Click += new System.EventHandler(this.addDateBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.addDateBtn.GetChildAt(0))).Text = "+";
             ((Telerik.WinControls.UI.RadButtonElement)(this.addDateBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -178,6 +184,7 @@
             this.minusDateBtn.Size = new System.Drawing.Size(61, 66);
             this.minusDateBtn.TabIndex = 32;
             this.minusDateBtn.Text = "-";
+            this.minusDateBtn.Click += new System.EventHandler(this.minusDateBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusDateBtn.GetChildAt(0))).Text = "-";
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusDateBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -190,6 +197,7 @@
             this.minusMinuteBtn.Size = new System.Drawing.Size(61, 66);
             this.minusMinuteBtn.TabIndex = 34;
             this.minusMinuteBtn.Text = "-";
+            this.minusMinuteBtn.Click += new System.EventHandler(this.minusMinuteBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusMinuteBtn.GetChildAt(0))).Text = "-";
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusMinuteBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -202,6 +210,7 @@
             this.minusHourBtn.Size = new System.Drawing.Size(61, 66);
             this.minusHourBtn.TabIndex = 33;
             this.minusHourBtn.Text = "-";
+            this.minusHourBtn.Click += new System.EventHandler(this.minusHourBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusHourBtn.GetChildAt(0))).Text = "-";
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusHourBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -214,6 +223,7 @@
             this.addMinuteBtn.Size = new System.Drawing.Size(61, 66);
             this.addMinuteBtn.TabIndex = 36;
             this.addMinuteBtn.Text = "+";
+            this.addMinuteBtn.Click += new System.EventHandler(this.addMinuteBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.addMinuteBtn.GetChildAt(0))).Text = "+";
             ((Telerik.WinControls.UI.RadButtonElement)(this.addMinuteBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -226,6 +236,7 @@
             this.addHourBtn.Size = new System.Drawing.Size(61, 66);
             this.addHourBtn.TabIndex = 35;
             this.addHourBtn.Text = "+";
+            this.addHourBtn.Click += new System.EventHandler(this.addHourBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.addHourBtn.GetChildAt(0))).Text = "+";
             ((Telerik.WinControls.UI.RadButtonElement)(this.addHourBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -238,6 +249,7 @@
             this.addYearBtn.Size = new System.Drawing.Size(61, 66);
             this.addYearBtn.TabIndex = 38;
             this.addYearBtn.Text = "+";
+            this.addYearBtn.Click += new System.EventHandler(this.addYearBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.addYearBtn.GetChildAt(0))).Text = "+";
             ((Telerik.WinControls.UI.RadButtonElement)(this.addYearBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -250,39 +262,43 @@
             this.minusYearBtn.Size = new System.Drawing.Size(61, 66);
             this.minusYearBtn.TabIndex = 39;
             this.minusYearBtn.Text = "-";
+            this.minusYearBtn.Click += new System.EventHandler(this.minusYearBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusYearBtn.GetChildAt(0))).Text = "-";
             ((Telerik.WinControls.UI.RadButtonElement)(this.minusYearBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
-            // radButton10
+            // OkBtn
             // 
-            this.radButton10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radButton10.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.radButton10.Location = new System.Drawing.Point(126, 6);
-            this.radButton10.Name = "radButton10";
-            this.radButton10.Size = new System.Drawing.Size(221, 66);
-            this.radButton10.TabIndex = 40;
-            this.radButton10.Text = "确    定";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton10.GetChildAt(0))).Text = "确    定";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton10.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.OkBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.OkBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.OkBtn.Location = new System.Drawing.Point(11, 5);
+            this.OkBtn.Name = "OkBtn";
+            this.OkBtn.Size = new System.Drawing.Size(221, 66);
+            this.OkBtn.TabIndex = 40;
+            this.OkBtn.Text = "确    定";
+            this.OkBtn.Click += new System.EventHandler(this.OkButn_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.OkBtn.GetChildAt(0))).Text = "确    定";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.OkBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
-            // radButton11
+            // CancelBtn
             // 
-            this.radButton11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radButton11.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.radButton11.Location = new System.Drawing.Point(503, 6);
-            this.radButton11.Name = "radButton11";
-            this.radButton11.Size = new System.Drawing.Size(221, 66);
-            this.radButton11.TabIndex = 41;
-            this.radButton11.Text = "返    回";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton11.GetChildAt(0))).Text = "返    回";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton11.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CancelBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.CancelBtn.Location = new System.Drawing.Point(602, 5);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(221, 66);
+            this.CancelBtn.TabIndex = 41;
+            this.CancelBtn.Text = "返    回";
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.CancelBtn.GetChildAt(0))).Text = "返    回";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.CancelBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.addMonthBtn);
             this.panel1.Controls.Add(this.radDateTimePicker2);
-            this.panel1.Controls.Add(this.radDateTimePicker1);
+            this.panel1.Controls.Add(this.actualCourseTimePicker);
             this.panel1.Controls.Add(this.minusYearBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.addYearBtn);
@@ -303,18 +319,34 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.radButton11);
-            this.panel2.Controls.Add(this.radButton10);
+            this.panel2.Controls.Add(this.radButton1);
+            this.panel2.Controls.Add(this.CancelBtn);
+            this.panel2.Controls.Add(this.OkBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 456);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(836, 84);
             this.panel2.TabIndex = 43;
             // 
+            // radButton1
+            // 
+            this.radButton1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.radButton1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.radButton1.Location = new System.Drawing.Point(307, 8);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(267, 66);
+            this.radButton1.TabIndex = 42;
+            this.radButton1.Text = "设置为20分钟之后";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Text = "设置为20分钟之后";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            // 
             // SetTimeForm
             // 
+            this.AcceptButton = this.OkBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(836, 540);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -324,7 +356,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SetTimeForm";
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actualCourseTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMonthBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minusMonthBtn)).EndInit();
@@ -336,11 +368,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.addHourBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addYearBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minusYearBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OkBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CancelBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +384,7 @@
         private Telerik.WinControls.Themes.TelerikMetroTouchTheme telerikMetroTouchTheme1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker1;
+        private Telerik.WinControls.UI.RadDateTimePicker actualCourseTimePicker;
         private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker2;
         private Telerik.WinControls.UI.RadButton addMonthBtn;
         private Telerik.WinControls.UI.RadButton minusMonthBtn;
@@ -363,9 +396,10 @@
         private Telerik.WinControls.UI.RadButton addHourBtn;
         private Telerik.WinControls.UI.RadButton addYearBtn;
         private Telerik.WinControls.UI.RadButton minusYearBtn;
-        private Telerik.WinControls.UI.RadButton radButton10;
-        private Telerik.WinControls.UI.RadButton radButton11;
+        private Telerik.WinControls.UI.RadButton OkBtn;
+        private Telerik.WinControls.UI.RadButton CancelBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private Telerik.WinControls.UI.RadButton radButton1;
     }
 }

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using AttendanceSystemClientV2.Controls;
 using AttendanceSystemClientV2.Models;
 using AttendanceSystemClientV2.PC;
+using AttendanceSystemClientV2.Properties;
 using AttendanceSystemClientV2.UserInterface;
 using Telerik.WinControls.UI;
 
@@ -29,6 +30,12 @@ namespace AttendanceSystemClientV2.UserInterface {
             dp_BindDataSourceForFirstClassListBox(); // 为第一个标签页中的左上角ListBox绑定数据源
 
             dp_BindDataSourceForThirdClassListBox();//为第三个标签页中的左上角Listbox绑定数据源
+
+            Settings.Default.UserId = ""; // 清空密码用户名信息
+
+            Settings.Default.Password = "";
+
+            Settings.Default.Save(); // 保存
         }
 
 
@@ -68,7 +75,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         private void coursesListBox_SelectedIndexChanged ( object sender, EventArgs e ) {
 
-            var selectedproperty = (KeyValuePair<long, string>)coursesListBox.SelectedItem; // 获取已经选择的项目
+            var selectedproperty = (KeyValuePair<long, string>)coursesListBox1.SelectedItem; // 获取已经选择的项目
 
             if (selectedproperty.Key == -1) {
                 return;
@@ -106,11 +113,11 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             var dpCourseInfoDictionary = OfflineDataControl.GetCourseInfoDictionary ();
 
-            coursesListBox.DataSource = new BindingSource (dpCourseInfoDictionary, null);
+            coursesListBox1.DataSource = new BindingSource (dpCourseInfoDictionary, null);
 
-            coursesListBox.DisplayMember = "Value"; //设置显示字段
+            coursesListBox1.DisplayMember = "Value"; //设置显示字段
 
-            coursesListBox.ValueMember = "Key";//设置值字段
+            coursesListBox1.ValueMember = "Key";//设置值字段
 
         }
 
@@ -190,7 +197,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             classInfoDatatable.DefaultView.Sort = "上课日期 DESC"; // 按照日期 降序排序
 
-            rollCallingDetailGview.DataSource = classInfoDatatable; // 绑定刚才得到的datatable
+            rollCallingDetailGview3.DataSource = classInfoDatatable; // 绑定刚才得到的datatable
 
         }
 
@@ -204,7 +211,7 @@ namespace AttendanceSystemClientV2.UserInterface {
                 return;
             }
 
-            var rollCallingDetailRow = this.rollCallingDetailGview.SelectedRows[0];
+            var rollCallingDetailRow = this.rollCallingDetailGview3.SelectedRows[0];
 
             var kkno = selectedproperty.Key;
 
@@ -266,14 +273,23 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void uploadDataBtn_Click ( object sender, EventArgs e ) {
-            
+
             var selectedproperty = (KeyValuePair<long, string>)courseListLbox3.SelectedItem; // 获取已经选择的项目
+
 
             if (selectedproperty.Key == -1) { //判断是否有数据
                 MsgBox.ShowMsgBoxDialog("没有数据");
             }
 
-            var rollCallingDetailRow = this.rollCallingDetailGview.SelectedRows[0];
+            var courseInfo = new CourseInfo(selectedproperty.Key);
+
+            Settings.Default.UserId = courseInfo.TeacherNo; // 设置登录时的教师编号
+
+            var logonForm = new LogOnForm();
+
+            logonForm.ShowDialog();
+
+            var rollCallingDetailRow = this.rollCallingDetailGview3.SelectedRows[0];
 
             var kkno = selectedproperty.Key;
 
@@ -294,6 +310,8 @@ namespace AttendanceSystemClientV2.UserInterface {
             // 如果验证不通过 则提示密码错误 并返回 什么都不做.
             //todo:上传数据的业务逻辑在这里编写即可 需要从界面里带出去的东西:1.上课编号2.课程编号 3.预计上课时间
 
+
+
             var displayString = DataUploadControl.GenerateConfirmString(kkno, kkname, skno, skdate);
 
             var confirmResault = ConfirmBox.ShowConfirmBoxDialog("请确认要上传的课程信息:\n"+displayString);
@@ -305,6 +323,57 @@ namespace AttendanceSystemClientV2.UserInterface {
            DataUploadControl.UploadOneClass(kkno , skno);
 
            MsgBox.ShowMsgBoxDialog(displayString+"\n\n上传完成");
+
+            dp_RefreshMainForm();
+        }
+
+        private void chooseClassBtn_Click ( object sender, EventArgs e ) {
+
+
+
+        }
+
+        private void radButton1_Click_1 ( object sender, EventArgs e ) {
+
+            var selectedproperty = (KeyValuePair<long, string>)coursesListBox1.SelectedItem; // 获取已经选择的项目
+
+            if (selectedproperty.Key == -1) { //判断是否有数据
+                MsgBox.ShowMsgBoxDialog ("没有数据");
+            }
+
+            var rollCallingDetailRow = classInfoGview1.SelectedRows[0];
+
+            var kkno = selectedproperty.Key;
+
+            var skno = Convert.ToInt64 (rollCallingDetailRow.Cells["上课编号"].Value);
+
+            var ydSkdate = Convert.ToString ((rollCallingDetailRow.Cells["上课日期"].Value));
+
+            var kkname = Convert.ToString (selectedproperty.Value);
+            //验证离线密码
+            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd (kkno);
+
+            if (!offlineVerifyResault) {
+
+                MsgBox.ShowMsgBoxDialog ("验证口令失败");
+
+                return;
+            }
+            // 如果验证不通过 则提示密码错误 并返回 什么都不做.
+            //todo:指纹点名的业务逻辑在这里编写即可 需要从界面里带出去的东西:1.上课编号2.课程编号 3.实际上课时间
+
+            var getRollCallTimeForm = new SetTimeForm();
+
+            var getRollCallTimeResault = getRollCallTimeForm.ShowDialog(); // 显示设置时间窗口
+
+            if (getRollCallTimeResault == DialogResult.Cancel) { // 如果点击了返回 那么就不要再往下走了.
+                return;
+            }
+
+            var actualRollCallTime = getRollCallTimeForm.GetActualRollCallTime();
+
+            MsgBox.ShowMsgBoxDialog(actualRollCallTime.ToString());
+
         }
     }
 }

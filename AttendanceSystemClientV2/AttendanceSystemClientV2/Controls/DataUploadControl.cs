@@ -61,13 +61,24 @@ namespace AttendanceSystemClientV2.Controls {
             
             //下面这个东西直接往数据库里塞就行
 
-            _waitForm = new WaitForm("正在上传课程");
-            
-            
+            var fDataModule = new DataModule ();
+
+
+
+            try {
+
+                var verifyList =  from c in fDataModule.GetJsandkkviewro() where c.KKNO == kkno select c;
+
+                verifyList.Count(); // 败笔.  数一下就知道登录是否正确了.
+            } catch (RemObjects.SDK.Exceptions.SessionNotFoundException) {
+
+                MsgBox.ShowMsgBoxDialog("登录异常");
+
+            }
 
             var dmList = OfflineDataControl.GetDmtable(kkno, skno); // 这已经是List了... 我干了什么...
 
-            var fDataModule = new DataModule();
+            MsgBox.ShowMsgBoxDialog(fDataModule.IsLoggedOn.ToString());
 
             foreach (var dmlistRecord in dmList) {
 
@@ -81,6 +92,8 @@ namespace AttendanceSystemClientV2.Controls {
                 fDataModule.UpdateDmRow(dmlistRecord);
 
             }
+
+            _waitForm = new WaitForm ("准备上传点名信息");
 
             new Thread(() => {
 
@@ -133,7 +146,7 @@ namespace AttendanceSystemClientV2.Controls {
             skrecord.EDITDATE = DateTime.Now; // 设置编辑时间
 
             skrecord.EDITMANNO = Convert.ToInt64(Properties.Settings.Default.UserId); // 设置编辑人员ID
-
+            
             skrecord.SKZT = 1;//已经点名
 
             fDataModule.UpdateSkTableRow(skrecord); // 上传上课信息.
@@ -152,8 +165,11 @@ namespace AttendanceSystemClientV2.Controls {
 
                 DataDownloadControl.SaveSkTable (kkno);
 
+                _waitForm.BeginInvoke (new MethodInvoker (( ) => _waitForm.Close()));
             }).Start();
-            
+
+            _waitForm.ShowDialog();
+
         }
 
     }

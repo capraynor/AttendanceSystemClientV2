@@ -114,9 +114,9 @@ namespace AttendanceSystemClientV2 {
 
             //Properties.Settings.Default.UserId = "";//拉取数据时需要获取ID 所以这个字段不能被删除。
 
-            Properties.Settings.Default.Password = "";//清楚保存的密码
+            //Properties.Settings.Default.Password = "";//清楚保存的密码
 
-            Properties.Settings.Default.Save ();//清空用户名和密码并保存
+            //Properties.Settings.Default.Save ();//清空用户名和密码并保存
 
         }
         #endregion
@@ -181,8 +181,8 @@ namespace AttendanceSystemClientV2 {
         /// 获取GetsSktable07Viewro视图 该函数不会立即拉取数据(延迟加载).
         /// </summary>
         /// <returns>GetsSktable07Viewro视图(延迟加载)</returns>
-        public RemoteTable<SKTABLE_07_VIEWRO> GetSktable07Viewro  ( ) {
-            return remoteDataAdapter.GetTable<SKTABLE_07_VIEWRO> ();
+        public RemoteTable<SKTABLE_07_VIEW> GetSktable07Viewro  ( ) {
+            return remoteDataAdapter.GetTable<SKTABLE_07_VIEW> ();
         }
 
         /// <summary>
@@ -220,9 +220,9 @@ namespace AttendanceSystemClientV2 {
         /// </summary>
         /// <param name="skno">上课编号</param>
         /// <returns></returns>
-        public SKTABLE_07_VIEWRO GSktable07Record(long  skno ) {
+        public SKTABLE_07_VIEW GSktable07Record(long  skno ) {
 
-            var sktable07S = from c in remoteDataAdapter.GetTable<SKTABLE_07_VIEWRO>() 
+            var sktable07S = from c in remoteDataAdapter.GetTable<SKTABLE_07_VIEW>() 
                              where c.SKNO == skno 
                              select c;
 
@@ -236,7 +236,7 @@ namespace AttendanceSystemClientV2 {
         /// 上传上课表的一条数据
         /// </summary>
         /// <param name="skRow">上课表的一条记录</param>
-        public void UpdateSkTableRow(SKTABLE_07_VIEWRO skRow) {
+        public void UpdateSkTableRow(SKTABLE_07_VIEW skRow) {
 
             remoteDataAdapter.UpdateRow(skRow);
 

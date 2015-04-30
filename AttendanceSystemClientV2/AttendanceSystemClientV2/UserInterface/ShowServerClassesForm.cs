@@ -16,7 +16,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         private readonly List<JSANDKKVIEWRO> _jsandkkviewro; // 已经登录的教师对应的开课表
 
-        private List<SKTABLE_07_VIEWRO> _sktable;
+        private List<SKTABLE_07_VIEW> _sktable;
 
         /// <summary>
         /// 构造函数

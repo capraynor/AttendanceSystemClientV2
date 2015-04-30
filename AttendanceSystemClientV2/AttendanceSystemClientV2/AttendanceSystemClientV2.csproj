@@ -175,6 +175,7 @@
     <Compile Include="Controls\DataUploadControl.cs" />
     <Compile Include="Controls\FingerPrintControl.cs" />
     <Compile Include="Controls\OfflineDataControl.cs" />
+    <Compile Include="Controls\RollCallControl.cs" />
     <Compile Include="DataModule.cs">
       <SubType>Component</SubType>
     </Compile>

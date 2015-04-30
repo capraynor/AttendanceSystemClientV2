@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.panel1_default = new System.Windows.Forms.Panel();
             this.panel2_down = new System.Windows.Forms.Panel();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
@@ -65,7 +65,7 @@
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.coursesListBox = new System.Windows.Forms.ListBox();
+            this.coursesListBox1 = new System.Windows.Forms.ListBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.startRollCallPage = new Telerik.WinControls.UI.RadPageViewPage();
@@ -133,7 +133,7 @@
             this.showRollCallingDetailBtnPanel = new System.Windows.Forms.Panel();
             this.showRollCallingDetailBtn = new Telerik.WinControls.UI.RadButton();
             this.rollCallingDetailGviewPanel = new System.Windows.Forms.Panel();
-            this.rollCallingDetailGview = new Telerik.WinControls.UI.RadGridView();
+            this.rollCallingDetailGview3 = new Telerik.WinControls.UI.RadGridView();
             this.panel35 = new System.Windows.Forms.Panel();
             this.radPanel9 = new Telerik.WinControls.UI.RadPanel();
             this.dataManagementOperationButtonsPanel = new System.Windows.Forms.Panel();
@@ -163,7 +163,7 @@
             this.panel2_up = new System.Windows.Forms.Panel();
             this.metroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c = new Telerik.WinControls.RootRadElement();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.panel1_default.SuspendLayout();
             this.panel2_down.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).BeginInit();
@@ -229,8 +229,8 @@
             this.showRollCallingDetailBtnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showRollCallingDetailBtn)).BeginInit();
             this.rollCallingDetailGviewPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview3.MasterTemplate)).BeginInit();
             this.panel35.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel9)).BeginInit();
             this.dataManagementOperationButtonsPanel.SuspendLayout();
@@ -248,6 +248,7 @@
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -283,7 +284,7 @@
             this.mainPageView.Font = new System.Drawing.Font("微软雅黑", 25F);
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.dataManagementPage;
+            this.mainPageView.SelectedPage = this.downloadDataPage;
             this.mainPageView.Size = new System.Drawing.Size(1278, 599);
             this.mainPageView.TabIndex = 0;
             this.mainPageView.Text = "radPageView1";
@@ -338,6 +339,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.radButton1);
             this.panel1.Controls.Add(this.deleteCourseBtn);
             this.panel1.Controls.Add(this.downloadCourseBtn);
             this.panel1.Controls.Add(this.panel20);
@@ -351,7 +353,7 @@
             // 
             this.deleteCourseBtn.Enabled = false;
             this.deleteCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.deleteCourseBtn.Location = new System.Drawing.Point(329, 522);
+            this.deleteCourseBtn.Location = new System.Drawing.Point(365, 522);
             this.deleteCourseBtn.Name = "deleteCourseBtn";
             this.deleteCourseBtn.Size = new System.Drawing.Size(161, 56);
             this.deleteCourseBtn.TabIndex = 7;
@@ -360,7 +362,7 @@
             // downloadCourseBtn
             // 
             this.downloadCourseBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.downloadCourseBtn.Location = new System.Drawing.Point(62, 519);
+            this.downloadCourseBtn.Location = new System.Drawing.Point(5, 522);
             this.downloadCourseBtn.Name = "downloadCourseBtn";
             this.downloadCourseBtn.Size = new System.Drawing.Size(161, 56);
             this.downloadCourseBtn.TabIndex = 6;
@@ -402,6 +404,7 @@
             this.classInfoGview1.Name = "classInfoGview1";
             this.classInfoGview1.ReadOnly = true;
             this.classInfoGview1.Size = new System.Drawing.Size(531, 449);
+            this.classInfoGview1.SynchronizeCurrentRowInSplitMode = true;
             this.classInfoGview1.TabIndex = 1;
             this.classInfoGview1.Text = "radGridView1";
             // 
@@ -582,25 +585,25 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.coursesListBox);
+            this.panel18.Controls.Add(this.coursesListBox1);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Location = new System.Drawing.Point(0, 55);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(598, 305);
             this.panel18.TabIndex = 2;
             // 
-            // coursesListBox
+            // coursesListBox1
             // 
-            this.coursesListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.coursesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coursesListBox.Font = new System.Drawing.Font("微软雅黑", 21.75F);
-            this.coursesListBox.FormattingEnabled = true;
-            this.coursesListBox.ItemHeight = 38;
-            this.coursesListBox.Location = new System.Drawing.Point(0, 0);
-            this.coursesListBox.Name = "coursesListBox";
-            this.coursesListBox.Size = new System.Drawing.Size(598, 305);
-            this.coursesListBox.TabIndex = 0;
-            this.coursesListBox.SelectedIndexChanged += new System.EventHandler(this.coursesListBox_SelectedIndexChanged);
+            this.coursesListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.coursesListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.coursesListBox1.Font = new System.Drawing.Font("微软雅黑", 21.75F);
+            this.coursesListBox1.FormattingEnabled = true;
+            this.coursesListBox1.ItemHeight = 38;
+            this.coursesListBox1.Location = new System.Drawing.Point(0, 0);
+            this.coursesListBox1.Name = "coursesListBox1";
+            this.coursesListBox1.Size = new System.Drawing.Size(598, 305);
+            this.coursesListBox1.TabIndex = 0;
+            this.coursesListBox1.SelectedIndexChanged += new System.EventHandler(this.coursesListBox_SelectedIndexChanged);
             // 
             // panel17
             // 
@@ -804,21 +807,21 @@
             // 
             // chart1
             // 
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Area3DStyle.IsRightAngleAxes = false;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.Area3DStyle.IsRightAngleAxes = false;
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(531, 283);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -871,12 +874,14 @@
             // chooseClassBtn
             // 
             this.chooseClassBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.chooseClassBtn.Enabled = false;
             this.chooseClassBtn.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
             this.chooseClassBtn.Location = new System.Drawing.Point(32, 10);
             this.chooseClassBtn.Name = "chooseClassBtn";
             this.chooseClassBtn.Size = new System.Drawing.Size(221, 66);
             this.chooseClassBtn.TabIndex = 17;
             this.chooseClassBtn.Text = "选择课程";
+            this.chooseClassBtn.Click += new System.EventHandler(this.chooseClassBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.chooseClassBtn.GetChildAt(0))).Text = "选择课程";
             ((Telerik.WinControls.UI.RadButtonElement)(this.chooseClassBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
@@ -1259,25 +1264,25 @@
             this.rollCallStudentListGv.Font = new System.Drawing.Font("微软雅黑", 21.75F);
             this.rollCallStudentListGv.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // rollCallStudentListGv
             // 
             this.rollCallStudentListGv.MasterTemplate.AllowAddNewRow = false;
             this.rollCallStudentListGv.MasterTemplate.AllowColumnReorder = false;
             this.rollCallStudentListGv.MasterTemplate.AllowDragToGroup = false;
             this.rollCallStudentListGv.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.HeaderText = "学生姓名";
-            gridViewTextBoxColumn1.Name = "col1";
-            gridViewTextBoxColumn1.Width = 187;
-            gridViewTextBoxColumn2.HeaderText = "签到时间";
-            gridViewTextBoxColumn2.Name = "col2";
-            gridViewTextBoxColumn2.Width = 205;
-            gridViewTextBoxColumn3.HeaderText = "到课情况";
-            gridViewTextBoxColumn3.Name = "column1";
-            gridViewTextBoxColumn3.Width = 186;
+            gridViewTextBoxColumn7.HeaderText = "学生姓名";
+            gridViewTextBoxColumn7.Name = "col1";
+            gridViewTextBoxColumn7.Width = 187;
+            gridViewTextBoxColumn8.HeaderText = "签到时间";
+            gridViewTextBoxColumn8.Name = "col2";
+            gridViewTextBoxColumn8.Width = 205;
+            gridViewTextBoxColumn9.HeaderText = "到课情况";
+            gridViewTextBoxColumn9.Name = "column1";
+            gridViewTextBoxColumn9.Width = 186;
             this.rollCallStudentListGv.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9});
             this.rollCallStudentListGv.Name = "rollCallStudentListGv";
             this.rollCallStudentListGv.ReadOnly = true;
             this.rollCallStudentListGv.Size = new System.Drawing.Size(596, 587);
@@ -1371,31 +1376,31 @@
             // 
             // rollCallingDetailGviewPanel
             // 
-            this.rollCallingDetailGviewPanel.Controls.Add(this.rollCallingDetailGview);
+            this.rollCallingDetailGviewPanel.Controls.Add(this.rollCallingDetailGview3);
             this.rollCallingDetailGviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rollCallingDetailGviewPanel.Location = new System.Drawing.Point(0, 0);
             this.rollCallingDetailGviewPanel.Name = "rollCallingDetailGviewPanel";
             this.rollCallingDetailGviewPanel.Size = new System.Drawing.Size(531, 362);
             this.rollCallingDetailGviewPanel.TabIndex = 4;
             // 
-            // rollCallingDetailGview
+            // rollCallingDetailGview3
             // 
-            this.rollCallingDetailGview.AutoSizeRows = true;
-            this.rollCallingDetailGview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rollCallingDetailGview.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.rollCallingDetailGview.Location = new System.Drawing.Point(0, 0);
+            this.rollCallingDetailGview3.AutoSizeRows = true;
+            this.rollCallingDetailGview3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rollCallingDetailGview3.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.rollCallingDetailGview3.Location = new System.Drawing.Point(0, 0);
             // 
-            // rollCallingDetailGview
+            // rollCallingDetailGview3
             // 
-            this.rollCallingDetailGview.MasterTemplate.AllowAddNewRow = false;
-            this.rollCallingDetailGview.MasterTemplate.AllowColumnReorder = false;
-            this.rollCallingDetailGview.MasterTemplate.AllowDragToGroup = false;
-            this.rollCallingDetailGview.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.rollCallingDetailGview.Name = "rollCallingDetailGview";
-            this.rollCallingDetailGview.ReadOnly = true;
-            this.rollCallingDetailGview.Size = new System.Drawing.Size(531, 362);
-            this.rollCallingDetailGview.TabIndex = 1;
-            this.rollCallingDetailGview.Text = "radGridView2";
+            this.rollCallingDetailGview3.MasterTemplate.AllowAddNewRow = false;
+            this.rollCallingDetailGview3.MasterTemplate.AllowColumnReorder = false;
+            this.rollCallingDetailGview3.MasterTemplate.AllowDragToGroup = false;
+            this.rollCallingDetailGview3.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.rollCallingDetailGview3.Name = "rollCallingDetailGview3";
+            this.rollCallingDetailGview3.ReadOnly = true;
+            this.rollCallingDetailGview3.Size = new System.Drawing.Size(531, 362);
+            this.rollCallingDetailGview3.TabIndex = 1;
+            this.rollCallingDetailGview3.Text = "radGridView2";
             // 
             // panel35
             // 
@@ -1439,8 +1444,8 @@
             this.viewDataStateBtn.Name = "viewDataStateBtn";
             this.viewDataStateBtn.Size = new System.Drawing.Size(250, 66);
             this.viewDataStateBtn.TabIndex = 23;
-            this.viewDataStateBtn.Text = "检查数据状态";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.viewDataStateBtn.GetChildAt(0))).Text = "检查数据状态";
+            this.viewDataStateBtn.Text = "检查连接状态";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.viewDataStateBtn.GetChildAt(0))).Text = "检查连接状态";
             ((Telerik.WinControls.UI.RadButtonElement)(this.viewDataStateBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 
             // viewStudentListBtn
@@ -1698,11 +1703,15 @@
             this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.StretchVertically = true;
             this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // directorySearcher1
+            // radButton1
             // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.radButton1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.radButton1.Location = new System.Drawing.Point(184, 522);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(161, 56);
+            this.radButton1.TabIndex = 8;
+            this.radButton1.Text = "开始考勤";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click_1);
             // 
             // MainForm
             // 
@@ -1790,8 +1799,8 @@
             this.showRollCallingDetailBtnPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.showRollCallingDetailBtn)).EndInit();
             this.rollCallingDetailGviewPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview3.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rollCallingDetailGview3)).EndInit();
             this.panel35.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel9)).EndInit();
             this.dataManagementOperationButtonsPanel.ResumeLayout(false);
@@ -1810,6 +1819,7 @@
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1827,7 +1837,7 @@
         private Telerik.WinControls.UI.RadPageViewPage dataManagementPage;
         private Telerik.WinControls.RootRadElement object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c;
         private System.Windows.Forms.Panel panel3_fill;
-        private System.Windows.Forms.ListBox coursesListBox;
+        private System.Windows.Forms.ListBox coursesListBox1;
         private System.Windows.Forms.Panel panel3_up;
         private System.Windows.Forms.Panel panel4_down;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
@@ -1865,7 +1875,6 @@
         private Telerik.WinControls.UI.RadButton stopRollCallBtn;
         private System.Windows.Forms.Panel rollCallStudentListPn;
         private Telerik.WinControls.UI.RadGridView rollCallStudentListGv;
-        private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.Panel currentStudentDetailPn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pboxPhoto;
@@ -1903,7 +1912,7 @@
         private System.Windows.Forms.Panel panel35;
         private Telerik.WinControls.UI.RadPanel radPanel9;
         private System.Windows.Forms.Panel rollCallingDetailGviewPanel;
-        private Telerik.WinControls.UI.RadGridView rollCallingDetailGview;
+        private Telerik.WinControls.UI.RadGridView rollCallingDetailGview3;
         private Telerik.WinControls.UI.RadButton uploadDataBtn;
         private Telerik.WinControls.UI.RadButton viewRollCallDetailsBtn;
         private System.Windows.Forms.Panel showRollCallingDetailBtnPanel;
@@ -1946,6 +1955,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label studentClassLbl2;
+        private Telerik.WinControls.UI.RadButton radButton1;
 
     }
 }
