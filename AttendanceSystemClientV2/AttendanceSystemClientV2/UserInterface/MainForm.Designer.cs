@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.panel1_default = new System.Windows.Forms.Panel();
             this.panel2_down = new System.Windows.Forms.Panel();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
@@ -43,6 +43,7 @@
             this.panel3_up = new System.Windows.Forms.Panel();
             this.panel4_down = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.deleteCourseBtn = new Telerik.WinControls.UI.RadButton();
             this.downloadCourseBtn = new Telerik.WinControls.UI.RadButton();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -163,7 +164,6 @@
             this.panel2_up = new System.Windows.Forms.Panel();
             this.metroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c = new Telerik.WinControls.RootRadElement();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.panel1_default.SuspendLayout();
             this.panel2_down.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).BeginInit();
@@ -173,6 +173,7 @@
             this.panel3_up.SuspendLayout();
             this.panel4_down.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteCourseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.downloadCourseBtn)).BeginInit();
             this.panel20.SuspendLayout();
@@ -248,7 +249,6 @@
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -284,7 +284,7 @@
             this.mainPageView.Font = new System.Drawing.Font("微软雅黑", 25F);
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.downloadDataPage;
+            this.mainPageView.SelectedPage = this.startRollCallPage;
             this.mainPageView.Size = new System.Drawing.Size(1278, 599);
             this.mainPageView.TabIndex = 0;
             this.mainPageView.Text = "radPageView1";
@@ -348,6 +348,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 589);
             this.panel1.TabIndex = 2;
+            // 
+            // radButton1
+            // 
+            this.radButton1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
+            this.radButton1.Location = new System.Drawing.Point(184, 522);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(161, 56);
+            this.radButton1.TabIndex = 8;
+            this.radButton1.Text = "开始考勤";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click_1);
             // 
             // deleteCourseBtn
             // 
@@ -807,21 +817,21 @@
             // 
             // chart1
             // 
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.Area3DStyle.IsRightAngleAxes = false;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(531, 283);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1270,19 +1280,19 @@
             this.rollCallStudentListGv.MasterTemplate.AllowColumnReorder = false;
             this.rollCallStudentListGv.MasterTemplate.AllowDragToGroup = false;
             this.rollCallStudentListGv.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.HeaderText = "学生姓名";
-            gridViewTextBoxColumn7.Name = "col1";
-            gridViewTextBoxColumn7.Width = 187;
-            gridViewTextBoxColumn8.HeaderText = "签到时间";
-            gridViewTextBoxColumn8.Name = "col2";
-            gridViewTextBoxColumn8.Width = 205;
-            gridViewTextBoxColumn9.HeaderText = "到课情况";
-            gridViewTextBoxColumn9.Name = "column1";
-            gridViewTextBoxColumn9.Width = 186;
+            gridViewTextBoxColumn1.HeaderText = "学生姓名";
+            gridViewTextBoxColumn1.Name = "col1";
+            gridViewTextBoxColumn1.Width = 187;
+            gridViewTextBoxColumn2.HeaderText = "签到时间";
+            gridViewTextBoxColumn2.Name = "col2";
+            gridViewTextBoxColumn2.Width = 205;
+            gridViewTextBoxColumn3.HeaderText = "到课情况";
+            gridViewTextBoxColumn3.Name = "column1";
+            gridViewTextBoxColumn3.Width = 186;
             this.rollCallStudentListGv.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
             this.rollCallStudentListGv.Name = "rollCallStudentListGv";
             this.rollCallStudentListGv.ReadOnly = true;
             this.rollCallStudentListGv.Size = new System.Drawing.Size(596, 587);
@@ -1390,7 +1400,7 @@
             this.rollCallingDetailGview3.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.rollCallingDetailGview3.Location = new System.Drawing.Point(0, 0);
             // 
-            // rollCallingDetailGview3
+            // 
             // 
             this.rollCallingDetailGview3.MasterTemplate.AllowAddNewRow = false;
             this.rollCallingDetailGview3.MasterTemplate.AllowColumnReorder = false;
@@ -1703,16 +1713,6 @@
             this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.StretchVertically = true;
             this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radButton1
-            // 
-            this.radButton1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold);
-            this.radButton1.Location = new System.Drawing.Point(184, 522);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(161, 56);
-            this.radButton1.TabIndex = 8;
-            this.radButton1.Text = "开始考勤";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click_1);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1739,6 +1739,7 @@
             this.panel3_up.ResumeLayout(false);
             this.panel4_down.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteCourseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.downloadCourseBtn)).EndInit();
             this.panel20.ResumeLayout(false);
@@ -1819,7 +1820,6 @@
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

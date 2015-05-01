@@ -187,6 +187,7 @@
     <Compile Include="Helpers\HDFingerPrintHelper.cs" />
     <Compile Include="Models\BriefcaseInfo.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\FingerPrintListItem.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UserInterface\ConfirmBox.cs">
