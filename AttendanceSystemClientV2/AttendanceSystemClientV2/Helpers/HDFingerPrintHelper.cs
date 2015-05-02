@@ -168,8 +168,12 @@ namespace AttendanceSystemClientV2.Helpers {
 
         //指纹验证部分
         public static int Download1Fingerprint ( IntPtr fpHandlePtr, string fingerprintString, UInt16 id, uint timeout = 0 ) {
-            int stat = 0;
-            byte[] fingerPrintRawData = Convert.FromBase64String (fingerprintString);
+            var stat = 0;
+
+            if (string.IsNullOrEmpty(fingerprintString))
+                return 1;
+
+            var fingerPrintRawData = Convert.FromBase64String (fingerprintString);
             stat = FpDownChar (fpHandlePtr, 1, fingerPrintRawData, 512, timeout);
             if (stat != 0) return stat;
             stat = FpStoreChar (fpHandlePtr, 1, id, 3000);

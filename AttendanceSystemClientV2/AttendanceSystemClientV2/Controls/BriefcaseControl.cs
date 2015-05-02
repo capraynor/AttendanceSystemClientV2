@@ -114,6 +114,7 @@ namespace AttendanceSystemClientV2.Controls {
 
         /// <summary>
         /// 获取propertiesBriefcase,其中包含该 1.该平板中所有的课程 2.班级表
+        /// 第一次在哪下载的课程 就得在哪里用.学院之间不能混用.
         /// 若briefcase不存在 则创建一个briefcase
         /// </summary>
         /// <returns></returns>
@@ -241,6 +242,33 @@ namespace AttendanceSystemClientV2.Controls {
 
             return (verifyResault == DialogResult.Yes);//比对结果并返回验证结果....
             //此结果非彼结果..
+
+        }
+
+        /// <summary>
+        /// 获取班级表(字典)
+        ///  
+        /// </summary>
+        /// <returns></returns>
+        public static Dictionary<long , string> GetBjTable(){
+
+            var dictionaryToReturn = new Dictionary<long, string>();
+
+            var classInfoBriefcase = GetPropertiesBriefcase();
+
+            var bjTable = classInfoBriefcase.FindTable("BJTABLE");
+
+            foreach (DataRow bjRow in bjTable.Rows){
+
+                var bjId = Convert.ToInt64(bjRow["BJID"]);
+
+                var bjName = Convert.ToString(bjRow["BJNAME"]);
+
+                dictionaryToReturn.Add(bjId , bjName);
+                
+            }
+
+            return dictionaryToReturn;
 
         }
 

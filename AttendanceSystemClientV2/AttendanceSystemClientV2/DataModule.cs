@@ -48,6 +48,7 @@ namespace AttendanceSystemClientV2 {
 
             this.IsLoggedOn = false;
 
+
         }
 
         public DataModule ( IContainer container )
