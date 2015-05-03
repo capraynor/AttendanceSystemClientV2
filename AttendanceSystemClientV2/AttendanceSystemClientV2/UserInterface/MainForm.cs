@@ -23,6 +23,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         //标签页侧边栏需要背景
         public MainForm ( ) {
             InitializeComponent ();
+
             _rollCalling = false;//标记是否正在进行考勤工作
 
             _fDataModule = new DataModule ();//datamodule 用于查看数据(好像没什么用耶)。
@@ -366,13 +367,15 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             var getRollCallTimeResault = getRollCallTimeForm.ShowDialog(); // 显示设置时间窗口
 
+            MsgBox.ShowMsgBoxDialog ( getRollCallTimeResault.ToString () );
+
             if (getRollCallTimeResault == DialogResult.Cancel) { // 如果点击了返回 那么就不要再往下走了.
                 return;
             }
 
             var actualRollCallTime = getRollCallTimeForm.GetActualRollCallTime();
 
-            MsgBox.ShowMsgBoxDialog(actualRollCallTime.ToString());
+            RollCallControl.Init(kkno , skno , actualRollCallTime);
 
         }
     }

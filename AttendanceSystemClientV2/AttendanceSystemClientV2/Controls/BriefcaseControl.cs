@@ -250,7 +250,7 @@ namespace AttendanceSystemClientV2.Controls {
         ///  
         /// </summary>
         /// <returns></returns>
-        public static Dictionary<long , string> GetBjTable(){
+        public static Dictionary<long , string> GetBjTableDictionary(){
 
             var dictionaryToReturn = new Dictionary<long, string>();
 

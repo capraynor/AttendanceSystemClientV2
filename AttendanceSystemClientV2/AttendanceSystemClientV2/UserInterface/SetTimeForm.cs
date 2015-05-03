@@ -18,7 +18,9 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         }
 
-        private void OkButn_Click ( object sender, System.EventArgs e ) {
+        private void OkButn_Click ( object sender, System.EventArgs e ){
+
+            this.DialogResult = DialogResult.OK;
 
             _actuallyRollCallTime = actualCourseTimePicker.Value;
 
@@ -26,9 +28,9 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         }
 
-        private void CancelBtn_Click ( object sender, System.EventArgs e ) {
+        private void CancelBtn_Click ( object sender, System.EventArgs e ){
 
-            
+            this.DialogResult = DialogResult.Cancel;
 
         }
 

@@ -323,6 +323,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fplib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\App.ico" />
     <None Include="Resources\female.jpg" />
     <None Include="Resources\male.jpg" />

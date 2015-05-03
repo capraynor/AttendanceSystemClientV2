@@ -16,6 +16,9 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             radPanel2.Text = information;
 
+            TopMost = true;
+
+            Focus();
         }
 
         private void btnOk_Click ( object sender, EventArgs e ) {

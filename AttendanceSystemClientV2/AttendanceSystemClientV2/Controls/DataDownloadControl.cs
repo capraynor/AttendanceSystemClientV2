@@ -267,9 +267,13 @@ namespace AttendanceSystemClientV2.Controls {
 
         }
 
+        /// <summary>
+        /// 刷新学生信息
+        /// </summary>
+        /// <param name="skno"></param>
         public static void RefreshStudentInformation(long skno) {
             
-
+            //todo:完成 刷新学生信息 方法
 
         }
 

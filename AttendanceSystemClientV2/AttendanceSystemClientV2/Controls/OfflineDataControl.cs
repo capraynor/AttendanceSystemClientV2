@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 using AttendanceSystemClientV2.Helpers;
 using AttendanceSystemClientV2.PC;
+using AttendanceSystemClientV2.UserInterface;
 using RemObjects.DataAbstract;
 
 namespace AttendanceSystemClientV2.Controls {
@@ -38,14 +39,13 @@ namespace AttendanceSystemClientV2.Controls {
         /// </summary>
         /// <param name="kkno">开课编号</param>
         /// <returns>开课编号对应的选课表(学生信息 一个学生一条记录)</returns>
-        public static List<XKTABLE_VIEWRO> GetXktable ( long kkno ) {
+        public static DataTable GetXktable ( long kkno ) {
 
             var courseBriefCase = BriefcaseControl.GetBriefcase(kkno);
 
             var xkTable = courseBriefCase.FindTable("XKTABLE");
 
-            return xkTable.ToList<XKTABLE_VIEWRO>();
-
+            return xkTable;
         }
 
         /// <summary>
