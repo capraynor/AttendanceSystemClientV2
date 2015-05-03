@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AttendanceSystemClientV2.Controls;
 using AttendanceSystemClientV2.PC;
+using AttendanceSystemClientV2.Properties;
 
 namespace AttendanceSystemClientV2.Models {
 
@@ -34,7 +35,7 @@ namespace AttendanceSystemClientV2.Models {
         /// <summary>
         /// 学生皂片
         /// </summary>
-        public byte[] StudentPhoto;
+        public Image StudentPhoto;
 
         /// <summary>
         /// 班级编号
@@ -46,6 +47,12 @@ namespace AttendanceSystemClientV2.Models {
         /// </summary>
         [System.ComponentModel.DisplayName(@"班级")]
         public string ClassName { get; set; }
+
+        /// <summary>
+        /// 学生姓名
+        /// </summary>
+        [System.ComponentModel.DisplayName(@"姓名")]
+        public string StudentName { get; set; }
 
 
         /// <summary>
@@ -123,7 +130,7 @@ namespace AttendanceSystemClientV2.Models {
         /// <summary>
         /// 应到时间
         /// </summary>
-        public DateTime RollCallTime = DateTime.Now;
+        public DateTime ExpectedArriveTime = DateTime.Now;
 
         /// <summary>
         /// 标记了第几次点名
@@ -132,13 +139,15 @@ namespace AttendanceSystemClientV2.Models {
 
         /// <summary>
         /// 当指纹仪找到这个人的时候,程序需要调用List中的对象的该函数来进行签到操作.
+        /// 将签到时间传进来 该函数会自己判断是否迟到 并写入Briefcase中.
         /// </summary>
-        /// <param name="arriveTime"></param>
-        /// <param name="rollCallStatus"></param>
-        public void SignIn(DateTime arriveTime , short rollCallStatus){
+        /// <param name="arriveTime">签到时间</param>
+        public void SignIn(DateTime arriveTime ){
 
-            //将到课状态更改成指定的状态
-            RollCallStatus = rollCallStatus;
+            var isLate = (arriveTime > ExpectedArriveTime);
+
+            //判断是否迟到 并将到课状态更改成指定的状态
+            RollCallStatus = (short) (isLate ? 1 : 0);
 
             //把标记该门课的表取出来
             var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
@@ -147,32 +156,43 @@ namespace AttendanceSystemClientV2.Models {
             var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno );
 
             //改点名表里的记录 这里改的就是数据了.
-            OfflineDataControl.ChangeDmRecord ( ref dmTable, StudentId, 0, arriveTime, RollCallTimes );
+            OfflineDataControl.ChangeDmRecord ( ref dmTable, StudentId, RollCallStatus, arriveTime, RollCallTimes );
 
             //存点名表.
             BriefcaseControl.SaveDmTable ( classBriefcase, dmTable );
 
         }
 
-        public Student(XKTABLE_VIEWRO xkRecord){
-            
-            StudentId = xkRecord.XSID;
+        public Student(DataRow xkRecord , DMTABLE_08_NOPIC_VIEW dmRecord  , DateTime expectedArriveTime){
 
-            if (xkRecord.XSZP != null){
+            StudentId = Convert.ToString ( xkRecord["XSID"] );
 
-                StudentPhoto = xkRecord.XSZP;
+            if (xkRecord["XSZP"] != DBNull.Value) {
+
+                var memoryStream = new MemoryStream ( (byte[])xkRecord["XSZP"] );
+
+                StudentPhoto = Image.FromStream ( memoryStream );
 
             }
+            else{
+                StudentPhoto = Resources.male;
+            }
 
-            if (!String.IsNullOrEmpty(xkRecord.ZW2)){
+            if (!String.IsNullOrEmpty ( (string)xkRecord["ZW2"] )) {
 
-                FingerprintString = xkRecord.ZW2;
+                FingerprintString = (string)xkRecord["ZW2"];
                 
             }
 
-            ClassId = Convert.ToInt64 ( xkRecord.BJID );
+            ClassId = Convert.ToInt64 ( xkRecord["BJID"] );
 
-            RollCallStatus = 5;
+            if (dmRecord.DKZT != null) RollCallStatus = dmRecord.DKZT.Value;
+
+            ExpectedArriveTime = expectedArriveTime; // 应到时间
+
+            StudentName = (string)xkRecord["XSNAME"];
+
+
 
         }
         
