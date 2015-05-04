@@ -196,7 +196,7 @@ namespace AttendanceSystemClientV2.Controls {
         /// 保存上课表 并更新PropertiesBriefcase中的上课状态.
         /// </summary>
         /// <param name="kkno"></param>
-        public static void SaveSkTable(long kkno) {
+        public static void SaveSkTable(long kkno , long skno , SKTABLE_07_VIEW skRecord) {
 
             var fDataModule = new DataModule();
 
@@ -204,20 +204,61 @@ namespace AttendanceSystemClientV2.Controls {
 
             var sktableList = sktable.ToList ();
 
-            var skdatatable = EnumerableExtension.ListToDataTable (sktableList, "SKTABLE"); //将上课表转换成datatable
+            var courseBriefcase = BriefcaseControl.GetBriefcase ( kkno );
 
-            var courseBriefcase = BriefcaseControl.GetBriefcase (kkno);
+            var skdatatable = courseBriefcase.FindTable ( "SKTABLE" ); //将上课表转换成datatable
 
-            courseBriefcase.AddTable (skdatatable); // 将datatable写入briefcase中
+            var skDatarow = skdatatable.Select ( string.Format ( "SKNO = {0}", skno ) );
 
-            var ttttt = courseBriefcase.FindTable("SKTABLE");
+            skDatarow.First().BeginEdit();
 
-            courseBriefcase.WriteBriefcase (); // 写入硬盘
+            skDatarow.First()["EDITMANNO"] = skRecord.EDITMANNO;
+
+            skDatarow.First ()["EDITDATE"] = skRecord.EDITDATE;
+
+            skDatarow.First ()["DMFS"] = skRecord.DMFS;
+
+            skDatarow.First ()["CDRS"] = skRecord.CDRS;
+
+            skDatarow.First ()["ZCRS"] = skRecord.ZCRS;
+
+            skDatarow.First ()["ZTRS"] = skRecord.ZTRS;
+
+            skDatarow.First ()["KKRS"] = skRecord.KKRS;
+
+            skDatarow.First ()["SKDATE"] = skRecord.SKDATE;
+
+            skDatarow.First ()["XKDATE"] = skRecord.XKDATE;
+
+            skDatarow.First().EndEdit();
+
+            courseBriefcase.AddTable ( skdatatable );
+
+            courseBriefcase.WriteBriefcase();
+
+            //todo:改PropertiesBriefcase!!!!
+            //foreach (DataRow sktableRow in skdatatable.Rows) {
+
+            //    if ((Int16)sktableRow["SKZT"] == 3)
+            //        continue;
+
+            //    var index = sktableList.FindIndex(a => a.SKNO == (long) sktableRow["SKNO"]);
+
+            //    sktableRow.BeginEdit();
+            //    sktableRow[["ZTRS"]]
+
+            //}
+
+            //courseBriefcase.AddTable (skdatatable); // 将datatable写入briefcase中
+
+            //var ttttt = courseBriefcase.FindTable("SKTABLE");
+
+            //courseBriefcase.WriteBriefcase (); // 写入硬盘
 
 
-            //刷新PropertiesBriefcase
+            ////刷新PropertiesBriefcase
 
-            RefreshClassInfoTable(courseBriefcase , sktableList);
+            //RefreshClassInfoTable(courseBriefcase , sktableList);
 
         }
 

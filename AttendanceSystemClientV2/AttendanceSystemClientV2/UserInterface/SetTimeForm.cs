@@ -5,9 +5,13 @@ namespace AttendanceSystemClientV2.UserInterface {
     public partial class SetTimeForm : Form {
 
         private DateTime _actuallyRollCallTime ;
-        public SetTimeForm ( ) {
+        public SetTimeForm (DateTime scheduled_Time) {
 
             InitializeComponent ();
+
+            this.radDateTimePicker2.Value = scheduled_Time;
+
+            actualCourseTimePicker.Value = DateTime.Now;
 
         }
 
@@ -97,7 +101,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void radButton1_Click ( object sender, EventArgs e ) {
             //设置为20分钟之后
 
-            actualCourseTimePicker.Value = actualCourseTimePicker.Value.AddMinutes(20);
+            actualCourseTimePicker.Value = DateTime.Now.AddMinutes(20);
 
         }
 

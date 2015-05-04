@@ -98,11 +98,11 @@ namespace AttendanceSystemClientV2.Controls {
         /// <summary>
         /// 通过上课编号获取每节课的签到情况信息.该信息保存在每节课对应的Briefcase中的ClassInfo中
         /// </summary>
-        /// <param name="skno">上课编号</param>
+        /// <param name="kkno">开课编号</param>
         /// <returns>ClassInfo表 里面包含着每节课的签到信息.</returns>
-        public static DataTable GetClassInfoTable ( long skno ) {
+        public static DataTable GetClassInfoTable ( long kkno ) {
 
-            if (!File.Exists (GlobalParams.BriefcasePath + skno + @".daBriefcase")) {
+            if (!File.Exists (GlobalParams.BriefcasePath + kkno + @".daBriefcase")) {
                 var emptyClassInfoTable = new DataTable ("ClassInfo");
                 // 里面应该存放每节课的信息. 该datatable应该放在对应课程的briefcase中 这个表是空的.将会在DataDownloadControl中对此表进行填充.
 
@@ -115,7 +115,7 @@ namespace AttendanceSystemClientV2.Controls {
                 return emptyClassInfoTable;
             }
 
-            var courseBriefcase = new FileBriefcase (GlobalParams.BriefcasePath + skno + @".daBriefcase", true);
+            var courseBriefcase = new FileBriefcase (GlobalParams.BriefcasePath + kkno + @".daBriefcase", true);
 
             var classInfoTable = courseBriefcase.FindTable ("ClassInfo");
 

@@ -149,6 +149,8 @@ namespace AttendanceSystemClientV2.Controls {
             
             skrecord.SKZT = 1;//已经点名
 
+            skrecord.DMFS = 1;
+
             fDataModule.UpdateSkTableRow(skrecord); // 上传上课信息.
 
             fDataModule.ApplyChanges (); //需要将该操作放到线程中.
@@ -163,7 +165,7 @@ namespace AttendanceSystemClientV2.Controls {
 
                 _waitForm.BeginInvoke (new MethodInvoker (( ) => _waitForm.SetValue (70)));
 
-                DataDownloadControl.SaveSkTable (kkno);
+                DataDownloadControl.SaveSkTable (kkno , skno , skrecord);
 
                 _waitForm.BeginInvoke (new MethodInvoker (( ) => _waitForm.Close()));
             }).Start();

@@ -219,6 +219,7 @@
             this.normalBtn.Size = new System.Drawing.Size(221, 66);
             this.normalBtn.TabIndex = 15;
             this.normalBtn.Text = "正常到课";
+            this.normalBtn.Click += new System.EventHandler(this.normalBtn_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.normalBtn.GetChildAt(0))).Text = "正常到课";
             ((Telerik.WinControls.UI.RadButtonElement)(this.normalBtn.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             // 

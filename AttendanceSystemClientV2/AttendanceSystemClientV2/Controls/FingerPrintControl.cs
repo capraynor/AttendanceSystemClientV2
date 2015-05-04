@@ -113,13 +113,9 @@ namespace AttendanceSystemClientV2.Controls {
 
             closeProgressBar ();
 
-            HdFingerprintHelper.FpCloseUsb ( fingerprintPtr ); // 初始化完毕之后关闭指纹仪 等.
+            HdFingerprintHelper.FpCloseUsb ( fingerprintPtr ); // 初始化完毕之后关闭指纹仪 等需要签到的时候再打开指纹仪..
 
         }
-
-
-
-
 
     }
 }

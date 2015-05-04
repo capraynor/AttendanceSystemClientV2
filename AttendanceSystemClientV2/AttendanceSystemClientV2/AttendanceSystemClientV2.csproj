@@ -323,6 +323,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="资源文件\Reject.wav" />
+    <None Include="资源文件\Accept.wav" />
     <Content Include="fplib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

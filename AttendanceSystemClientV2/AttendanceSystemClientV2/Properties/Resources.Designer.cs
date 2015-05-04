@@ -61,6 +61,15 @@ namespace AttendanceSystemClientV2.Properties {
         }
         
         /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Accept {
+            get {
+                return ResourceManager.GetStream("Accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap female {
@@ -87,6 +96,15 @@ namespace AttendanceSystemClientV2.Properties {
             get {
                 object obj = ResourceManager.GetObject("male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Reject {
+            get {
+                return ResourceManager.GetStream("Reject", resourceCulture);
             }
         }
         

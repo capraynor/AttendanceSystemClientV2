@@ -26,7 +26,15 @@ namespace AttendanceSystemClientV2.UserInterface {
         private long skno;
         private long kkno;
 
-        public ViewStudentsForm ( long kkno ,long skno) {
+        private bool isRollCalling = false;
+
+        /// <summary>
+        /// 手动更改签到状态
+        /// </summary>
+        /// <param name="kkno">开课编号</param>
+        /// <param name="skno">上课编号</param>
+        /// <param name="isRollCalling">是否正在签到</param>
+        public ViewStudentsForm ( long kkno ,long skno , bool isRollCalling) {
 
             InitializeComponent ();
 
@@ -35,6 +43,8 @@ namespace AttendanceSystemClientV2.UserInterface {
             this.kkno = kkno;
 
             var dmTable = OfflineDataControl.GetDmDatatable(kkno , skno);
+
+            this.isRollCalling = isRollCalling; // 是否正在签到
 
             if (dmTable == null) { 
                 // 判断获取到的点名表是否为空
@@ -55,9 +65,6 @@ namespace AttendanceSystemClientV2.UserInterface {
             studentsGridView.DataSource = dmDisplayTable;
 
 
-
-
-
             //调用一个或者几个函数函数 该函数应该:
             //1.传入 kkno  和 skno 返回该堂课的点名表
             //2.传入kkno和datatable 可以正常写入briefcase.
@@ -66,6 +73,26 @@ namespace AttendanceSystemClientV2.UserInterface {
         }
 
         private void returnBtn_Click ( object sender, EventArgs e ) {
+
+            var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno );
+
+            if (isRollCalling){
+
+                foreach (var student in RollCallControl.CopyOfStudentList){
+
+                    var dmTableRows = dmTable.Select(string.Format("XSID = '{0}'", student.StudentId));
+
+                    if (!dmTableRows.Any()) continue;
+
+                    student.RollCallStatus = Convert.ToInt16(dmTableRows.First()["DKZT"]);
+
+                    if (dmTableRows.First ()["DMSJ1"] != DBNull.Value) // 如果点名时间1不为空的话
+                    student.ArriveTime = Convert.ToDateTime(dmTableRows.First()["DMSJ1"]);
+
+                }
+
+            }
+
             this.Close();
         }
 

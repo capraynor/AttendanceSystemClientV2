@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -28,47 +30,69 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             _fDataModule = new DataModule ();//datamodule 用于查看数据(好像没什么用耶)。
 
-            dp_BindDataSourceForFirstClassListBox(); // 为第一个标签页中的左上角ListBox绑定数据源
+            dp_ResetMainForm (); // 重置窗口的显示
 
-            dp_BindDataSourceForThirdClassListBox();//为第三个标签页中的左上角Listbox绑定数据源
+            dp_BindDataSourceForFirstClassListBox (); // 为第一个标签页中的左上角ListBox绑定数据源
+
+            dp_BindDataSourceForThirdClassListBox ();//为第三个标签页中的左上角Listbox绑定数据源
 
             Settings.Default.UserId = ""; // 清空密码用户名信息
 
             Settings.Default.Password = "";
 
-            Settings.Default.Save(); // 保存
+            Settings.Default.Save (); // 保存
+
+            dp_DisableRollCallButtons ();
         }
 
 
         private void manualBtn_Click ( object sender, EventArgs e ) {
-            new ManualRollCallForm ().ShowDialog ();
+
+            var selectedproperty = (KeyValuePair<long, string>)coursesListBox1.SelectedItem; // 获取已经选择的项目
+
+            if (selectedproperty.Key == -1) { //判断是否有数据
+                MsgBox.ShowMsgBoxDialog ( "没有数据" );
+            }
+
+            var rollCallingDetailRow = classInfoGview1.SelectedRows[0];
+
+            var kkno = selectedproperty.Key;
+
+            var skno = Convert.ToInt64 ( rollCallingDetailRow.Cells["上课编号"].Value );
+
+            RollCallControl.StopFingerprint(); // 初始化完了之后再停指纹仪
+
+            new ViewStudentsForm(kkno , skno , true).ShowDialog() ;
+
+            var showStudentInformationDelegate = new RollCallControl.UpdateUserInterfaceDelegate(ShowStudentInformation);
+
+            RollCallControl.StartRollCall ( RollCallControl.CopyOfStudentList, showStudentInformationDelegate );
+
         }
 
 
 
         private void radButton1_Click ( object sender, EventArgs e ) {
 
-            var resault = new LogOnForm().ShowDialog();//显示下载课程窗口
+            var resault = new LogOnForm ().ShowDialog ();//显示下载课程窗口
 
             if (resault == DialogResult.Cancel)
                 return;
 
             try {
 
-                new ShowServerClassesForm().ShowDialog();
+                new ShowServerClassesForm ().ShowDialog ();
 
-            }
-            catch (RemObjects.SDK.Exceptions.SessionNotFoundException) {
+            } catch (RemObjects.SDK.Exceptions.SessionNotFoundException) {
 
-                MsgBox.ShowMsgBoxDialog("登录异常");
+                MsgBox.ShowMsgBoxDialog ( "登录异常" );
 
             } //todo:将下面的catch放出来
             catch (Exception expException) {
 
-                MsgBox.ShowMsgBoxDialog(expException.Message + "\n" + expException.StackTrace);
-            }
-            finally {
-                dp_RefreshMainForm();
+                MsgBox.ShowMsgBoxDialog ( expException.Message + "\n" + expException.StackTrace );
+            } finally {
+                dp_RefreshMainForm ();
 
                 // 不管怎样 点击完下载课程之后一定要刷新一下显示
             }
@@ -82,11 +106,13 @@ namespace AttendanceSystemClientV2.UserInterface {
                 return;
             }
 
-            var courseInfo = new CourseInfo(selectedproperty.Key);
+            var courseInfo = new CourseInfo ( selectedproperty.Key );
 
-            dp_RefreshFirstDetails(courseInfo);
+            dp_RefreshFirstDetails ( courseInfo );
 
-            dp_BindDataSourceForFirstClassStatusGridView(selectedproperty.Key);
+            dp_BindDataSourceForFirstClassStatusGridView ( selectedproperty.Key );
+
+            courseNoLbl1.Text = selectedproperty.Key.ToString();
 
         }
 
@@ -94,8 +120,8 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// 刷新第一个页面的课程详情
         /// </summary>
         /// <param name="courseInfo">描述一门课程的类</param>
-        private void dp_RefreshFirstDetails(CourseInfo courseInfo) {
-            
+        private void dp_RefreshFirstDetails ( CourseInfo courseInfo ) {
+
             courseNameLbl1.Text = courseInfo.CourseName; // 课程名称
 
             teacherNameLbl1.Text = courseInfo.TeacherName; // 教师姓名
@@ -110,11 +136,11 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// 该函数会直接调用Controls中的函数,获取数据源.
         /// 这样可以直接用于刷新界面显示之类的操作.
         /// </summary>
-        private void dp_BindDataSourceForFirstClassListBox() {
+        private void dp_BindDataSourceForFirstClassListBox ( ) {
 
             var dpCourseInfoDictionary = OfflineDataControl.GetCourseInfoDictionary ();
 
-            coursesListBox1.DataSource = new BindingSource (dpCourseInfoDictionary, null);
+            coursesListBox1.DataSource = new BindingSource ( dpCourseInfoDictionary, null );
 
             coursesListBox1.DisplayMember = "Value"; //设置显示字段
 
@@ -122,14 +148,14 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         }
 
-        
+
         /// <summary>
         /// 刷新第一个标签页中Gridview的显示状态.  
         /// </summary>
-        /// <param name="skno">上课编号</param>
-        private void dp_BindDataSourceForFirstClassStatusGridView(long skno) {
+        /// <param name="kkno">上课编号</param>
+        private void dp_BindDataSourceForFirstClassStatusGridView ( long kkno ) {
 
-            var classInfoDatatable = OfflineDataControl.GetClassInfoTable(skno);
+            var classInfoDatatable = OfflineDataControl.GetClassInfoTable ( kkno );
 
             classInfoDatatable.DefaultView.Sort = "上课日期 DESC";
 
@@ -141,11 +167,11 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// 绑定第三个标签页左上角的Listbox的数据源.
         /// 该函数可以用于刷新第三个标签页的显示.
         /// </summary>
-        private void dp_BindDataSourceForThirdClassListBox() {
+        private void dp_BindDataSourceForThirdClassListBox ( ) {
 
             var dpCourseInfoDictionary = OfflineDataControl.GetCourseInfoDictionary ();
 
-            courseListLbox3.DataSource = new BindingSource (dpCourseInfoDictionary, null);
+            courseListLbox3.DataSource = new BindingSource ( dpCourseInfoDictionary, null );
 
             courseListLbox3.DisplayMember = "Value"; //设置显示字段
 
@@ -153,7 +179,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         }
 
-        private void dp_RefreshThirdDetails(CourseInfo courseInfo) {
+        private void dp_RefreshThirdDetails ( CourseInfo courseInfo ) {
 
             courseNameLbl3.Text = courseInfo.CourseName;
 
@@ -171,11 +197,13 @@ namespace AttendanceSystemClientV2.UserInterface {
                 return;
             }
 
-            var courseInfo = new CourseInfo (selectedproperty.Key); // 
+            var courseInfo = new CourseInfo ( selectedproperty.Key ); // 
 
-            dp_RefreshThirdDetails (courseInfo); // 刷新左下方的显示
-            
-            dp_BindDataSourceForThirdClassStatusGridView(selectedproperty.Key); // 设置第三个标签页右侧的gridview数据源
+            dp_RefreshThirdDetails ( courseInfo ); // 刷新左下方的显示
+
+            dp_BindDataSourceForThirdClassStatusGridView ( selectedproperty.Key ); // 设置第三个标签页右侧的gridview数据源
+
+            courseNoLbl3.Text = selectedproperty.Key.ToString();
         }
 
         private void showRollCallingDetailBtn_Click ( object sender, EventArgs e ) {
@@ -194,7 +222,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// <param name="skno">上课编号</param>
         private void dp_BindDataSourceForThirdClassStatusGridView ( long skno ) {
 
-            var classInfoDatatable = OfflineDataControl.GetClassInfoTable (skno); // 获取ClassInfo表
+            var classInfoDatatable = OfflineDataControl.GetClassInfoTable ( skno ); // 获取ClassInfo表
 
             classInfoDatatable.DefaultView.Sort = "上课日期 DESC"; // 按照日期 降序排序
 
@@ -203,9 +231,9 @@ namespace AttendanceSystemClientV2.UserInterface {
         }
 
         private void viewRollCallDetailsBtn_Click ( object sender, EventArgs e ) {
-            
-            
-            
+
+
+
             var selectedproperty = (KeyValuePair<long, string>)courseListLbox3.SelectedItem; // 获取已经选择的项目
 
             if (selectedproperty.Key == -1) { //判断是否有数据
@@ -216,25 +244,25 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             var kkno = selectedproperty.Key;
 
-            var skno = Convert.ToInt64(rollCallingDetailRow.Cells["上课编号"].Value);
+            var skno = Convert.ToInt64 ( rollCallingDetailRow.Cells["上课编号"].Value );
 
             //验证离线密码
-            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd(kkno);
+            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd ( kkno );
 
             if (!offlineVerifyResault) {
-                
-                MsgBox.ShowMsgBoxDialog("验证口令失败");
+
+                MsgBox.ShowMsgBoxDialog ( "验证口令失败" );
 
                 return;
-            } 
+            }
             // 如果验证不通过 则提示密码错误 并返回 什么都不做.
 
             //显示 View StudentsForm 窗口.
-            var viewStudentForm = new ViewStudentsForm(kkno, skno);
+            var viewStudentForm = new ViewStudentsForm ( kkno, skno  , false);
 
             if (!viewStudentForm.IsDisposed) { // 判断该窗口是否已经被释放
 
-                viewStudentForm.ShowDialog();
+                viewStudentForm.ShowDialog ();
 
             }
         }
@@ -242,7 +270,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// <summary>
         /// 刷新界面课程列表的显示
         /// </summary>
-        private void dp_RefreshMainForm() {
+        private void dp_RefreshMainForm ( ) {
 
             dp_BindDataSourceForFirstClassListBox (); // 为第一个标签页中的左上角ListBox绑定数据源
 
@@ -253,9 +281,45 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// <summary>
         /// 重置界面的显示(主要是点名界面)
         /// </summary>
-        private void dp_ResetMainForm() {
-            
+        private void dp_ResetMainForm ( ) {
 
+            
+            photoPbox.Image = Resources.male;
+
+            mainPageView.SelectedPage = startRollCallPage;
+
+            studentClassLbl2.Text = @"班级名称"; // 班级名称
+
+
+            studentNameLbl2.Text = @"姓名";
+
+            studentIdLbl2.Text = @"学号";
+
+            rollCallStatus2.Text = @"状态";
+
+            label7.Text = @"这里显示姓名";
+
+            //更新右侧的统计信息 包括饼图
+            expectedStudentNumLbl.Text = @"应到人数";
+
+            didNotSubmitStudentNumLbl.Text = @"未到";
+
+            actualStudentNumLbl.Text = @"迟到";
+
+            askForLeaveStudentNumLbl.Text = @"请假";
+
+            var didNotSubmitStudentNumText = label19.Text + didNotSubmitStudentNumLbl.Text;
+
+            var actualStudentNumLblText = label14.Text + actualStudentNumLbl.Text;
+
+            var askForLeaveStudentNumLblText = label18.Text + askForLeaveStudentNumLbl.Text;
+
+            var xData = new List<string> () { didNotSubmitStudentNumText, actualStudentNumLblText, askForLeaveStudentNumLblText };
+
+            var yData = new List<int> () { 2, 10, 3, };
+
+            chart1.Series[0].Points.DataBindXY ( xData, yData );
+            //统计信息操作结束
 
         }
 
@@ -279,32 +343,32 @@ namespace AttendanceSystemClientV2.UserInterface {
 
 
             if (selectedproperty.Key == -1) { //判断是否有数据
-                MsgBox.ShowMsgBoxDialog("没有数据");
+                MsgBox.ShowMsgBoxDialog ( "没有数据" );
             }
 
-            var courseInfo = new CourseInfo(selectedproperty.Key);
+            var courseInfo = new CourseInfo ( selectedproperty.Key );
 
             Settings.Default.UserId = courseInfo.TeacherNo; // 设置登录时的教师编号
 
-            var logonForm = new LogOnForm();
+            var logonForm = new LogOnForm ();
 
-            logonForm.ShowDialog();
+            logonForm.ShowDialog ();
 
             var rollCallingDetailRow = this.rollCallingDetailGview3.SelectedRows[0];
 
             var kkno = selectedproperty.Key;
 
-            var skno = Convert.ToInt64 (rollCallingDetailRow.Cells["上课编号"].Value);
+            var skno = Convert.ToInt64 ( rollCallingDetailRow.Cells["上课编号"].Value );
 
-            var skdate = Convert.ToString( (rollCallingDetailRow.Cells["上课日期"].Value));
+            var skdate = Convert.ToString ( (rollCallingDetailRow.Cells["上课日期"].Value) );
 
-            var kkname = Convert.ToString(selectedproperty.Value);
+            var kkname = Convert.ToString ( selectedproperty.Value );
             //验证离线密码
-            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd (kkno);
+            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd ( kkno );
 
             if (!offlineVerifyResault) {
 
-                MsgBox.ShowMsgBoxDialog ("验证口令失败");
+                MsgBox.ShowMsgBoxDialog ( "验证口令失败" );
 
                 return;
             }
@@ -313,59 +377,57 @@ namespace AttendanceSystemClientV2.UserInterface {
 
 
 
-            var displayString = DataUploadControl.GenerateConfirmString(kkno, kkname, skno, skdate);
+            var displayString = DataUploadControl.GenerateConfirmString ( kkno, kkname, skno, skdate );
 
-            var confirmResault = ConfirmBox.ShowConfirmBoxDialog("请确认要上传的课程信息:\n"+displayString);
+            var confirmResault = ConfirmBox.ShowConfirmBoxDialog ( "请确认要上传的课程信息:\n" + displayString );
 
             if (confirmResault == DialogResult.Cancel) return;//如果点击了取消 就取消上传课程.
 
             //todo:在这里写上传数据的业务逻辑
 
-           DataUploadControl.UploadOneClass(kkno , skno);
+            DataUploadControl.UploadOneClass ( kkno, skno );
 
-           MsgBox.ShowMsgBoxDialog(displayString+"\n\n上传完成");
+            MsgBox.ShowMsgBoxDialog ( displayString + "\n\n上传完成" );
 
-            dp_RefreshMainForm();
+            dp_RefreshMainForm ();
         }
 
-        private void chooseClassBtn_Click ( object sender, EventArgs e ) {
-
-
-
-        }
+        
 
         private void radButton1_Click_1 ( object sender, EventArgs e ) {
 
             var selectedproperty = (KeyValuePair<long, string>)coursesListBox1.SelectedItem; // 获取已经选择的项目
 
             if (selectedproperty.Key == -1) { //判断是否有数据
-                MsgBox.ShowMsgBoxDialog ("没有数据");
+                MsgBox.ShowMsgBoxDialog ( "没有数据" );
             }
 
             var rollCallingDetailRow = classInfoGview1.SelectedRows[0];
 
             var kkno = selectedproperty.Key;
 
-            var skno = Convert.ToInt64 (rollCallingDetailRow.Cells["上课编号"].Value);
+            var skno = Convert.ToInt64 ( rollCallingDetailRow.Cells["上课编号"].Value );
 
-            var ydSkdate = Convert.ToString ((rollCallingDetailRow.Cells["上课日期"].Value));
+            var ydSkdate = Convert.ToString ( (rollCallingDetailRow.Cells["上课日期"].Value) );
 
-            var kkname = Convert.ToString (selectedproperty.Value);
+            var kkname = Convert.ToString ( selectedproperty.Value );
+
             //验证离线密码
-            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd (kkno);
+            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd ( kkno );
 
             if (!offlineVerifyResault) {
 
-                MsgBox.ShowMsgBoxDialog ("验证口令失败");
+                MsgBox.ShowMsgBoxDialog ( "验证口令失败" );
 
                 return;
             }
             // 如果验证不通过 则提示密码错误 并返回 什么都不做.
             //todo:指纹点名的业务逻辑在这里编写即可 需要从界面里带出去的东西:1.上课编号2.课程编号 3.实际上课时间
 
-            var getRollCallTimeForm = new SetTimeForm();
+            //把预定上课时间传出去
+            var getRollCallTimeForm = new SetTimeForm ( Convert.ToDateTime ( ydSkdate ) );
 
-            var getRollCallTimeResault = getRollCallTimeForm.ShowDialog(); // 显示设置时间窗口
+            var getRollCallTimeResault = getRollCallTimeForm.ShowDialog (); // 显示设置时间窗口
 
             MsgBox.ShowMsgBoxDialog ( getRollCallTimeResault.ToString () );
 
@@ -373,9 +435,174 @@ namespace AttendanceSystemClientV2.UserInterface {
                 return;
             }
 
-            var actualRollCallTime = getRollCallTimeForm.GetActualRollCallTime();
 
-            RollCallControl.Init(kkno , skno , actualRollCallTime);
+
+            var actualRollCallTime = getRollCallTimeForm.GetActualRollCallTime ();
+
+            courseNameLbl2.Text = kkname; // 课程名称 label内容
+
+            expectedTeachingTimeLbl.Text = ydSkdate; // 预定上课时间 label内容
+
+            teacherNameLbl2.Text = teacherNameLbl1.Text; // 教师姓名 label内容
+
+            actualTeachingTimeLbl.Text = actualRollCallTime.ToString("f"); //实际上课时间内容
+
+            var studentList = RollCallControl.Init ( kkno, skno, actualRollCallTime );
+
+            //对于RollCallControl来说 这个委托是用来更新界面的.具体怎么更新界面他不用管 所以不用改名
+            var showStudentInformationDelegate =
+                new RollCallControl.UpdateUserInterfaceDelegate ( ShowStudentInformation );
+
+            RollCallControl.StartRollCall(studentList ,showStudentInformationDelegate);
+
+            mainPageView.SelectedPage = startRollCallPage;
+            
+            dp_ResetMainForm();
+
+            dp_EnableRollcallButtons();
+
+            rollCallStudentListGv.DataSource = RollCallControl.CopyOfStudentList;
+            //todo:接下来要做的事情:
+            //1.打开指纹仪
+            //2.识别出来的号码拿出来 放到Student List里查 查完了把Student对象扔到界面委托里显示.
+            //3.用while(bool变量)控制结束签到
+            //4.结束签到的时候直接closeUsb即可
+            //写一个函数 传入更新界面的Delegate 该函数需要在一个新的线程里编写.
+
+        }
+
+        /// <summary>
+        /// 显示辅助函数. 
+        /// 拿到学生信息之后 要通过这个函数来更新界面 
+        /// </summary>
+        /// <param name="fingerprintImage">指纹图像</param>
+        /// <param name="courseInfo">里面应该有应到人数和实到人数.</param>
+        /// <param name="student">学生.  如果为空则显示指纹图像</param>
+        private void Dp_ShowStudentInformation ( Image fingerprintImage, CourseInfo courseInfo, Student student = null ) {
+
+            if (student == null) {
+
+                if (fingerprintImage == null) // 如果没图片的话就返回 图片可能会不存在于硬盘上
+                    return;
+
+                photoPbox.Image = fingerprintImage;
+
+                return;
+
+            }
+
+            mainPageView.SelectedPage = startRollCallPage;
+
+            studentClassLbl2.Text = student.ClassName; // 班级名称
+
+            photoPbox.Image = student.StudentPhoto; // 学生照片
+
+            studentNameLbl2.Text = student.StudentName;
+
+            studentIdLbl2.Text = student.StudentId;
+
+            rollCallStatus2.Text = student.RollCallStatusString;
+
+            label7.Text = student.StudentName;
+
+            //更新右侧的统计信息 包括饼图
+            expectedStudentNumLbl.Text = courseInfo.expectedStudentNum.ToString ();
+
+            didNotSubmitStudentNumLbl.Text = courseInfo.didNotSubmitStudentNum.ToString ();
+
+            actualStudentNumLbl.Text = courseInfo.actualStudentNum.ToString ();
+
+            askForLeaveStudentNumLbl.Text = courseInfo.askForLeaveStudentNum.ToString ();
+
+            var expectedStudentNumLblText = label13.Text + expectedStudentNumLbl.Text;
+
+            var didNotSubmitStudentNumText = label19.Text + didNotSubmitStudentNumLbl.Text;
+
+            var actualStudentNumLblText = label14.Text + actualStudentNumLbl.Text;
+
+            var askForLeaveStudentNumLblText = label18.Text + askForLeaveStudentNumLbl.Text;
+
+            var xData = new List<string> () { didNotSubmitStudentNumText, actualStudentNumLblText, askForLeaveStudentNumLblText };
+
+            var yData = new List<int> () {  courseInfo.didNotSubmitStudentNum, courseInfo.actualStudentNum, courseInfo.askForLeaveStudentNum, };
+
+            chart1.Series[0].Points.DataBindXY(xData, yData);
+            //统计信息操作结束
+
+        }
+
+        public void ShowStudentInformation ( Image fingerprintImage, CourseInfo courseInfo, Student student = null ){
+
+            Invoke(new MethodInvoker(() => Dp_ShowStudentInformation(fingerprintImage, courseInfo, student)));
+
+        }
+
+        /// <summary>
+        /// 结束点名按钮函数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void stopRollCallBtn_Click ( object sender, EventArgs e ){
+
+            
+
+            stopRollCallBtn.Enabled = false;
+
+            RollCallControl.StopFingerprint(); // 先停指纹仪
+
+            dp_ResetMainForm(); // 再重置窗口
+
+            dp_DisableRollCallButtons ();//然后把按钮关掉.
+
+        }
+
+
+
+        /// <summary>
+        /// 让签到控制按钮变为可用
+        /// </summary>
+        private void dp_EnableRollcallButtons(){
+
+            showBriefStudentListBtn.Enabled = true;
+
+            manualRollCallBtn.Enabled = true;
+
+            stopRollCallBtn.Enabled = true;
+
+            radButton1.Enabled = false;
+
+            coursesListBox1.Enabled = false;
+
+            classInfoGview1.Enabled = false;
+        }
+
+        /// <summary>
+        /// 让签到按钮变为不可用
+        /// </summary>
+        private void dp_DisableRollCallButtons(){
+
+            showBriefStudentListBtn.Enabled = false;
+
+            manualRollCallBtn.Enabled = false;
+
+            stopRollCallBtn.Enabled = false;
+
+            radButton1.Enabled = true;
+
+            coursesListBox1.Enabled = true;
+
+            classInfoGview1.Enabled = true;
+        }
+
+        private void showBriefStudentListBtn_Click ( object sender, EventArgs e ) {
+
+            rollCallStudentListPn.BringToFront(); // 将学生列表放在前端
+
+        }
+
+        private void chooseClassBtn_Click ( object sender, EventArgs e ) {
+
+            currentStudentDetailPn.BringToFront (); //将当前学生信息放在前端
 
         }
     }
