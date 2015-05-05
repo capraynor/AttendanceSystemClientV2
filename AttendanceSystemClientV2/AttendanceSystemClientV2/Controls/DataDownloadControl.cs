@@ -236,6 +236,17 @@ namespace AttendanceSystemClientV2.Controls {
 
             courseBriefcase.WriteBriefcase();
 
+            var classInfoTable = OfflineDataControl.GetClassInfoTable(kkno);
+
+            var classInfoRow = classInfoTable.Select(string.Format("上课编号 = '{0}'", skno));
+
+            classInfoRow.First().BeginEdit();
+            classInfoRow.First()["上课状态"] = "已签到";
+
+            classInfoRow.First().EndEdit();
+
+            courseBriefcase.AddTable ( classInfoTable );
+
             //todo:改PropertiesBriefcase!!!!
             //foreach (DataRow sktableRow in skdatatable.Rows) {
 

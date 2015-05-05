@@ -378,6 +378,18 @@ namespace AttendanceSystemClientV2.Controls {
             return counter.Count ();
 
         }
+
+        public static void SaveSkTable(List<SKTABLE_07_VIEW> skTable , long kkno){
+
+            var courseBriefcase = BriefcaseControl.GetBriefcase(kkno);
+
+            var skDatatable = EnumerableExtension.ListToDataTable(skTable, "SKTABLE");
+
+            courseBriefcase.AddTable(skDatatable);
+
+            courseBriefcase.WriteBriefcase();
+
+        }
         
 
     }

@@ -102,6 +102,7 @@
             this.passwdTbox.PasswordChar = '*';
             this.passwdTbox.Size = new System.Drawing.Size(288, 39);
             this.passwdTbox.TabIndex = 15;
+            this.passwdTbox.Click += new System.EventHandler(this.passwdTbox_Click);
             // 
             // VerifyOfflinePasswordForm
             // 

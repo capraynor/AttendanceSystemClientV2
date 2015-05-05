@@ -43,10 +43,14 @@ namespace AttendanceSystemClientV2.UserInterface {
             Settings.Default.Save (); // 保存
 
             dp_DisableRollCallButtons ();
+
+            mainPageView.SelectedPage = downloadDataPage;
         }
 
 
         private void manualBtn_Click ( object sender, EventArgs e ) {
+
+            /***********得到kkno和skno 然后验证离线密码***********/
 
             var selectedproperty = (KeyValuePair<long, string>)coursesListBox1.SelectedItem; // 获取已经选择的项目
 
@@ -59,6 +63,22 @@ namespace AttendanceSystemClientV2.UserInterface {
             var kkno = selectedproperty.Key;
 
             var skno = Convert.ToInt64 ( rollCallingDetailRow.Cells["上课编号"].Value );
+
+            var ydSkdate = Convert.ToString ( (rollCallingDetailRow.Cells["上课日期"].Value) );
+
+            var kkname = Convert.ToString ( selectedproperty.Value );
+
+            //验证离线密码
+            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd ( kkno );
+
+            if (!offlineVerifyResault) {
+
+                MsgBox.ShowMsgBoxDialog ( "验证口令失败" );
+
+                return;
+            }
+
+            /***********得到kkno和skno 然后验证离线密码***********/
 
             RollCallControl.StopFingerprint(); // 初始化完了之后再停指纹仪
 
@@ -429,15 +449,30 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             var getRollCallTimeResault = getRollCallTimeForm.ShowDialog (); // 显示设置时间窗口
 
-            MsgBox.ShowMsgBoxDialog ( getRollCallTimeResault.ToString () );
-
             if (getRollCallTimeResault == DialogResult.Cancel) { // 如果点击了返回 那么就不要再往下走了.
                 return;
             }
 
-
-
             var actualRollCallTime = getRollCallTimeForm.GetActualRollCallTime ();
+
+            var skrecordList = OfflineDataControl.GetSktable ( kkno );// 将来需要把这个拿来更新上课表
+
+            //var skrecord = (from c in skrecordList where c.SKNO == skno select c).First (); // linq  完了以后把第一条记录取出来(一共就有一条记录.)
+
+            //FindIndex(a => a.SKNO == (long) sktableRow["SKNO"])
+
+            var skrecordIndex = skrecordList.FindIndex(a => a.SKNO == skno);
+
+            var skrecord = skrecordList[skrecordIndex];
+
+            skrecord.SKZT = 3;
+
+            skrecord.DMFS = 1;
+
+            skrecord.SKDATE = actualRollCallTime;
+
+            OfflineDataControl.SaveSkTable(skrecordList , kkno); // 存上课表
+
 
             courseNameLbl2.Text = kkname; // 课程名称 label内容
 
@@ -486,6 +521,20 @@ namespace AttendanceSystemClientV2.UserInterface {
                     return;
 
                 photoPbox.Image = fingerprintImage;
+
+                studentNameLbl2.Text = @"请重按手指";
+
+                mainPageView.SelectedPage = startRollCallPage;
+
+                studentClassLbl2.Text = ""; // 班级名称
+
+                studentNameLbl2.Text = "";
+
+                studentIdLbl2.Text = "";
+
+                rollCallStatus2.Text = "";
+
+                label7.Text = @"请重按手指";
 
                 return;
 
@@ -544,7 +593,37 @@ namespace AttendanceSystemClientV2.UserInterface {
         /// <param name="e"></param>
         private void stopRollCallBtn_Click ( object sender, EventArgs e ){
 
-            
+            /***********得到kkno和skno 然后验证离线密码***********/
+
+            var selectedproperty = (KeyValuePair<long, string>)coursesListBox1.SelectedItem; // 获取已经选择的项目
+
+            if (selectedproperty.Key == -1) { //判断是否有数据
+                MsgBox.ShowMsgBoxDialog ( "没有数据" );
+            }
+
+            var rollCallingDetailRow = classInfoGview1.SelectedRows[0];
+
+            var kkno = selectedproperty.Key;
+
+            var skno = Convert.ToInt64 ( rollCallingDetailRow.Cells["上课编号"].Value );
+
+            var ydSkdate = Convert.ToString ( (rollCallingDetailRow.Cells["上课日期"].Value) );
+
+            var kkname = Convert.ToString ( selectedproperty.Value );
+
+            //验证离线密码
+            var offlineVerifyResault = BriefcaseControl.VerifyOfflinePasswd ( kkno );
+
+            if (!offlineVerifyResault) {
+
+                MsgBox.ShowMsgBoxDialog ( "验证口令失败" );
+
+                return;
+            }
+
+            /***********得到kkno和skno 然后验证离线密码***********/
+
+            RollCallControl.SetOneCourseDidNotSubmit(kkno, skno);
 
             stopRollCallBtn.Enabled = false;
 
@@ -603,6 +682,26 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void chooseClassBtn_Click ( object sender, EventArgs e ) {
 
             currentStudentDetailPn.BringToFront (); //将当前学生信息放在前端
+
+        }
+
+        private void pictureBox1_Click ( object sender, EventArgs e ){
+
+            var dialogResault = ConfirmBox.ShowConfirmBoxDialog("确定要退出吗?");
+
+            if (dialogResault == DialogResult.OK){
+
+
+                Close ();
+
+            }
+
+
+        }
+
+        private void pictureBox1_MouseDown ( object sender, MouseEventArgs e ) {
+
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
 
         }
     }

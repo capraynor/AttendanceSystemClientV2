@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,18 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             DialogResult = DialogResult.No;//设置Dialogresault为No
             //如果点击取消, dialogresault就为Cancel
+        }
+
+        private void passwdTbox_Click ( object sender, EventArgs e ) {
+
+            //弹出键盘
+            try {
+                Process.Start ( @"C:/Program Files/Common Files/microsoft shared/ink/tabtip.exe" );
+            } catch {
+
+            }
+            //弹出键盘
+
         }
     }
 }

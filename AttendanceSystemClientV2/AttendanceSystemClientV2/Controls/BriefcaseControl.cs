@@ -42,17 +42,27 @@ namespace AttendanceSystemClientV2.Controls {
 
                 }
 
+                dialogresault = new SetOfflinePasswdForm ().ShowDialog (); // 显示离线密码框 指定离线密码
+
+                if (dialogresault == DialogResult.Cancel) { // 如果用户点击取消的话
+
+                    return null;//返回null 在调用的位置需要进行判定.如果为null 则不下载课程
+                }//离线密码存在 Properties.Settings.Default.OffliePassword 里面.
+
                 File.Move (GlobalParams.BriefcasePath + kkrecord.KKNO + @".daBriefcase", 
                     GlobalParams.BriefcasePath + kkrecord.KKNO + @".daBriefcase"+DateTime.Now.ToString("yyyymmmmddhhmmss")); // 若存在 则重命名该briefcase.
 
             }
+            else{
+                dialogresault = new SetOfflinePasswdForm ().ShowDialog (); // 显示离线密码框 指定离线密码
 
-            dialogresault = new SetOfflinePasswdForm ().ShowDialog (); // 显示离线密码框 指定离线密码
+                if (dialogresault == DialogResult.Cancel) { // 如果用户点击取消的话
 
-            if (dialogresault == DialogResult.Cancel) { // 如果用户点击取消的话
+                    return null;//返回null 在调用的位置需要进行判定.如果为null 则不下载课程
+                }//离线密码存在 Properties.Settings.Default.OffliePassword 里面.
+            }
 
-                return null;//返回null 在调用的位置需要进行判定.如果为null 则不下载课程
-            }//离线密码存在 Properties.Settings.Default.OffliePassword 里面.
+            
 
             
             var briefcaseToReturn = new FileBriefcase(GlobalParams.BriefcasePath + kkrecord.KKNO + @".daBriefcase");
@@ -122,7 +132,21 @@ namespace AttendanceSystemClientV2.Controls {
 
             if (File.Exists(GlobalParams.BriefcasePath + @"Properties.daBriefcase")) { //does properties briefcase exists?
 
-                return new FileBriefcase (GlobalParams.BriefcasePath + @"Properties.daBriefcase" , true);//if yes ,return that briefcase(侯晨琛非要让我用英语注释)
+                var propertiesBriefcase = new  FileBriefcase (GlobalParams.BriefcasePath + @"Properties.daBriefcase" , true);//if yes ,return that briefcase(侯晨琛非要让我用英语注释)
+
+                var fDataModule = new DataModule ();//新建briefcase的时候要下载班级表咯
+
+                var bjTable = from c in fDataModule.GetBjTable () //获取数据
+                              where c.XYID == collageNo
+                              select c;
+
+                var bjDataTable = EnumerableExtension.ListToDataTable ( bjTable.ToList (), "BJTABLE" );//将班级表转换成datatable
+
+                propertiesBriefcase.AddTable ( bjDataTable );//将班级表添加到briefcase中
+
+                propertiesBriefcase.WriteBriefcase();
+
+                return propertiesBriefcase;//返回该briefcase
 
             }else {
 
@@ -138,13 +162,15 @@ namespace AttendanceSystemClientV2.Controls {
 
                 var fDataModule = new DataModule();//新建briefcase的时候要下载班级表咯
 
-                var bjTable = from c in fDataModule.GetBjTable() //获取数据
+                var bjTable = from c in fDataModule.GetBjTable() //获取班级表数据
                               where c.XYID == collageNo 
                               select c;
 
                 var bjDataTable = EnumerableExtension.ListToDataTable(bjTable.ToList(), "BJTABLE");//将班级表转换成datatable
 
                 propertiesBriefcase.AddTable(bjDataTable);//将班级表添加到briefcase中
+
+                propertiesBriefcase.WriteBriefcase ();
 
                 return propertiesBriefcase;//返回该briefcase
 

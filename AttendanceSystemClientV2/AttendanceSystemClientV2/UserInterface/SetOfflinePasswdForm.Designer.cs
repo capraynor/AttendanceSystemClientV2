@@ -93,6 +93,7 @@
             this.confirmPasswordTbox.PasswordChar = '*';
             this.confirmPasswordTbox.Size = new System.Drawing.Size(288, 39);
             this.confirmPasswordTbox.TabIndex = 11;
+            this.confirmPasswordTbox.Click += new System.EventHandler(this.confirmPasswordTbox_Click);
             this.confirmPasswordTbox.TextChanged += new System.EventHandler(this.confirmPasswordTbox_TextChanged);
             // 
             // btnOk
@@ -129,6 +130,7 @@
             this.passwordTbox.PasswordChar = '*';
             this.passwordTbox.Size = new System.Drawing.Size(288, 39);
             this.passwordTbox.TabIndex = 10;
+            this.passwordTbox.Click += new System.EventHandler(this.passwordTbox_Click);
             this.passwordTbox.TextChanged += new System.EventHandler(this.UserIdTextBox_TextChanged);
             // 
             // radPanel1

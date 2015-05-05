@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace AttendanceSystemClientV2.UserInterface {
@@ -69,6 +70,30 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         }
         #endregion
+
+        private void UserIdTextBox_Click ( object sender, EventArgs e ) {
+
+            //弹出键盘
+            try {
+                Process.Start ( @"C:/Program Files/Common Files/microsoft shared/ink/tabtip.exe" );
+            } catch{
+
+            }
+            //弹出键盘
+
+        }
+
+        private void PasswordTextBox_Click ( object sender, EventArgs e ) {
+
+            //弹出键盘
+            try {
+                Process.Start ( @"C:/Program Files/Common Files/microsoft shared/ink/tabtip.exe" );
+            } catch {
+
+            }
+            //弹出键盘
+
+        }
 
 
 

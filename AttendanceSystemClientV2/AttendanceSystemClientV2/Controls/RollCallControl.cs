@@ -434,6 +434,7 @@ namespace AttendanceSystemClientV2.Controls {
 
         public static void SetOneCourseDidNotSubmit(long kkno , long skno){
 
+           
             var courseBriefcase = BriefcaseControl.GetBriefcase(kkno);
 
             var classInfoTable =  OfflineDataControl.GetClassInfoTable(kkno);
@@ -443,6 +444,12 @@ namespace AttendanceSystemClientV2.Controls {
             classInfoRows.First().BeginEdit();
 
             classInfoRows.First()["上课状态"] = "未提交";
+
+            classInfoRows.First().EndEdit();
+
+            courseBriefcase.AddTable(classInfoTable);
+
+            courseBriefcase.WriteBriefcase();
 
 
         }

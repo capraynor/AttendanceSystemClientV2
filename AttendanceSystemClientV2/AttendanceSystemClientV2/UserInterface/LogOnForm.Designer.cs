@@ -53,6 +53,7 @@
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(288, 39);
             this.PasswordTextBox.TabIndex = 3;
+            this.PasswordTextBox.Click += new System.EventHandler(this.PasswordTextBox_Click);
             this.PasswordTextBox.TextChanged += new System.EventHandler(this.ValidateInput);
             // 
             // UserIdTextBox
@@ -63,6 +64,7 @@
             this.UserIdTextBox.Name = "UserIdTextBox";
             this.UserIdTextBox.Size = new System.Drawing.Size(288, 39);
             this.UserIdTextBox.TabIndex = 1;
+            this.UserIdTextBox.Click += new System.EventHandler(this.UserIdTextBox_Click);
             this.UserIdTextBox.TextChanged += new System.EventHandler(this.ValidateInput);
             // 
             // btnCancel
