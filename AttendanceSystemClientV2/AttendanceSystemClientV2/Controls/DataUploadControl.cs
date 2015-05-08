@@ -54,6 +54,8 @@ namespace AttendanceSystemClientV2.Controls {
         /// <param name="skno">上课编号</param>
         public static void UploadOneClass(long kkno, long skno) {
             
+            //todo:这个东西要重写
+
             //1.根据KKNo找到本地的Briefcase. 因为之前都查过了 所以这里就不用做Briefcase的检查了.  直接拉Briefcase过来饥渴.
             //2.根据skno在Briefcase中获取点名表和上课表.
             //3.对于上课表的更改, 直接在服务器上找到那节课对应的记录 然后改 然后上传即可.
@@ -77,8 +79,6 @@ namespace AttendanceSystemClientV2.Controls {
             }
 
             var dmList = OfflineDataControl.GetDmtable(kkno, skno); // 这已经是List了... 我干了什么...
-
-            MsgBox.ShowMsgBoxDialog(fDataModule.IsLoggedOn.ToString());
 
             foreach (var dmlistRecord in dmList) {
 

@@ -23,7 +23,10 @@ namespace AttendanceSystemClientV2.UserInterface {
         //显示隐藏的学生列表
         //选择标签页的时候弹出toast提示
         //标签页侧边栏需要背景
-        public MainForm ( ) {
+        public MainForm ( ){
+
+            var d = DateTime.Now;
+
             InitializeComponent ();
 
             _rollCalling = false;//标记是否正在进行考勤工作
@@ -45,6 +48,7 @@ namespace AttendanceSystemClientV2.UserInterface {
             dp_DisableRollCallButtons ();
 
             mainPageView.SelectedPage = downloadDataPage;
+
         }
 
 
@@ -370,10 +374,6 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             Settings.Default.UserId = courseInfo.TeacherNo; // 设置登录时的教师编号
 
-            var logonForm = new LogOnForm ();
-
-            logonForm.ShowDialog ();
-
             var rollCallingDetailRow = this.rollCallingDetailGview3.SelectedRows[0];
 
             var kkno = selectedproperty.Key;
@@ -395,7 +395,9 @@ namespace AttendanceSystemClientV2.UserInterface {
             // 如果验证不通过 则提示密码错误 并返回 什么都不做.
             //todo:上传数据的业务逻辑在这里编写即可 需要从界面里带出去的东西:1.上课编号2.课程编号 3.预计上课时间
 
+            var logonForm = new LogOnForm ();//登录窗口
 
+            logonForm.ShowDialog (); // 显示登录窗口
 
             var displayString = DataUploadControl.GenerateConfirmString ( kkno, kkname, skno, skdate );
 

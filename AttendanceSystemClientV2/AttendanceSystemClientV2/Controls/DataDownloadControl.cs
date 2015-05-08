@@ -232,13 +232,17 @@ namespace AttendanceSystemClientV2.Controls {
 
             skDatarow.First().EndEdit();
 
+            skdatatable = EnumerableExtension.ListToDataTable ( skdatatable.ToList<SKTABLE_07_VIEW> ()  , "SKTABLE");
+            
             courseBriefcase.AddTable ( skdatatable );
 
             courseBriefcase.WriteBriefcase();
 
             var classInfoTable = OfflineDataControl.GetClassInfoTable(kkno);
 
-            var classInfoRow = classInfoTable.Select(string.Format("上课编号 = '{0}'", skno));
+            //var classInfoTable = courseBriefcase.FindTable("ClassInfo");
+
+            var classInfoRow = classInfoTable.Select(string.Format("上课编号='{0}'", skno));
 
             classInfoRow.First().BeginEdit();
             classInfoRow.First()["上课状态"] = "已签到";
@@ -246,6 +250,8 @@ namespace AttendanceSystemClientV2.Controls {
             classInfoRow.First().EndEdit();
 
             courseBriefcase.AddTable ( classInfoTable );
+
+            courseBriefcase.WriteBriefcase();
 
             //todo:改PropertiesBriefcase!!!!
             //foreach (DataRow sktableRow in skdatatable.Rows) {

@@ -200,6 +200,9 @@ namespace AttendanceSystemClientV2.Controls {
         public static FileBriefcase GetBriefcase(long kkno) {
 
             if (!File.Exists(GlobalParams.BriefcasePath + kkno + @".daBriefcase")) {
+
+                MsgBox.ShowMsgBoxDialog(string.Format("该briefcase: {0} 未找到" , kkno));
+
                 return null;
             } 
             

@@ -17,6 +17,59 @@ namespace AttendanceSystemClientV2.Models {
     /// 学生类。用于描述一个学生。
     /// </summary>
     public class Student {
+
+        /// <summary>
+        /// 学生姓名
+        /// </summary>
+        [System.ComponentModel.DisplayName ( @"姓名" )]
+        public string StudentName { get; set; }
+
+        /// <summary>
+        /// 考勤状态
+        /// </summary>
+        [System.ComponentModel.DisplayName ( @"状态" )]
+        public string RollCallStatusString {
+            get {
+                switch (RollCallStatus) {
+
+                    case 0: {
+
+                            return "正常";
+
+
+                        }
+                    case 1: {
+
+                            return "迟到";
+
+                        }
+
+                    case 2: {
+
+                            return "早退";
+
+                        }
+                    case 3: {
+
+                            return "旷课";
+
+                        }
+                    case 4: {
+
+                            return "请假";
+
+                        }
+
+                    case 5: {
+
+                            return "未签到";
+                        }
+                }
+
+                return "N/A"; // 如果数据异常就翻脸
+            }
+        }
+
         /// <summary>
         /// 学号
         /// </summary>
@@ -48,12 +101,6 @@ namespace AttendanceSystemClientV2.Models {
         [System.ComponentModel.DisplayName(@"班级")]
         public string ClassName { get; set; }
 
-        /// <summary>
-        /// 学生姓名
-        /// </summary>
-        [System.ComponentModel.DisplayName(@"姓名")]
-        public string StudentName { get; set; }
-
 
         /// <summary>
         /// 指纹字符串
@@ -75,57 +122,13 @@ namespace AttendanceSystemClientV2.Models {
         /// </summary>
         public long skno;
 
-        /// <summary>
-        /// 考勤状态
-        /// </summary>
-        [System.ComponentModel.DisplayName(@"状态")]
-        public string RollCallStatusString {
-            get {
-                switch (RollCallStatus) {
-
-                    case 0: {
-
-                        return "正常";
-
-                        
-                    }
-                    case 1: {
-
-                        return "迟到";
-                        
-                    }
-
-                    case 2: {
-
-                        return "早退";
-
-                    }
-                    case 3: {
-
-                        return "旷课";
-
-                    }
-                    case 4: {
-
-                        return "请假";
-
-                    }
-
-                    case 5: {
-
-                        return "未签到";
-                    }
-                }
-
-                return "N/A"; // 如果数据异常就翻脸
-            }
-        }
+        
 
         /// <summary>
         /// 该学生的到课时间
         /// </summary>
         [System.ComponentModel.DisplayName(@"到课时间")]
-        public DateTime ArriveTime { get; set; }
+        public DateTime? ArriveTime { get; set; }
 
         /// <summary>
         /// 应到时间
@@ -192,6 +195,16 @@ namespace AttendanceSystemClientV2.Models {
 
             StudentName = (string)xkRecord["XSNAME"];
 
+            if (dmRecord.DMSJ1 == null){ // 如果点名时间1为空的话
+
+                ArriveTime = null; // 这名学生的点名时间也为空
+
+            }
+            else{
+
+                ArriveTime = dmRecord.DMSJ1; // 否则这名学生的点名时间应该和离线数据的点名时间相同
+
+            }
 
 
         }
