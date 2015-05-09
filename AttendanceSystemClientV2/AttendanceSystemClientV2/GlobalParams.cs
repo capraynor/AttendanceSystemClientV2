@@ -22,13 +22,17 @@ namespace AttendanceSystemClientV2 {
                 }
                 return (RootDir + @"\Briefcase\");
             }
+
+            
         }
 
         /// <summary>
         /// 获取软件的根目录
         /// </summary>
         public static string RootDir {
-            get { return Environment.CurrentDirectory; }
+            //get { return Environment.CurrentDirectory; }
+            get { return Environment.GetFolderPath ( Environment.SpecialFolder.MyDocuments ); }
+
         }
 
         /// <summary>

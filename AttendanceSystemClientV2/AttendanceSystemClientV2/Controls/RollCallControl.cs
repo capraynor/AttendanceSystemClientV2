@@ -53,7 +53,11 @@ namespace AttendanceSystemClientV2.Controls {
 
             var classBriefcase = BriefcaseControl.GetBriefcase ( kkno ); // 拿课程对应的Briefcase 
 
+            Student.ClassBriefcase = classBriefcase; // 用于缓存classBriefcase 当手动签到结束后应该刷新Student.ClassBriefcase 变量
+
             var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno ); // 拿本节课对应的点名表
+
+            Student.DmTable = dmTable; // 缓存点名表 手动签到时候要刷新Student.DmTable变量
 
             var xkTable = OfflineDataControl.GetXktable ( kkno ); // 拿课程对应的学生信息
 

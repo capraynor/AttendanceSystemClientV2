@@ -35,6 +35,9 @@
             this.panel1_default = new System.Windows.Forms.Panel();
             this.panel2_down = new System.Windows.Forms.Panel();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
+            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
+            this.metroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c = new Telerik.WinControls.RootRadElement();
             this.downloadDataPage = new Telerik.WinControls.UI.RadPageViewPage();
             this.panel3_fill = new System.Windows.Forms.Panel();
             this.panel3_up = new System.Windows.Forms.Panel();
@@ -157,15 +160,13 @@
             this.courseListLbox3 = new System.Windows.Forms.ListBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
-            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.panel2_up = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c = new Telerik.WinControls.RootRadElement();
             this.panel1_default.SuspendLayout();
             this.panel2_down.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).BeginInit();
             this.mainPageView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             this.downloadDataPage.SuspendLayout();
             this.panel3_fill.SuspendLayout();
             this.panel3_up.SuspendLayout();
@@ -246,7 +247,6 @@
             this.panel34.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             this.panel2_up.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -284,7 +284,7 @@
             this.mainPageView.Font = new System.Drawing.Font("微软雅黑", 25F);
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.dataManagementPage;
+            this.mainPageView.SelectedPage = this.downloadDataPage;
             this.mainPageView.Size = new System.Drawing.Size(1278, 599);
             this.mainPageView.TabIndex = 0;
             this.mainPageView.Text = "radPageView1";
@@ -297,14 +297,29 @@
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.mainPageView.GetChildAt(0))).ItemSizeMode = Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight;
             ((Telerik.WinControls.UI.StripViewItemContainer)(this.mainPageView.GetChildAt(0).GetChildAt(0))).MinSize = new System.Drawing.Size(0, 0);
             // 
+            // radStatusStrip1
+            // 
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 599);
+            this.radStatusStrip1.Name = "radStatusStrip1";
+            this.radStatusStrip1.Size = new System.Drawing.Size(1278, 24);
+            this.radStatusStrip1.TabIndex = 1;
+            this.radStatusStrip1.Text = "radStatusStrip1";
+            // 
+            // object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c
+            // 
+            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.Name = "object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c";
+            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.StretchHorizontally = true;
+            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.StretchVertically = true;
+            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // downloadDataPage
             // 
             this.downloadDataPage.Controls.Add(this.panel3_fill);
             this.downloadDataPage.Image = ((System.Drawing.Image)(resources.GetObject("downloadDataPage.Image")));
-            this.downloadDataPage.ItemSize = new System.Drawing.SizeF(109F, 100F);
-            this.downloadDataPage.Location = new System.Drawing.Point(139, 4);
+            this.downloadDataPage.ItemSize = new System.Drawing.SizeF(107F, 98F);
+            this.downloadDataPage.Location = new System.Drawing.Point(137, 4);
             this.downloadDataPage.Name = "downloadDataPage";
-            this.downloadDataPage.Size = new System.Drawing.Size(1135, 591);
+            this.downloadDataPage.Size = new System.Drawing.Size(1137, 591);
             this.downloadDataPage.Text = " ";
             // 
             // panel3_fill
@@ -313,7 +328,7 @@
             this.panel3_fill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3_fill.Location = new System.Drawing.Point(0, 0);
             this.panel3_fill.Name = "panel3_fill";
-            this.panel3_fill.Size = new System.Drawing.Size(1135, 591);
+            this.panel3_fill.Size = new System.Drawing.Size(1137, 591);
             this.panel3_fill.TabIndex = 1;
             // 
             // panel3_up
@@ -322,7 +337,7 @@
             this.panel3_up.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3_up.Location = new System.Drawing.Point(0, 0);
             this.panel3_up.Name = "panel3_up";
-            this.panel3_up.Size = new System.Drawing.Size(1135, 591);
+            this.panel3_up.Size = new System.Drawing.Size(1137, 591);
             this.panel3_up.TabIndex = 1;
             // 
             // panel4_down
@@ -333,7 +348,7 @@
             this.panel4_down.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4_down.Location = new System.Drawing.Point(0, 0);
             this.panel4_down.Name = "panel4_down";
-            this.panel4_down.Size = new System.Drawing.Size(1135, 591);
+            this.panel4_down.Size = new System.Drawing.Size(1137, 591);
             this.panel4_down.TabIndex = 2;
             // 
             // panel1
@@ -346,7 +361,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(600, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 589);
+            this.panel1.Size = new System.Drawing.Size(535, 589);
             this.panel1.TabIndex = 2;
             // 
             // radButton1
@@ -386,7 +401,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(531, 504);
+            this.panel20.Size = new System.Drawing.Size(533, 504);
             this.panel20.TabIndex = 5;
             // 
             // panel21
@@ -395,7 +410,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(0, 55);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(531, 449);
+            this.panel21.Size = new System.Drawing.Size(533, 449);
             this.panel21.TabIndex = 3;
             // 
             // classInfoGview1
@@ -413,7 +428,7 @@
             this.classInfoGview1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.classInfoGview1.Name = "classInfoGview1";
             this.classInfoGview1.ReadOnly = true;
-            this.classInfoGview1.Size = new System.Drawing.Size(531, 449);
+            this.classInfoGview1.Size = new System.Drawing.Size(533, 449);
             this.classInfoGview1.SynchronizeCurrentRowInSplitMode = true;
             this.classInfoGview1.TabIndex = 1;
             this.classInfoGview1.Text = "radGridView1";
@@ -424,7 +439,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(531, 55);
+            this.panel14.Size = new System.Drawing.Size(533, 55);
             this.panel14.TabIndex = 2;
             // 
             // radPanel1
@@ -434,7 +449,7 @@
             this.radPanel1.Font = new System.Drawing.Font("微软雅黑", 21.75F);
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(531, 55);
+            this.radPanel1.Size = new System.Drawing.Size(533, 55);
             this.radPanel1.TabIndex = 2;
             this.radPanel1.Text = "考勤情况（每节课）";
             // 
@@ -639,7 +654,7 @@
             // 
             this.startRollCallPage.Controls.Add(this.panel10);
             this.startRollCallPage.Image = ((System.Drawing.Image)(resources.GetObject("startRollCallPage.Image")));
-            this.startRollCallPage.ItemSize = new System.Drawing.SizeF(109F, 96F);
+            this.startRollCallPage.ItemSize = new System.Drawing.SizeF(107F, 94F);
             this.startRollCallPage.Location = new System.Drawing.Point(139, 4);
             this.startRollCallPage.Name = "startRollCallPage";
             this.startRollCallPage.Size = new System.Drawing.Size(1135, 591);
@@ -1291,7 +1306,7 @@
             // 
             this.dataManagementPage.Controls.Add(this.panel12);
             this.dataManagementPage.Image = ((System.Drawing.Image)(resources.GetObject("dataManagementPage.Image")));
-            this.dataManagementPage.ItemSize = new System.Drawing.SizeF(109F, 88F);
+            this.dataManagementPage.ItemSize = new System.Drawing.SizeF(107F, 86F);
             this.dataManagementPage.Location = new System.Drawing.Point(139, 4);
             this.dataManagementPage.Name = "dataManagementPage";
             this.dataManagementPage.Size = new System.Drawing.Size(1135, 591);
@@ -1677,14 +1692,6 @@
             this.radPanel3.TabIndex = 2;
             this.radPanel3.Text = "课程列表";
             // 
-            // radStatusStrip1
-            // 
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 599);
-            this.radStatusStrip1.Name = "radStatusStrip1";
-            this.radStatusStrip1.Size = new System.Drawing.Size(1278, 24);
-            this.radStatusStrip1.TabIndex = 1;
-            this.radStatusStrip1.Text = "radStatusStrip1";
-            // 
             // panel2_up
             // 
             this.panel2_up.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2_up.BackgroundImage")));
@@ -1708,13 +1715,6 @@
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
-            // object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c
-            // 
-            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.Name = "object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c";
-            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.StretchHorizontally = true;
-            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.StretchVertically = true;
-            this.object_9d9a2a38_7052_4f9c_b5cb_084d4e0b9c3c.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1736,6 +1736,7 @@
             this.panel2_down.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).EndInit();
             this.mainPageView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             this.downloadDataPage.ResumeLayout(false);
             this.panel3_fill.ResumeLayout(false);
             this.panel3_up.ResumeLayout(false);
@@ -1821,7 +1822,6 @@
             this.panel34.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             this.panel2_up.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

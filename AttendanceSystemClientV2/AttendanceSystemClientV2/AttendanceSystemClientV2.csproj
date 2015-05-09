@@ -13,8 +13,7 @@
     <RootNamespace>AttendanceSystemClientV2</RootNamespace>
     <AssemblyName>AttendanceSystemClientV2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>AttendanceSystemClientV2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -41,7 +40,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -123,6 +122,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="RemObjects.InternetPack">
       <Name>RemObjects.InternetPack</Name>
@@ -193,7 +195,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="AttendanceSystemClientV2.relativityClient" />
     <None Include="AttendanceSystemClientV2_TemporaryKey.pfx" />
     <None Include="Briefcase\2012020404.daBriefcase">
@@ -313,6 +317,12 @@
       <DependentUpon>ShowServerClassesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TableDefinitions_PC.cs" />
+    <Compile Include="UserInterface\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\VerifyOfflinePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +378,9 @@
     <EmbeddedResource Include="UserInterface\ShowServerClassesForm.resx">
       <DependentUpon>ShowServerClassesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\VerifyOfflinePassword.resx">
       <DependentUpon>VerifyOfflinePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +392,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="资源文件\BlueBackground.png" />
+    <None Include="Resources\Reject.wav" />
+    <None Include="Resources\Accept.wav" />
     <None Include="资源文件\Reject.wav" />
     <None Include="资源文件\Accept.wav" />
     <Content Include="fplib.dll">

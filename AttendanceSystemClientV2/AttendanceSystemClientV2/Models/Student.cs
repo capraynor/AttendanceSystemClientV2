@@ -10,13 +10,24 @@ using System.Threading.Tasks;
 using AttendanceSystemClientV2.Controls;
 using AttendanceSystemClientV2.PC;
 using AttendanceSystemClientV2.Properties;
+using RemObjects.DataAbstract;
 
 namespace AttendanceSystemClientV2.Models {
 
     /// <summary>
     /// 学生类。用于描述一个学生。
     /// </summary>
-    public class Student {
+    public class Student{
+
+        /// <summary>
+        /// 点名表缓存 手动点名后要注意刷新该变量
+        /// </summary>
+        public static DataTable DmTable; // 这个点名表要直接往briefcase里写.
+
+        /// <summary>
+        /// Briefcase缓存 手动考勤之后应该刷新该变量.
+        /// </summary>
+        public static FileBriefcase ClassBriefcase;
 
         /// <summary>
         /// 学生姓名
@@ -152,17 +163,20 @@ namespace AttendanceSystemClientV2.Models {
             //判断是否迟到 并将到课状态更改成指定的状态
             RollCallStatus = (short) (isLate ? 1 : 0);
 
+            /****************************************************************************************************************************/
             //把标记该门课的表取出来
-            var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
+            //var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
 
             //然后获取点名表
-            var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno );
+            //var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno );
+            //2015年5月8日 效率问题, 这里的从硬盘中取表操作已经被替换了. 如果需要拿Briefcase和点名表,请直接去Student.Dmtable和Student.ClassBriefcase中取.  
+            /**************************************************************************************************************************/
+            
+            //改点名表里的记录 这里改的就是数据了.注意 这里改的是Student中的静态变量.
+            OfflineDataControl.ChangeDmRecord ( ref DmTable, StudentId, RollCallStatus, arriveTime, RollCallTimes );
 
-            //改点名表里的记录 这里改的就是数据了.
-            OfflineDataControl.ChangeDmRecord ( ref dmTable, StudentId, RollCallStatus, arriveTime, RollCallTimes );
-
-            //存点名表.
-            BriefcaseControl.SaveDmTable ( classBriefcase, dmTable );
+            //存点名表.注意 这里改的是Student中的静态变量.
+            BriefcaseControl.SaveDmTable ( ClassBriefcase, DmTable );
 
         }
 

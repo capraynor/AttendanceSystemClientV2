@@ -25,6 +25,8 @@ namespace AttendanceSystemClientV2.UserInterface {
         //标签页侧边栏需要背景
         public MainForm ( ){
 
+            SplashForm.ShowSplashForm();
+
             var d = DateTime.Now;
 
             InitializeComponent ();
@@ -49,6 +51,8 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             mainPageView.SelectedPage = downloadDataPage;
 
+            SplashForm.CloseSplashForm();
+            
         }
 
 
@@ -86,11 +90,15 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             RollCallControl.StopFingerprint(); // 初始化完了之后再停指纹仪
 
-            new ViewStudentsForm(kkno , skno , true).ShowDialog() ;
+            new ViewStudentsForm(kkno , skno , true).ShowDialog() ; // 手动点名完了之后 copyofstudentlist里面已经存着新的数据了.
+
+
 
             var showStudentInformationDelegate = new RollCallControl.UpdateUserInterfaceDelegate(ShowStudentInformation);
 
             RollCallControl.StartRollCall ( RollCallControl.CopyOfStudentList, showStudentInformationDelegate );
+
+
 
         }
 
@@ -499,6 +507,8 @@ namespace AttendanceSystemClientV2.UserInterface {
             dp_EnableRollcallButtons();
 
             rollCallStudentListGv.DataSource = RollCallControl.CopyOfStudentList;
+
+
             //todo:接下来要做的事情:
             //1.打开指纹仪
             //2.识别出来的号码拿出来 放到Student List里查 查完了把Student对象扔到界面委托里显示.

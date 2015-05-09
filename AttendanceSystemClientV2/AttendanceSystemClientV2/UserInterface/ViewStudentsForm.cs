@@ -76,6 +76,8 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno );
 
+            var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
+
             if (isRollCalling){
 
                 foreach (var student in RollCallControl.CopyOfStudentList){
@@ -91,9 +93,13 @@ namespace AttendanceSystemClientV2.UserInterface {
 
                 }
 
+                Student.DmTable = dmTable;
+
+                Student.ClassBriefcase = classBriefcase;
+
             }
 
-            this.Close();
+            Close();
         }
 
         private void upBtn_Click ( object sender, EventArgs e ) {
