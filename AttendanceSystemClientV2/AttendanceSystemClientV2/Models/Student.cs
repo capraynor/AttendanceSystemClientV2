@@ -163,6 +163,8 @@ namespace AttendanceSystemClientV2.Models {
             //判断是否迟到 并将到课状态更改成指定的状态
             RollCallStatus = (short) (isLate ? 1 : 0);
 
+            ArriveTime = arriveTime;
+
             /****************************************************************************************************************************/
             //把标记该门课的表取出来
             //var classBriefcase = BriefcaseControl.GetBriefcase(kkno);

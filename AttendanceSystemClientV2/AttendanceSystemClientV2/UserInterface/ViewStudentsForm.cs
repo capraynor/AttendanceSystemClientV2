@@ -28,6 +28,8 @@ namespace AttendanceSystemClientV2.UserInterface {
 
         private bool isRollCalling = false;
 
+        private FileBriefcase classBriefcase;
+
         /// <summary>
         /// 手动更改签到状态
         /// </summary>
@@ -64,6 +66,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             studentsGridView.DataSource = dmDisplayTable;
 
+            classBriefcase = BriefcaseControl.GetBriefcase(kkno);
 
             //调用一个或者几个函数函数 该函数应该:
             //1.传入 kkno  和 skno 返回该堂课的点名表
@@ -76,7 +79,7 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             var dmTable = OfflineDataControl.GetDmDatatable ( kkno, skno );
 
-            var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
+            classBriefcase = BriefcaseControl.GetBriefcase(kkno);
 
             if (isRollCalling){
 
@@ -181,7 +184,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void changeToNormalBtn_Click ( object sender, EventArgs e ) {
 
             //先把Briefcase找出来
-            var classBriefcase = BriefcaseControl.GetBriefcase(kkno);
+            classBriefcase = BriefcaseControl.GetBriefcase(kkno);
 
             //然后把当前的学号找出来
             var studentId = Convert.ToString(studentsGridView.SelectedRows.First().Cells["学号"].Value);
@@ -239,7 +242,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void changeToLateBtn_Click ( object sender, EventArgs e ) {
 
             //先把Briefcase找出来
-            var classBriefcase = BriefcaseControl.GetBriefcase (kkno);
+            //classBriefcase = BriefcaseControl.GetBriefcase (kkno);
 
             //然后把当前的学号找出来
             var studentId = Convert.ToString (studentsGridView.SelectedRows.First ().Cells["学号"].Value);
@@ -260,7 +263,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void changeToAskForLeaveBtn_Click ( object sender, EventArgs e ) {
 
             //先把Briefcase找出来
-            var classBriefcase = BriefcaseControl.GetBriefcase (kkno);
+            //classBriefcase = BriefcaseControl.GetBriefcase (kkno);
 
             //然后把当前的学号找出来
             var studentId = Convert.ToString (studentsGridView.SelectedRows.First ().Cells["学号"].Value);
@@ -282,7 +285,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void changeToAbsentBtn_Click ( object sender, EventArgs e ) {
 
             //先把Briefcase找出来
-            var classBriefcase = BriefcaseControl.GetBriefcase (kkno);
+            //classBriefcase = BriefcaseControl.GetBriefcase (kkno);
 
             //然后把当前的学号找出来
             var studentId = Convert.ToString (studentsGridView.SelectedRows.First ().Cells["学号"].Value);
@@ -304,7 +307,7 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void changeToLeaveEarly_Click ( object sender, EventArgs e ) {
 
             //先把Briefcase找出来
-            var classBriefcase = BriefcaseControl.GetBriefcase (kkno);
+            //classBriefcase = BriefcaseControl.GetBriefcase (kkno);
 
             //然后把当前的学号找出来
             var studentId = Convert.ToString (studentsGridView.SelectedRows.First ().Cells["学号"].Value);

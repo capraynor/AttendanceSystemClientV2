@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using AttendanceSystemClientV2.Controls;
 using AttendanceSystemClientV2.Models;
@@ -52,7 +53,8 @@ namespace AttendanceSystemClientV2.UserInterface {
             mainPageView.SelectedPage = downloadDataPage;
 
             SplashForm.CloseSplashForm();
-            
+
+            radLabelElement1.Text = System.Reflection.Assembly.GetExecutingAssembly ().ToString ();
         }
 
 
@@ -124,8 +126,8 @@ namespace AttendanceSystemClientV2.UserInterface {
 
                 MsgBox.ShowMsgBoxDialog ( expException.Message + "\n" + expException.StackTrace );
             } finally {
-                dp_RefreshMainForm ();
-
+                //dp_RefreshMainForm ();
+                dp_BindDataSourceForFirstClassListBox (); // 为第一个标签页中的左上角ListBox绑定数据源
                 // 不管怎样 点击完下载课程之后一定要刷新一下显示
             }
         }
@@ -145,7 +147,6 @@ namespace AttendanceSystemClientV2.UserInterface {
             dp_BindDataSourceForFirstClassStatusGridView ( selectedproperty.Key );
 
             courseNoLbl1.Text = selectedproperty.Key.ToString();
-
         }
 
         /// <summary>
@@ -419,7 +420,9 @@ namespace AttendanceSystemClientV2.UserInterface {
 
             MsgBox.ShowMsgBoxDialog ( displayString + "\n\n上传完成" );
 
-            dp_RefreshMainForm ();
+            //dp_RefreshMainForm ();
+
+            dp_BindDataSourceForThirdClassListBox ();//为第三个标签页中的左上角Listbox绑定数据源
         }
 
         
@@ -714,6 +717,18 @@ namespace AttendanceSystemClientV2.UserInterface {
         private void pictureBox1_MouseDown ( object sender, MouseEventArgs e ) {
 
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
+
+        }
+
+        private void refreshThirdDisplay_Click ( object sender, EventArgs e ) {
+
+            dp_BindDataSourceForThirdClassListBox ();//为第三个标签页中的左上角Listbox绑定数据源
+
+        }
+
+        private void radButton2_Click ( object sender, EventArgs e ) {
+
+            dp_BindDataSourceForFirstClassListBox (); // 为第一个标签页中的左上角ListBox绑定数据源
 
         }
     }

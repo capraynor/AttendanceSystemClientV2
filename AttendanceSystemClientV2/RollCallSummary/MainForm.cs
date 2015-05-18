@@ -22,80 +22,84 @@ namespace RollCallSummary {
 
         public MainForm ( ) {
 
-            this.fDataModule = new DataModule ();
+            //this.fDataModule = new DataModule ();
 
-            var bjTable = fDataModule.GetBjTable ();
+            //var bjTable = fDataModule.GetBjTable ();
 
-            Console.WriteLine("{0}获取班级表", DateTime.Now);
+            //Console.WriteLine("{0}获取班级表", DateTime.Now);
 
-            this.InitializeComponent ();
+            //this.InitializeComponent ();
 
-            this.classGridView.DataSource = bjTable;
+            //this.classGridView.DataSource = bjTable;
 
-            Console.WriteLine ( "{0}开始获取开课表", DateTime.Now );
+            //Console.WriteLine ( "{0}开始获取开课表", DateTime.Now );
 
-            kktable =fDataModule.GetKktable05Viewros ().ToList ();
+            //kktable =fDataModule.GetKktable05Viewros ().ToList ();
 
-            Console.WriteLine ("{0}获取开课表", DateTime.Now);
+            //Console.WriteLine ("{0}获取开课表", DateTime.Now);
 
-            Console.WriteLine ( "{0}开始获取学生表", DateTime.Now );
+            //Console.WriteLine ( "{0}开始获取学生表", DateTime.Now );
 
-            xsTable = fDataModule.GetXsTable().ToList();
+            //xsTable = fDataModule.GetXsTable().ToList();
 
-            Console.WriteLine ( "{0}获取学生表", DateTime.Now );
+            //Console.WriteLine ( "{0}获取学生表", DateTime.Now );
 
-            Console.WriteLine ( "{0}开始获取点名表", DateTime.Now );
-            dmTable = fDataModule.GetDmTable().ToList();
-            Console.WriteLine ( "{0}获取点名表", DateTime.Now );
-            var studentList = new List<Student>();
+            //Console.WriteLine ( "{0}开始获取点名表", DateTime.Now );
+            //dmTable = fDataModule.GetDmTable().ToList();
+            //Console.WriteLine ( "{0}获取点名表", DateTime.Now );
+            //var studentList = new List<Student>();
 
-            foreach (var xstableRecord in xsTable){
+            //foreach (var xstableRecord in xsTable){
 
-                var student = new Student();
+            //    var student = new Student();
 
-                student.xsid = xstableRecord.XSID;
+            //    student.xsid = xstableRecord.XSID;
 
-                student.xsname = xstableRecord.XSNAME;
+            //    student.xsname = xstableRecord.XSNAME;
 
-                student.askForLeaveTotal = 0;
+            //    student.askForLeaveTotal = 0;
 
-                student.absentTotal = 0;
+            //    student.absentTotal = 0;
 
-                if (xstableRecord.BJID != null) student.classId = xstableRecord.BJID.Value;
+            //    if (xstableRecord.BJID != null) student.classId = xstableRecord.BJID.Value;
 
-                studentList.Add(student);
+            //    studentList.Add(student);
 
-            }
+            //}
 
-            foreach (var kktablerecord in kktable){
+            //foreach (var kktablerecord in kktable){
 
-                var dmRecords = from c in dmTable where c.KKNO == kktablerecord.KKNO select c;
+            //    var dmRecords = from c in dmTable where c.KKNO == kktablerecord.KKNO select c;
 
-                Console.WriteLine ( string.Format ( "正在统计{0}", kktablerecord.KKNAME ) );
+            //    Console.WriteLine ( string.Format ( "正在统计{0}", kktablerecord.KKNAME ) );
 
-                foreach (var student in studentList){
+            //    foreach (var student in studentList){
 
-                    var askForLeaveCounter = from c in dmRecords where c.DKZT == 3 && c.XSID == student.xsid select c;
+            //        var askForLeaveCounter = from c in dmRecords where c.DKZT == 3 && c.XSID == student.xsid select c;
 
-                    var absentCounter = from c in dmRecords where c.DKZT == 4 && c.XSID == student.xsid select c;
+            //        var absentCounter = from c in dmRecords where c.DKZT == 4 && c.XSID == student.xsid select c;
 
-                    long askForLeaveTotal = askForLeaveCounter.Count();
+            //        long askForLeaveTotal = askForLeaveCounter.Count();
 
-                    long absentTotal = absentCounter.Count();
+            //        long absentTotal = absentCounter.Count();
 
-                    student.askForLeaveTotal += askForLeaveTotal;
+            //        student.askForLeaveTotal += askForLeaveTotal;
 
-                    student.absentTotal += absentTotal;
+            //        student.absentTotal += absentTotal;
 
-                }
+            //    }
 
-                Console.WriteLine(string.Format("统计完毕:{0}" , kktablerecord.KKNAME));
+            //    Console.WriteLine(string.Format("统计完毕:{0}" , kktablerecord.KKNAME));
 
 
-            }
+            //}
 
-            this.classGridView.DataSource = studentList;
-            dataGridView1.DataSource = studentList;
+            //this.classGridView.DataSource = studentList;
+            //dataGridView1.DataSource = studentList;
+
+            fDataModule = new DataModule();
+
+
         }
 
         private void classGridView_Click ( object sender, EventArgs e ) {

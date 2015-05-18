@@ -42,11 +42,16 @@ namespace AttendanceSystemClientV2.Controls {
                     _row["上课时间"] = "N/A";
                 }
 
-                if (kktable05Viewro.SKZT == 0) {
-                    _row["签到状态"] = "未签到";
-                }
-                else {
-                    _row["签到状态"] = "已签到";
+                switch (kktable05Viewro.SKZT){
+                    case null:
+                        _row["签到状态"] = "未知";
+                        break;
+                    case 0:
+                        _row["签到状态"] = "未签到";
+                        break;
+                    default:
+                        _row["签到状态"] = "已签到";
+                        break;
                 }
 
                 kkdatatable.Rows.Add(_row);

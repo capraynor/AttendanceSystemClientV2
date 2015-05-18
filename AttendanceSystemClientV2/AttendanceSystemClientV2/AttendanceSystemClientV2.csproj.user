@@ -4,7 +4,7 @@
     <PublishUrlHistory>ftp://172.16.120.173/AttendanceSystemClientV2Publish/|发布\</PublishUrlHistory>
     <InstallUrlHistory>http://172.16.120.173/AttendanceSystemClientV2Publish/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory>http://172.16.120.5/|http://www.baidu.com/</UpdateUrlHistory>
+    <UpdateUrlHistory>http://172.16.120.173/AttendanceSystemClientV2Publish/|http://172.16.120.5/|http://www.baidu.com/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>zh-CN</FallbackCulture>

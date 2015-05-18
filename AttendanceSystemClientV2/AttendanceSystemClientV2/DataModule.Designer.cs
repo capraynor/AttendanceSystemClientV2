@@ -49,6 +49,7 @@
             // 
             // message
             // 
+            this.message.AddServerExceptionPrefix = false;
             this.message.ContentType = "application/octet-stream";
             this.message.SerializerInstance = null;
             // 
@@ -79,8 +80,6 @@
             this.remoteDataAdapter.DataUpdateCall.Parameters.Add("Result", "Binary", RemObjects.SDK.ParameterDirection.Result);
             this.remoteDataAdapter.DataUpdateCall.OutgoingDeltaParameter = "aDelta";
             this.remoteDataAdapter.DataUpdateCall.IncomingDeltaParameter = "Result";
-            //this.remoteDataAdapter.LoginString = null;
-            //this.remoteDataAdapter.Password = null;
             this.remoteDataAdapter.RemoteService = this.remoteService;
             this.remoteDataAdapter.SchemaCall.MethodName = "GetSchema";
             this.remoteDataAdapter.SchemaCall.Parameters.Clear();
@@ -88,9 +87,7 @@
             this.remoteDataAdapter.SchemaCall.Parameters.Add("Result", "String", RemObjects.SDK.ParameterDirection.Result);
             this.remoteDataAdapter.SchemaCall.IncomingSchemaParameter = "Result";
             this.remoteDataAdapter.ScriptProvider = null;
-            //this.remoteDataAdapter.TargetUrl = null;
             this.remoteDataAdapter.UseDynamicWhere = false;
-            //this.remoteDataAdapter.UserName = null;
             ((System.ComponentModel.ISupportInitialize)(this.remoteDataAdapter)).EndInit();
 
         }

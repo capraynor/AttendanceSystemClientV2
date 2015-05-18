@@ -37,10 +37,10 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://172.16.120.173/AttendanceSystemClientV2Publish/</InstallUrl>
     <UpdateUrl>http://172.16.120.173/AttendanceSystemClientV2Publish/</UpdateUrl>
-    <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.18</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
