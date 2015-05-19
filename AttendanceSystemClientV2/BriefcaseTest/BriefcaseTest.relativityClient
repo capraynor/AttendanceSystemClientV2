@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativityClient>
+  <Server>
+    <Name>WIN-632K2FE17PE</Name>
+    <ServerUri>http://172.16.120.2:7099/bin</ServerUri>
+  </Server>
+  <Domain>AttendanceSystem</Domain>
+  <Schema>PC</Schema>
+  <AdminLogin />
+  <DataLogin>1</DataLogin>
+</RelativityClient>

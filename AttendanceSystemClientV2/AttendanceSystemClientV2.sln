@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollCallSummary", "RollCallSummary\RollCallSummary.csproj", "{522BAF37-60FA-4930-88B9-C7EC7B6D064E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BriefcaseTest", "BriefcaseTest\BriefcaseTest.csproj", "{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,16 @@ Global
 		{522BAF37-60FA-4930-88B9-C7EC7B6D064E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{522BAF37-60FA-4930-88B9-C7EC7B6D064E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{522BAF37-60FA-4930-88B9-C7EC7B6D064E}.Release|x86.ActiveCfg = Release|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D126AAA0-E88C-4DE8-B449-5AF36637F4C6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
